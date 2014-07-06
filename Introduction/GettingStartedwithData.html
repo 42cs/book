@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting Started with Data &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Getting Started with Data</a><ul>
+<li><a class="reference internal" href="#built-in-atomic-data-types">Built-in Atomic Data Types</a></li>
+<li><a class="reference internal" href="#built-in-collection-data-types">Built-in Collection Data Types</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="getting-started-with-data">
+<h1>Getting Started with Data<a class="headerlink" href="#getting-started-with-data" title="Permalink to this headline">¶</a></h1>
+<p>We stated above that Python supports the object-oriented programming
+paradigm. This means that Python considers data to be the focal point of
+the problem-solving process. In Python, as well as in any other
+object-oriented programming language, we define a <strong>class</strong> to be a
+description of what the data look like (the state) and what the data can
+do (the behavior). Classes are analogous to abstract data types because
+a user of a class only sees the state and behavior of a data item. Data
+items are called <strong>objects</strong> in the object-oriented paradigm. An object
+is an instance of a class.</p>
+<div class="section" id="built-in-atomic-data-types">
+<h2>Built-in Atomic Data Types<a class="headerlink" href="#built-in-atomic-data-types" title="Permalink to this headline">¶</a></h2>
+<p>We will begin our review by considering the atomic data types. Python
+has two main built-in numeric classes that implement the integer and
+floating point data types. These Python classes are called <tt class="docutils literal"><span class="pre">int</span></tt> and
+<tt class="docutils literal"><span class="pre">float</span></tt>. The standard arithmetic operations, +, -, *, /, and **
+(exponentiation), can be used with parentheses forcing the order of
+operations away from normal operator precedence. Other very useful
+operations are the remainder (modulo) operator, %, and integer division,
+//. Note that when two integers are divided, the result is a floating
+point. The integer division operator returns the integer portion of the
+quotient by truncating any fractional part.</p>
+
+<div id="intro_1" lang="python" >
+
+<br/>
+<div id="intro_1_code_div" style="display: block">
+<textarea cols="50" rows="12" id="intro_1_code" class="active_code", prefixcode="undefined" lang="python">
+print 2+3*4
+print (2+3)*4
+print 2**10
+print 6/3
+print 7/3
+print 7//3
+print 7%3
+print 3/6
+print 3//6
+print 3%6
+print 2**100
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text">Basic Arithmetic Operators (intro_1)</span> </p>
+
+<button class='btn btn-success' id="intro_1_runb" onclick="runit('intro_1',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="intro_1_saveb" onclick="saveEditor('intro_1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="intro_1_loadb" onclick="requestCode('intro_1');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#intro_1_saveb').toggle();
+    $('#intro_1_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="intro_1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="intro_1_suffix" style="display:none">
+</pre>
+<pre id="intro_1_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<p>The boolean data type, implemented as the Python <tt class="docutils literal"><span class="pre">bool</span></tt> class, will be
+quite useful for representing truth values. The possible state values
+for a boolean object are <tt class="docutils literal"><span class="pre">True</span></tt> and <tt class="docutils literal"><span class="pre">False</span></tt> with the standard
+boolean operators, <tt class="docutils literal"><span class="pre">and</span></tt>, <tt class="docutils literal"><span class="pre">or</span></tt>, and <tt class="docutils literal"><span class="pre">not</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">False</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">False</span> <span class="ow">or</span> <span class="bp">True</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="ow">not</span> <span class="p">(</span><span class="bp">False</span> <span class="ow">or</span> <span class="bp">True</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">True</span> <span class="ow">and</span> <span class="bp">True</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Boolean data objects are also used as results for comparison operators
+such as equality (==) and greater than (<span class="math">\(&gt;\)</span>). In addition,
+relational operators and logical operators can be combined together to
+form complex logical questions. <a class="reference internal" href="#tab-relational"><em>Table&nbsp;1</em></a> shows the relational
+and logical operators with examples shown in the session that follows.</p>
+<table border="1" class="docutils" id="tab-relational">
+<caption><strong>Table 1: Relational and Logical Operators</strong></caption>
+<colgroup>
+<col width="25%" />
+<col width="13%" />
+<col width="61%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Operation Name</strong></th>
+<th class="head"><strong>Operator</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>less than</td>
+<td><span class="math">\(&lt;\)</span></td>
+<td>Less than operator</td>
+</tr>
+<tr class="row-odd"><td>greater than</td>
+<td><span class="math">\(&gt;\)</span></td>
+<td>Greater than operator</td>
+</tr>
+<tr class="row-even"><td>less than or equal</td>
+<td><span class="math">\(&lt;=\)</span></td>
+<td>Less than or equal to operator</td>
+</tr>
+<tr class="row-odd"><td>greater than or equal</td>
+<td><span class="math">\(&gt;=\)</span></td>
+<td>Greater than or equal to operator</td>
+</tr>
+<tr class="row-even"><td>equal</td>
+<td><span class="math">\(==\)</span></td>
+<td>Equality operator</td>
+</tr>
+<tr class="row-odd"><td>not equal</td>
+<td><span class="math">\(!=\)</span></td>
+<td>Not equal operator</td>
+</tr>
+<tr class="row-even"><td>logical and</td>
+<td><span class="math">\(and\)</span></td>
+<td>Both operands True for result to be True</td>
+</tr>
+<tr class="row-odd"><td>logical or</td>
+<td><span class="math">\(or\)</span></td>
+<td>One or the other operand is True for the result to be True</td>
+</tr>
+<tr class="row-even"><td>logical not</td>
+<td><span class="math">\(not\)</span></td>
+<td>Negates the truth value, False becomes True, True becomes False</td>
+</tr>
+</tbody>
+</table>
+
+<div id="intro_2" lang="python" >
+
+<br/>
+<div id="intro_2_code_div" style="display: block">
+<textarea cols="50" rows="12" id="intro_2_code" class="active_code", prefixcode="undefined" lang="python">
+print(5==10)
+print(10 > 5)
+print((5 >= 1) and (5 <= 10))
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text">Basic Relational and Logical Operators (intro_2)</span> </p>
+
+<button class='btn btn-success' id="intro_2_runb" onclick="runit('intro_2',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="intro_2_saveb" onclick="saveEditor('intro_2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="intro_2_loadb" onclick="requestCode('intro_2');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#intro_2_saveb').toggle();
+    $('#intro_2_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="intro_2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="intro_2_suffix" style="display:none">
+</pre>
+<pre id="intro_2_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<p>Identifiers are used in programming languages as names. In Python,
+identifiers start with a letter or an underscore (_), are case
+sensitive, and can be of any length. Remember that it is always a good
+idea to use names that convey meaning so that your program code is
+easier to read and understand.</p>
+<p>A Python variable is created when a name is used for the first time on
+the left-hand side of an assignment statement. Assignment statements
+provide a way to associate a name with a value. The variable will hold a
+reference to a piece of data and not the data itself. Consider the
+following session:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">theSum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theSum</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theSum</span> <span class="o">=</span> <span class="n">theSum</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theSum</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theSum</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">theSum</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>The assignment statement <tt class="docutils literal"><span class="pre">theSum</span> <span class="pre">=</span> <span class="pre">0</span></tt> creates a variable called
+<tt class="docutils literal"><span class="pre">theSum</span></tt> and lets it hold the reference to the data object <tt class="docutils literal"><span class="pre">0</span></tt> (see
+<a class="reference internal" href="#fig-assignment1"><em>Figure 3</em></a>). In general, the right-hand side of the assignment
+statement is evaluated and a reference to the resulting data object is
+“assigned” to the name on the left-hand side. At this point in our
+example, the type of the variable is integer as that is the type of the
+data currently being referred to by <tt class="docutils literal"><span class="pre">thesum</span></tt>. If the type of the data
+changes (see <a class="reference internal" href="#fig-assignment2"><em>Figure 4</em></a>), as shown above with the boolean
+value <tt class="docutils literal"><span class="pre">True</span></tt>, so does the type of the variable (<tt class="docutils literal"><span class="pre">thesum</span></tt> is now of
+the type boolean). The assignment statement changes the reference being
+held by the variable. This is a dynamic characteristic of Python. The
+same variable can refer to many different types of data.</p>
+<div class="figure align-center" id="fig-assignment1">
+<img alt="../_images/assignment1.png" src="../_images/assignment1.png" />
+<p class="caption">Figure 3: Variables Hold References to Data Objects</p>
+</div>
+<div class="figure align-center" id="fig-assignment2">
+<img alt="../_images/assignment2.png" src="../_images/assignment2.png" />
+<p class="caption">Figure 4: Assignment Changes the Reference</p>
+</div>
+</div>
+<div class="section" id="built-in-collection-data-types">
+<h2>Built-in Collection Data Types<a class="headerlink" href="#built-in-collection-data-types" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the numeric and boolean classes, Python has a number of
+very powerful built-in collection classes. Lists, strings, and tuples
+are ordered collections that are very similar in general structure but
+have specific differences that must be understood for them to be used
+properly. Sets and dictionaries are unordered collections.</p>
+<p>A <strong>list</strong> is an ordered collection of zero or more references to Python
+data objects. Lists are written as comma-delimited values enclosed in
+square brackets. The empty list is simply <tt class="docutils literal"><span class="pre">[</span> <span class="pre">]</span></tt>. Lists are
+heterogeneous, meaning that the data objects need not all be from the
+same class and the collection can be assigned to a variable as below.
+The following fragment shows a variety of Python data objects in a list.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="bp">True</span><span class="p">,</span><span class="mf">6.5</span><span class="p">]</span>
+<span class="go">[1, 3, True, 6.5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="bp">True</span><span class="p">,</span><span class="mf">6.5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myList</span>
+<span class="go">[1, 3, True, 6.5]</span>
+</pre></div>
+</div>
+<p>Note that when Python evaluates a list, the list itself is returned.
+However, in order to remember the list for later processing, its
+reference needs to be assigned to a variable.</p>
+<p>Since lists are considered to be sequentially ordered, they support a
+number of operations that can be applied to any Python sequence.
+<a class="reference internal" href="#tab-sequence"><em>Table&nbsp;2</em></a> reviews these operations and the following session
+gives examples of their use.</p>
+<table border="1" class="docutils" id="tab-sequence">
+<caption><strong>Table 2: Operations on Any Sequence in Python</strong></caption>
+<colgroup>
+<col width="33%" />
+<col width="17%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Operation Name</strong></th>
+<th class="head"><strong>Operator</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>indexing</td>
+<td>[ ]</td>
+<td>Access an element of a sequence</td>
+</tr>
+<tr class="row-odd"><td>concatenation</td>
+<td>+</td>
+<td>Combine sequences together</td>
+</tr>
+<tr class="row-even"><td>repetition</td>
+<td>*</td>
+<td>Concatenate a repeated number of times</td>
+</tr>
+<tr class="row-odd"><td>membership</td>
+<td>in</td>
+<td>Ask whether an item is in a sequence</td>
+</tr>
+<tr class="row-even"><td>length</td>
+<td>len</td>
+<td>Ask the number of items in the sequence</td>
+</tr>
+<tr class="row-odd"><td>slicing</td>
+<td>[ : ]</td>
+<td>Extract a part of a sequence</td>
+</tr>
+</tbody>
+</table>
+<p>Note that the indices for lists (sequences) start counting with 0. The
+slice operation, myList[1:3], returns a list of items starting with the
+item indexed by 1 up to but not including the item indexed by 3.</p>
+<p>Sometimes, you will want to initialize a list. This can quickly be
+accomplished by using repetition. For example,</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myList</span>
+<span class="go">[0, 0, 0, 0, 0, 0]</span>
+</pre></div>
+</div>
+<p>One very important aside relating to the repetition operator is that the
+result is a repetition of references to the data objects in the
+sequence. This can best be seen by considering the following session:</p>
+
+<div id="intro_3" lang="python" >
+
+<br/>
+<div id="intro_3_code_div" style="display: block">
+<textarea cols="50" rows="12" id="intro_3_code" class="active_code", prefixcode="undefined" lang="python">
+myList = [1,2,3,4]
+A = [myList]*3
+print(A)
+myList[2]=45
+print(A)
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text">Repetition of References (intro_3)</span> </p>
+
+<button class='btn btn-success' id="intro_3_runb" onclick="runit('intro_3',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="intro_3_saveb" onclick="saveEditor('intro_3');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="intro_3_loadb" onclick="requestCode('intro_3');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#intro_3_saveb').toggle();
+    $('#intro_3_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="intro_3_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="intro_3_suffix" style="display:none">
+</pre>
+<pre id="intro_3_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<p>The variable <tt class="docutils literal"><span class="pre">A</span></tt> holds a collection of three references to the
+original list called <tt class="docutils literal"><span class="pre">myList</span></tt>. Note that a change to one element of
+<tt class="docutils literal"><span class="pre">myList</span></tt> shows up in all three occurrences in <tt class="docutils literal"><span class="pre">A</span></tt>.</p>
+<p>Lists support a number of methods that will be used to build data
+structures. <a class="reference internal" href="#tab-listmethods"><em>Table&nbsp;3</em></a> provides a summary. Examples of their
+use follow.</p>
+<table border="1" class="docutils" id="tab-listmethods">
+<caption><strong>Table 3: Methods Provided by Lists in Python</strong></caption>
+<colgroup>
+<col width="23%" />
+<col width="25%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Method Name</strong></th>
+<th class="head"><strong>Use</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">append</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">alist.append(item)</span></tt></td>
+<td>Adds a new item to the end of a list</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">insert</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">alist.insert(i,item)</span></tt></td>
+<td>Inserts an item at the ith position in a list</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">pop</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">alist.pop()</span></tt></td>
+<td>Removes and returns the last item in a list</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">pop</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">alist.pop(i)</span></tt></td>
+<td>Removes and returns the ith item in a list</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">sort</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">alist.sort()</span></tt></td>
+<td>Modifies a list to be sorted</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">reverse</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">alist.reverse()</span></tt></td>
+<td>Modifies a list to be in reverse order</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">del</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">del</span> <span class="pre">alist[i]</span></tt></td>
+<td>Deletes the item in the ith position</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">index</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">alist.index(item)</span></tt></td>
+<td>Returns the index of the first occurrence of <tt class="docutils literal"><span class="pre">item</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">count</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">alist.count(item)</span></tt></td>
+<td>Returns the number of occurrences of <tt class="docutils literal"><span class="pre">item</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">remove</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">alist.remove(item)</span></tt></td>
+<td>Removes the first occurrence of <tt class="docutils literal"><span class="pre">item</span></tt></td>
+</tr>
+</tbody>
+</table>
+
+<div id="intro_5" lang="python" >
+
+<br/>
+<div id="intro_5_code_div" style="display: block">
+<textarea cols="50" rows="12" id="intro_5_code" class="active_code", prefixcode="undefined" lang="python">
+myList = [1024, 3, True, 6.5]
+myList.append(False)
+print(myList)
+myList.insert(2,4.5)
+print(myList)
+print(myList.pop())
+print(myList)
+print(myList.pop(1))
+print(myList)
+myList.pop(2)
+print(myList)
+myList.sort()
+print(myList)
+myList.reverse()
+print(myList)
+print(myList.count(6.5))
+print(myList.index(4.5))
+myList.remove(6.5)
+print(myList)
+del myList[0]
+print(myList)
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text">Examples of List Methods (intro_5)</span> </p>
+
+<button class='btn btn-success' id="intro_5_runb" onclick="runit('intro_5',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="intro_5_saveb" onclick="saveEditor('intro_5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="intro_5_loadb" onclick="requestCode('intro_5');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#intro_5_saveb').toggle();
+    $('#intro_5_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="intro_5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="intro_5_suffix" style="display:none">
+</pre>
+<pre id="intro_5_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<p>You can see that some of the methods, such as <tt class="docutils literal"><span class="pre">pop</span></tt>, return a value
+and also modify the list. Others, such as <tt class="docutils literal"><span class="pre">reverse</span></tt>, simply modify the
+list with no return value. <tt class="docutils literal"><span class="pre">pop</span></tt> will default to the end of the list
+but can also remove and return a specific item. The index range starting
+from 0 is again used for these methods. You should also notice the
+familiar “dot” notation for asking an object to invoke a method.
+<tt class="docutils literal"><span class="pre">myList.append(False)</span></tt> can be read as “ask the object <tt class="docutils literal"><span class="pre">myList</span></tt> to
+perform its <tt class="docutils literal"><span class="pre">append</span></tt> method and send it the value <tt class="docutils literal"><span class="pre">False</span></tt>.” Even
+simple data objects such as integers can invoke methods in this way.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">54</span><span class="p">)</span><span class="o">.</span><span class="n">__add__</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
+<span class="go">75</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>In this fragment we are asking the integer object <tt class="docutils literal"><span class="pre">54</span></tt> to execute its
+<tt class="docutils literal"><span class="pre">add</span></tt> method (called <tt class="docutils literal"><span class="pre">__add__</span></tt> in Python) and passing it <tt class="docutils literal"><span class="pre">21</span></tt> as
+the value to add. The result is the sum, <tt class="docutils literal"><span class="pre">75</span></tt>. Of course, we usually
+write this as <tt class="docutils literal"><span class="pre">54+21</span></tt>. We will say much more about these methods later
+in this section.</p>
+<p>One common Python function that is often discussed in conjunction with
+lists is the <tt class="docutils literal"><span class="pre">range</span></tt> function. <tt class="docutils literal"><span class="pre">range</span></tt> produces a range object that
+represents a sequence of values. By using the <tt class="docutils literal"><span class="pre">list</span></tt> function, it is
+possible to see the value of the range object as a list. This is
+illustrated below.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">range(0, 10)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">range(5, 10)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">[5, 6, 7, 8, 9]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">[5, 7, 9]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">[10, 9, 8, 7, 6, 5, 4, 3, 2]</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>The range object represents a sequence of integers. By default, it will
+start with 0. If you provide more parameters, it will start and end at
+particular points and can even skip items. In our first example,
+<tt class="docutils literal"><span class="pre">range(10)</span></tt>, the sequence starts with 0 and goes up to but does not
+include 10. In our second example, <tt class="docutils literal"><span class="pre">range(5,10)</span></tt> starts at 5 and goes
+up to but not including 10. <tt class="docutils literal"><span class="pre">range(5,10,2)</span></tt> performs similarly but
+skips by twos (again, 10 is not included).</p>
+<p><strong>Strings</strong> are sequential collections of zero or more letters, numbers
+and other symbols. We call these letters, numbers and other symbols
+<em>characters</em>. Literal string values are differentiated from identifiers
+by using quotation marks (either single or double).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;David&quot;</span>
+<span class="go">&#39;David&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span> <span class="o">=</span> <span class="s">&quot;David&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">&#39;i&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span><span class="o">*</span><span class="mi">2</span>
+<span class="go">&#39;DavidDavid&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">myName</span><span class="p">)</span>
+<span class="go">5</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Since strings are sequences, all of the sequence operations described
+above work as you would expect. In addition, strings have a number of
+methods, some of which are shown in <a class="reference internal" href="#tab-stringmethods"><em>Table&nbsp;4</em></a>. For example,</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span>
+<span class="go">&#39;David&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="go">&#39;DAVID&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="go">&#39;  David   &#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;v&#39;</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;v&#39;</span><span class="p">)</span>
+<span class="go">[&#39;Da&#39;, &#39;id&#39;]</span>
+</pre></div>
+</div>
+<p>Of these, <tt class="docutils literal"><span class="pre">split</span></tt> will be very useful for processing data. <tt class="docutils literal"><span class="pre">split</span></tt>
+will take a string and return a list of strings using the split
+character as a division point. In the example, <tt class="docutils literal"><span class="pre">v</span></tt> is the division
+point. If no division is specified, the split method looks for
+whitespace characters such as tab, newline and space.</p>
+<table border="1" class="docutils" id="tab-stringmethods">
+<caption><strong>Table 4: Methods Provided by Strings in Python</strong></caption>
+<colgroup>
+<col width="22%" />
+<col width="23%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Method Name</strong></th>
+<th class="head"><strong>Use</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">center</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">astring.center(w)</span></tt></td>
+<td>Returns a string centered in a field of size <tt class="docutils literal"><span class="pre">w</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">count</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">astring.count(item)</span></tt></td>
+<td>Returns the number of occurrences of <tt class="docutils literal"><span class="pre">item</span></tt> in the string</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">ljust</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">astring.ljust(w)</span></tt></td>
+<td>Returns a string left-justified in a field of size <tt class="docutils literal"><span class="pre">w</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">lower</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">astring.lower()</span></tt></td>
+<td>Returns a string in all lowercase</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">rjust</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">astring.rjust(w)</span></tt></td>
+<td>Returns a string right-justified in a field of size <tt class="docutils literal"><span class="pre">w</span></tt></td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">find</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">astring.find(item)</span></tt></td>
+<td>Returns the index of the first occurrence of <tt class="docutils literal"><span class="pre">item</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">split</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">astring.split(schar)</span></tt></td>
+<td>Splits a string into substrings at <tt class="docutils literal"><span class="pre">schar</span></tt></td>
+</tr>
+</tbody>
+</table>
+<p>A major difference between lists and strings is that lists can be
+modified while strings cannot. This is referred to as <strong>mutability</strong>.
+Lists are mutable; strings are immutable. For example, you can change an
+item in a list by using indexing and assignment. With a string that
+change is not allowed.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">myList</span>
+<span class="go">[1, 3, True, 6.5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myList</span>
+<span class="go">[1024, 3, True, 6.5]</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span>
+<span class="go">&#39;David&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="s">&#39;X&#39;</span>
+
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;pyshell#84&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">-toplevel-</span>
+    <span class="n">myName</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="s">&#39;X&#39;</span>
+<span class="gr">TypeError</span>: <span class="n">object doesn&#39;t support item assignment</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Tuples are very similar to lists in that they are heterogeneous
+sequences of data. The difference is that a tuple is immutable, like a
+string. A tuple cannot be changed. Tuples are written as comma-delimited
+values enclosed in parentheses. As sequences, they can use any operation
+described above. For example,</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">myTuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="bp">True</span><span class="p">,</span><span class="mf">4.96</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myTuple</span>
+<span class="go">(2, True, 4.96)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">myTuple</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myTuple</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="go">(2, True, 4.96, 2, True, 4.96, 2, True, 4.96)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myTuple</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">(2, True)</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>However, if you try to change an item in a tuple, you will get an error.
+Note that the error message provides location and reason for the
+problem.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">myTuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="bp">False</span>
+
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;pyshell#137&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">-toplevel-</span>
+    <span class="n">myTuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="bp">False</span>
+<span class="gr">TypeError</span>: <span class="n">object doesn&#39;t support item assignment</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>A set is an unordered collection of zero or more immutable Python data
+objects. Sets do not allow duplicates and are written as comma-delimited
+values enclosed in curly braces. The empty set is represented by
+<tt class="docutils literal"><span class="pre">set()</span></tt>. Sets are heterogeneous, and the collection can be assigned to
+a variable as below.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s">&quot;cat&quot;</span><span class="p">,</span><span class="mf">4.5</span><span class="p">,</span><span class="bp">False</span><span class="p">}</span>
+<span class="go">{False, 4.5, 3, 6, &#39;cat&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s">&quot;cat&quot;</span><span class="p">,</span><span class="mf">4.5</span><span class="p">,</span><span class="bp">False</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span>
+<span class="go">{False, 4.5, 3, 6, &#39;cat&#39;}</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Even though sets are not considered to be sequential, they do support a
+few of the familiar operations presented earlier. <a class="reference internal" href="#tab-setops"><em>Table&nbsp;5</em></a> reviews
+these operations and the following session gives examples of their use.</p>
+<table border="1" class="docutils" id="tab-setops">
+<caption><strong>Table 5: Operations on a Set in Python</strong></caption>
+<colgroup>
+<col width="23%" />
+<col width="18%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Operation Name</strong></th>
+<th class="head"><strong>Operator</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>membership</td>
+<td>in</td>
+<td>Set membership</td>
+</tr>
+<tr class="row-odd"><td>length</td>
+<td>len</td>
+<td>Returns the cardinality of the set</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">|</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset</span> <span class="pre">|</span> <span class="pre">otherset</span></tt></td>
+<td>Returns a new set with all elements from both sets</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">&amp;</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset</span> <span class="pre">&amp;</span> <span class="pre">otherset</span></tt></td>
+<td>Returns a new set with only those elements common to both sets</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">-</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset</span> <span class="pre">-</span> <span class="pre">otherset</span></tt></td>
+<td>Returns a new set with all items from the first set not in second</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">&lt;=</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset</span> <span class="pre">&lt;=</span> <span class="pre">otherset</span></tt></td>
+<td>Asks whether all elements of  the first set are in the second</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span>
+<span class="go">{False, 4.5, 3, 6, &#39;cat&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">mySet</span><span class="p">)</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="bp">False</span> <span class="ow">in</span> <span class="n">mySet</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&quot;dog&quot;</span> <span class="ow">in</span> <span class="n">mySet</span>
+<span class="go">False</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Sets support a number of methods that should be familiar to those who
+have worked with them in a mathematics setting. <a class="reference internal" href="#tab-setmethods"><em>Table&nbsp;6</em></a>
+provides a summary. Examples of their use follow. Note that <tt class="docutils literal"><span class="pre">union</span></tt>,
+<tt class="docutils literal"><span class="pre">intersection</span></tt>, <tt class="docutils literal"><span class="pre">issubset</span></tt>, and <tt class="docutils literal"><span class="pre">difference</span></tt> all have operators
+that can be used as well.</p>
+<table border="1" class="docutils" id="tab-setmethods">
+<caption><strong>Table 6: Methods Provided by Sets in Python</strong></caption>
+<colgroup>
+<col width="20%" />
+<col width="27%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Method Name</strong></th>
+<th class="head"><strong>Use</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">union</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset.union(otherset)</span></tt></td>
+<td>Returns a new set with all elements from both sets</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">intersection</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset.intersection(otherset)</span></tt></td>
+<td>Returns a new set with only those elements common to both sets</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">difference</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset.difference(otherset)</span></tt></td>
+<td>Returns a new set with all items from first set not in second</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">issubset</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset.issubset(otherset)</span></tt></td>
+<td>Asks whether all elements of one set are in the other</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">add</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset.add(item)</span></tt></td>
+<td>Adds item to the set</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">remove</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset.remove(item)</span></tt></td>
+<td>Removes item from the set</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">pop</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset.pop()</span></tt></td>
+<td>Removes an arbitrary element from the set</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">clear</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">aset.clear()</span></tt></td>
+<td>Removes all elements from the set</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span>
+<span class="go">{False, 4.5, 3, 6, &#39;cat&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">yourSet</span> <span class="o">=</span> <span class="p">{</span><span class="mi">99</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">yourSet</span><span class="p">)</span>
+<span class="go">{False, 4.5, 3, 100, 6, &#39;cat&#39;, 99}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span> <span class="o">|</span> <span class="n">yourSet</span>
+<span class="go">{False, 4.5, 3, 100, 6, &#39;cat&#39;, 99}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">yourSet</span><span class="p">)</span>
+<span class="go">{3}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span> <span class="o">&amp;</span> <span class="n">yourSet</span>
+<span class="go">{3}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">yourSet</span><span class="p">)</span>
+<span class="go">{False, 4.5, 6, &#39;cat&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span> <span class="o">-</span> <span class="n">yourSet</span>
+<span class="go">{False, 4.5, 6, &#39;cat&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">yourSet</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">}</span><span class="o">&lt;=</span><span class="n">yourSet</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">&quot;house&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span>
+<span class="go">{False, 4.5, 3, 6, &#39;house&#39;, &#39;cat&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mf">4.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span>
+<span class="go">{False, 3, 6, &#39;house&#39;, &#39;cat&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span>
+<span class="go">{3, 6, &#39;house&#39;, &#39;cat&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mySet</span>
+<span class="go">set()</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Our final Python collection is an unordered structure called a
+<strong>dictionary</strong>. Dictionaries are collections of associated pairs of
+items where each pair consists of a key and a value. This key-value pair
+is typically written as key:value. Dictionaries are written as
+comma-delimited key:value pairs enclosed in curly braces. For example,</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">capitals</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Iowa&#39;</span><span class="p">:</span><span class="s">&#39;DesMoines&#39;</span><span class="p">,</span><span class="s">&#39;Wisconsin&#39;</span><span class="p">:</span><span class="s">&#39;Madison&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">capitals</span>
+<span class="go">{&#39;Wisconsin&#39;: &#39;Madison&#39;, &#39;Iowa&#39;: &#39;DesMoines&#39;}</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>We can manipulate a dictionary by accessing a value via its key or by
+adding another key-value pair. The syntax for access looks much like a
+sequence access except that instead of using the index of the item we
+use the key value. To add a new value is similar.</p>
+
+<div id="intro_7" lang="python" >
+
+<br/>
+<div id="intro_7_code_div" style="display: block">
+<textarea cols="50" rows="12" id="intro_7_code" class="active_code", prefixcode="undefined" lang="python">
+capitals = {'Iowa':'DesMoines','Wisconsin':'Madison'}
+print(capitals['Iowa'])
+capitals['Utah']='SaltLakeCity'
+print(capitals)
+capitals['California']='Sacramento'
+print(len(capitals))
+for k in capitals:
+   print(capitals[k]," is the capital of ", k)
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text">Using a Dictionary (intro_7)</span> </p>
+
+<button class='btn btn-success' id="intro_7_runb" onclick="runit('intro_7',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="intro_7_saveb" onclick="saveEditor('intro_7');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="intro_7_loadb" onclick="requestCode('intro_7');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#intro_7_saveb').toggle();
+    $('#intro_7_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="intro_7_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="intro_7_suffix" style="display:none">
+</pre>
+<pre id="intro_7_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<p>It is important to note that the dictionary is maintained in no
+particular order with respect to the keys. The first pair added
+(<tt class="docutils literal"><span class="pre">'Utah':</span></tt> <tt class="docutils literal"><span class="pre">'SaltLakeCity'</span></tt>) was placed first in the dictionary and
+the second pair added (<tt class="docutils literal"><span class="pre">'California':</span></tt> <tt class="docutils literal"><span class="pre">'Sacramento'</span></tt>) was placed
+last. The placement of a key is dependent on the idea of “hashing,”
+which will be explained in more detail in Chapter 4. We also show the
+length function performing the same role as with previous collections.</p>
+<p>Dictionaries have both methods and operators. <a class="reference internal" href="#tab-dictopers"><em>Table&nbsp;7</em></a> and
+<a class="reference internal" href="#tab-dictmethods"><em>Table 8</em></a> describe them, and the session shows them in action. The
+<tt class="docutils literal"><span class="pre">keys</span></tt>, <tt class="docutils literal"><span class="pre">values</span></tt>, and <tt class="docutils literal"><span class="pre">items</span></tt> methods all return objects that
+contain the values of interest. You can use the <tt class="docutils literal"><span class="pre">list</span></tt> function to
+convert them to lists. You will also see that there are two variations
+on the <tt class="docutils literal"><span class="pre">get</span></tt> method. If the key is not present in the dictionary,
+<tt class="docutils literal"><span class="pre">get</span></tt> will return <tt class="docutils literal"><span class="pre">None</span></tt>. However, a second, optional parameter can
+specify a return value instead.</p>
+<table border="1" class="docutils" id="tab-dictopers">
+<caption><strong>Table 7: Operators Provided by Dictionaries in Python</strong></caption>
+<colgroup>
+<col width="19%" />
+<col width="17%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Operator</strong></th>
+<th class="head"><strong>Use</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">[]</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">myDict[k]</span></tt></td>
+<td>Returns the value associated with <tt class="docutils literal"><span class="pre">k</span></tt>, otherwise its an error</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">in</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">key</span> <span class="pre">in</span> <span class="pre">adict</span></tt></td>
+<td>Returns <tt class="docutils literal"><span class="pre">True</span></tt> if key is in the   dictionary, <tt class="docutils literal"><span class="pre">False</span></tt> otherwise</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">del</span></tt></td>
+<td>del <tt class="docutils literal"><span class="pre">adict[key]</span></tt></td>
+<td>Removes the entry from the  dictionary</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">phoneext</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;david&#39;</span><span class="p">:</span><span class="mi">1410</span><span class="p">,</span><span class="s">&#39;brad&#39;</span><span class="p">:</span><span class="mi">1137</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phoneext</span>
+<span class="go">{&#39;brad&#39;: 1137, &#39;david&#39;: 1410}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phoneext</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">dict_keys([&#39;brad&#39;, &#39;david&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">phoneext</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">[&#39;brad&#39;, &#39;david&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phoneext</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<span class="go">dict_values([1137, 1410])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">phoneext</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="go">[1137, 1410]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phoneext</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="go">dict_items([(&#39;brad&#39;, 1137), (&#39;david&#39;, 1410)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">phoneext</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="go">[(&#39;brad&#39;, 1137), (&#39;david&#39;, 1410)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phoneext</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;kent&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phoneext</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;kent&quot;</span><span class="p">,</span><span class="s">&quot;NO ENTRY&quot;</span><span class="p">)</span>
+<span class="go">&#39;NO ENTRY&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<table border="1" class="docutils" id="tab-dictmethods">
+<caption><strong>Table 8: Methods Provided by Dictionaries in Python</strong></caption>
+<colgroup>
+<col width="22%" />
+<col width="19%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Method Name</strong></th>
+<th class="head"><strong>Use</strong></th>
+<th class="head"><strong>Explanation</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">keys</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">adict.keys()</span></tt></td>
+<td>Returns the keys of the dictionary in a dict_keys object</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">values</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">adict.values()</span></tt></td>
+<td>Returns the values of the dictionary in a dict_values object</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">items</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">adict.items()</span></tt></td>
+<td>Returns the key-value pairs in a dict_items object</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">get</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">adict.get(k)</span></tt></td>
+<td>Returns the value associated with <tt class="docutils literal"><span class="pre">k</span></tt>, <tt class="docutils literal"><span class="pre">None</span></tt> otherwise</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">get</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">adict.get(k,alt)</span></tt></td>
+<td>Returns the value associated with <tt class="docutils literal"><span class="pre">k</span></tt>, <tt class="docutils literal"><span class="pre">alt</span></tt> otherwise</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This workspace is provided for your convenience.  You can use this activecode window to try out anything you like.</p>
+
+<div id="scratch_01_01" lang="python" >
+
+<br/>
+<div id="scratch_01_01_code_div" style="display: block">
+<textarea cols="50" rows="12" id="scratch_01_01_code" class="active_code", prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (scratch_01_01)</span> </p>
+
+<button class='btn btn-success' id="scratch_01_01_runb" onclick="runit('scratch_01_01',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="scratch_01_01_saveb" onclick="saveEditor('scratch_01_01');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="scratch_01_01_loadb" onclick="requestCode('scratch_01_01');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#scratch_01_01_saveb').toggle();
+    $('#scratch_01_01_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="scratch_01_01_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="scratch_01_01_suffix" style="display:none">
+</pre>
+<pre id="scratch_01_01_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Index &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/assess.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="_static/lib/lis.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"></ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+
+   
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/StringsareImmutable.html#index-0">abecedarian series</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-activecode"><strong>activecode</strong></a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-algorithm"><strong>algorithm</strong></a>, <a href="GeneralIntro/SpecialWaystoExecutePythoninthisBook.html#index-0">[1]</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/FormalandNaturalLanguages.html#term-ambiguity"><strong>ambiguity</strong></a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="week2/DebuggingBook.html#index-0">boundary conditions</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-bug"><strong>bug</strong></a>, <a href="GeneralIntro/MoreAboutPrograms.html#index-0">[1]</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-byte-code"><strong>byte code</strong></a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/intro-Strings.html#index-0">character</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-codelens"><strong>codelens</strong></a>
+  </dt>
+
+      
+  <dt><a href="Strings/Glossary.html#term-collection-data-type"><strong>collection data type</strong></a>
+  </dt>
+
+      
+  <dt><a href="BookLabs/pythonshell.html#term-command-line"><strong>command line</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-comment"><strong>comment</strong></a>
+  </dt>
+
+      
+  <dt><a href="Strings/TheSliceOperator.html#index-0">comparison of strings</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">compile</a>, <a href="GeneralIntro/Glossary.html#term-compile"><strong>[1]</strong></a>
+  </dt>
+
+      
+  <dt><a href="Strings/intro-Strings.html#index-0">compound data type</a>
+  </dt>
+
+      
+  <dt><a href="Strings/Loopingandcounting.html#index-0">computation pattern</a>
+  </dt>
+
+      
+  <dt><a href="Strings/ACollectionDataType.html#index-0">concatenation</a>, <a href="Strings/StringsareImmutable.html#index-0">[1]</a>
+  </dt>
+
+      
+  <dt><a href="Strings/TurtlesandStringsandLSystems.html#index-0">counting pattern</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="week2/DebuggingBook.html#index-0">debugging</a>, <a href="GeneralIntro/Glossary.html#term-debugging"><strong>[1]</strong></a>, <a href="GeneralIntro/MoreAboutPrograms.html#index-0">[2]</a>
+  </dt>
+
+      
+  <dt><a href="Strings/Afindfunction.html#index-0">default value</a>, <a href="Strings/Glossary.html#term-default-value"><strong>[1]</strong></a>
+  </dt>
+
+      
+  <dt><a href="Strings/Optionalparameters.html#index-0">dir function</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/Optionalparameters.html#index-0">docstring</a>
+  </dt>
+
+      
+  <dt><a href="Strings/Glossary.html#term-dot-notation"><strong>dot notation</strong></a>, <a href="Strings/Optionalparameters.html#index-0">[1]</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/SemanticErrors.html#index-0">Doyle, Arthur Conan</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/Loopingandcounting.html#index-0">eureka traversal</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-exception"><strong>exception</strong></a>, <a href="GeneralIntro/Syntaxerrors.html#index-0">[1]</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-executable"><strong>executable</strong></a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/StringsareImmutable.html#index-0">for loop</a>
+  </dt>
+
+      
+  <dt><a href="Strings/Summary.html#term-for-loop-traversal-for"><strong>for loop traversal (for)</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-formal-language"><strong>formal language</strong></a>, <a href="GeneralIntro/ExperimentalDebugging.html#index-0">[1]</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    function
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="Strings/StringMethods.html#index-0">len</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="Strings/Optionalparameters.html#index-0">function type</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">high-level language</a>, <a href="GeneralIntro/Glossary.html#term-high-level-language"><strong>[1]</strong></a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/SemanticErrors.html#index-0">Holmes, Sherlock</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/StringComparison.html#index-0">immutable</a>, <a href="Strings/Glossary.html#term-immutable"><strong>[1]</strong></a>
+  </dt>
+
+      
+  <dt><a href="Strings/Summary.html#term-in-and-not-in-operator-in-not-in"><strong>in and not in operator (in, not in)</strong></a>
+  </dt>
+
+      
+  <dt><a href="Strings/TraversalandthewhileLoop.html#index-0">in operator</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/intro-Strings.html#index-0">index</a>, <a href="Strings/Glossary.html#term-index"><strong>[1]</strong></a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="Strings/StringMethods.html#index-0">negative</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="Strings/Summary.html#term-indexing"><strong>indexing ([])</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">interpret</a>, <a href="GeneralIntro/Glossary.html#term-interpret"><strong>[1]</strong></a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/StringMethods.html#index-0">len function</a>
+  </dt>
+
+      
+  <dt><a href="Strings/Summary.html#term-length-function-len"><strong>length function (len)</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/SemanticErrors.html#index-0">Linux</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/FormalandNaturalLanguages.html#term-literalness"><strong>literalness</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">low-level language</a>, <a href="GeneralIntro/Glossary.html#term-low-level-language"><strong>[1]</strong></a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/StringsareImmutable.html#index-1">Make Way for Ducklings</a>
+  </dt>
+
+      
+  <dt><a href="Strings/StringsareImmutable.html#index-1">McCloskey, Robert</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/Optionalparameters.html#index-0">module</a>
+  </dt>
+
+      
+  <dt><a href="Strings/StringComparison.html#index-0">mutable</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-natural-language"><strong>natural language</strong></a>, <a href="GeneralIntro/ExperimentalDebugging.html#index-0">[1]</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/StringMethods.html#index-0">negative index</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-object-code"><strong>object code</strong></a>
+  </dt>
+
+      
+  <dt>
+    operator
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="Strings/TraversalandthewhileLoop.html#index-0">in</a>
+  </dt>
+
+      </dl></dd>
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/Afindfunction.html#index-0">optional parameter</a>, <a href="Strings/Glossary.html#term-optional-parameter"><strong>[1]</strong></a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt>
+    parameter
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="Strings/Afindfunction.html#index-0">optional</a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-parse"><strong>parse</strong></a>, <a href="GeneralIntro/ExperimentalDebugging.html#index-0">[1]</a>
+  </dt>
+
+      
+  <dt><a href="Strings/Loopingandcounting.html#index-0">pattern of computation</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/FormalandNaturalLanguages.html#term-poetry"><strong>poetry</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-portability"><strong>portability</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">portable</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-print-function"><strong>print function</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-problem-solving"><strong>problem solving</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/FormalandNaturalLanguages.html#term-program"><strong>program</strong></a>, <a href="GeneralIntro/Glossary.html#term-program"><strong>[1]</strong></a>, <a href="GeneralIntro/SpecialWaystoExecutePythoninthisBook.html#index-0">[2]</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/intro-TheWayoftheProgram.html#index-0">programming language</a>, <a href="GeneralIntro/Glossary.html#term-programming-language"><strong>[1]</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/FormalandNaturalLanguages.html#term-prose"><strong>prose</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-python-shell"><strong>Python shell</strong></a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/FormalandNaturalLanguages.html#term-redundancy"><strong>redundancy</strong></a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-runtime-error"><strong>runtime error</strong></a>, <a href="Strings/StringComparison.html#index-0">[1]</a>, <a href="GeneralIntro/Syntaxerrors.html#index-0">[2]</a>, <a href="Strings/StringMethods.html#index-0">[3]</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="GeneralIntro/Syntaxerrors.html#index-0">safe language</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-semantic-error"><strong>semantic error</strong></a>, <a href="GeneralIntro/RuntimeErrors.html#index-0">[1]</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-semantics"><strong>semantics</strong></a>, <a href="GeneralIntro/RuntimeErrors.html#index-0">[1]</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-shell-mode"><strong>shell mode</strong></a>
+  </dt>
+
+      
+  <dt><a href="Strings/Glossary.html#term-slice"><strong>slice</strong></a>
+  </dt>
+
+      
+  <dt><a href="Strings/Summary.html#term-slicing"><strong>slicing ([:])</strong></a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-source-code"><strong>source code</strong></a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/TheSliceOperator.html#index-0">string comparison</a>
+  </dt>
+
+      <dd><dl>
+        
+  <dt><a href="Strings/Summary.html#term-string-comparison"><strong>(&gt;, &lt;, &gt;=, &lt;=, ==, !=)</strong></a>
+  </dt>
+
+      </dl></dd>
+      
+  <dt><a href="Strings/Optionalparameters.html#index-0">string module</a>
+  </dt>
+
+      
+  <dt><a href="Strings/ACollectionDataType.html#index-0">string operations</a>
+  </dt>
+
+      
+  <dt><a href="Strings/intro-Strings.html#index-0">subscript operator</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-syntax"><strong>syntax</strong></a>, <a href="GeneralIntro/WhatisDebugging.html#index-0">[1]</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-syntax-error"><strong>syntax error</strong></a>, <a href="GeneralIntro/WhatisDebugging.html#index-0">[1]</a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="BookLabs/pythonshell.html#term-terminal"><strong>terminal</strong></a>
+  </dt>
+
+      
+  <dt><a href="week2/DebuggingBook.html#index-0">testing</a>
+  </dt>
+
+      
+  <dt><a href="GeneralIntro/Glossary.html#term-token"><strong>token</strong></a>, <a href="GeneralIntro/ExperimentalDebugging.html#index-0">[1]</a>
+  </dt>
+
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/StringsareImmutable.html#index-0">traversal</a>, <a href="Strings/Loopingandcounting.html#index-0">[1]</a>
+  </dt>
+
+      
+  <dt><a href="Strings/Glossary.html#term-traverse"><strong>traverse</strong></a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="Strings/Glossary.html#term-whitespace"><strong>whitespace</strong></a>
+  </dt>
+
+  </dl></td>
+</tr></table>
+
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Debugging &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="../index.html" />
+    <link rel="up" title="Table of Contents" href="../toc.html" />
+    <link rel="next" title="The Ultimate Debugging Handbook" href="DebuggingBook.html" />
+    <link rel="prev" title="Programming Tricks" href="ProgrammingTricks.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Debugging</a><ul>
+<li><a class="reference internal" href="#situation">Situation</a><ul>
+<li><a class="reference internal" href="#how-to-debug">How to Debug</a></li>
+<li><a class="reference internal" href="#strategies">Strategies</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tips">Tips</a><ul>
+<li><a class="reference internal" href="#reading-error-messages">Reading Error Messages</a></li>
+<li><a class="reference internal" href="#rubberducking">Rubberducking</a></li>
+<li><a class="reference internal" href="#lab">Lab</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#guided">Guided</a></li>
+<li><a class="reference internal" href="#warmups">Warmups</a></li>
+<li><a class="reference internal" href="#reading-the-error">Reading the error</a></li>
+<li><a class="reference internal" href="#fizzbuzz">FizzBuzz</a></li>
+<li><a class="reference internal" href="#oddsum">OddSum</a></li>
+<li><a class="reference internal" href="#challenge">Challenge</a><ul>
+<li><a class="reference internal" href="#avoiding-debugging">Avoiding Debugging</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-mantra">The Mantra</a><ul>
+<li><a class="reference internal" href="#next-part">Next Part</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Programming Tricks" data-toggle="tooltip">
+    <a href="ProgrammingTricks.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - The Ultimate Debugging Handbook' data-toggle="tooltip" >
+    <a href="DebuggingBook.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="debugging">
+<h1>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h1>
+<p>What is debugging? It&#8217;s simply the <strong>process</strong> of isolating a problem in a program. In someways, it&#8217;s more challenging than just programming because it requires a different way of thinking. When you are debugging you are a detective.</p>
+<blockquote>
+<div>&#8220;Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.&#8221; &#8211;Brian Kernighan</div></blockquote>
+<div class="section" id="situation">
+<h2>Situation<a class="headerlink" href="#situation" title="Permalink to this headline">¶</a></h2>
+
+            <div id="youtube" class="alert alert-warning">
+            Q-38: You want to watch a cat video. So you load up youtube.com but it doesn&#8217;t load. What do you do first?<form name="youtube_form" method="get" action="" onsubmit="return false;">
+            <input type="radio" name="group1" value="a" id="youtube_opt_a" />
+            <label for= "youtube_opt_a">  a) :( - IDK</label><br />
+            
+            <input type="radio" name="group1" value="b" id="youtube_opt_b" />
+            <label for= "youtube_opt_b">  b) Call your internet company and ask for support.</label><br />
+            
+            <input type="radio" name="group1" value="c" id="youtube_opt_c" />
+            <label for= "youtube_opt_c">  c) Restart your computer.</label><br />
+            
+            <input type="radio" name="group1" value="d" id="youtube_opt_d" />
+            <label for= "youtube_opt_d">  d) None of the above.</label><br />
+            
+
+            <script>
+            $(document).ready(function(){checkRadio('youtube');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('youtube','d',['You really want to watch that cat video.', 'The hold music is not that great. Is that what you would do first?', 'Is that what you would do first?', 'You\u0027d probably check to see if another website works. This would help you narrow the problem down.'])">Check Me</button>
+            <button class='btn btn-default' id="youtube_bcomp" disabled name="compare" onclick="compareAnswers('youtube');">Compare Me</button>
+            </form><br />
+            <div id="youtube_feedback">
+            </div>
+            </div>
+            <div class="section" id="how-to-debug">
+<h3>How to Debug<a class="headerlink" href="#how-to-debug" title="Permalink to this headline">¶</a></h3>
+<p>What not to do: randomly looking at code and making a guess. It&#8217;s much easier to work on a problem once you have narrowed down some options.</p>
+<p>The best programmers (and detectives) are systematic about collecting information and acting on it.</p>
+<p>Debugging is not just finding out why your code is not working. It&#8217;s not just diving into the code and staring at it intently for a few minutes and suddenly arriving at the solution.</p>
+<blockquote>
+<div>The goal is not just to make the program work. The goal is to learn how to make the program work</div></blockquote>
+<p>The question to ask when you are debugging is not &#8220;Why isn&#8217;t it working?!&#8221;. This isn&#8217;t a helpful question or mindset. A better question would be:</p>
+<blockquote>
+<div><strong>How</strong> could it have produced this output?</div></blockquote>
+<p>This question sets you on the right path. Remember everything that happens on a computer - happens for a reason.</p>
+<p>The answer to the &#8220;Why&#8221; question is simply - because the code told it to do that. The answer to the &#8220;How&#8221; question is much more useful.</p>
+<p>Experienced programmers do this almost naturally just because of the frequency with which they run into bugs - so while they run into just as many (if not more) problems than beginnners - they always know what to do next. With practice - you can too!</p>
+</div>
+<div class="section" id="strategies">
+<h3>Strategies<a class="headerlink" href="#strategies" title="Permalink to this headline">¶</a></h3>
+<p>I found an error. It crashed and/or produced an output that I didn&#8217;t expect. Now what?</p>
+<ol class="arabic">
+<li><p class="first">Ask &#8220;How could it have produced that output?&#8221; (and not why doesn&#8217;t it work)</p>
+</li>
+<li><p class="first">Approach the code with skepticism &amp;the understanding that it&#8217;s wrong (because the interpreter says so)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Categorize the error into a mental bucket to gain a better understanding. Examples:</dt>
+<dd><ul class="first last simple">
+<li>It was an indexing error -&gt; so it has do with where I access elements in a list</li>
+<li>The program didn&#8217;t return anything. -&gt; Where do I return right now?</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Take in any other data available to you.</dt>
+<dd><ul class="first last simple">
+<li>The code (read with a critical eye)</li>
+<li>Test Results</li>
+<li>What was the desired functionality</li>
+<li>What bucket does the error fall into?</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Create a hypothesis in the form of:</dt>
+<dd><ul class="first last simple">
+<li>The program is outputing X when I expected Y and it is doing so because of Z and Q.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Test the hypothesis.</p>
+</li>
+<li><p class="first">Check if the error appears anywhere else.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="tips">
+<h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">You are a detective and anything could be to blame (Except for Python)!  It&#8217;s common for beginner programmers to blame Python, but that should be your last resort.  Remember that Python has been used to solve CS61A level problems millions of times by millions of other programmers.  So, Python is probably not the problem.</p>
+</li>
+<li><p class="first">The code is wrong. If it wasn&#8217;t - you wouldn&#8217;t be getting unexpected input. Approach the code with skepticism.</p>
+</li>
+<li><p class="first">Find clues.  This is the biggest job of the detective and right now there are two important kinds of clues for you to understand.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Error Messages. Read them!</li>
+<li>Print Statements</li>
+</ol>
+</div></blockquote>
+</li>
+<li><p class="first">Read the error messages.</p>
+</li>
+<li><p class="first">Always read the error messages.</p>
+</li>
+<li><p class="first">Always read the error messages. In their entirety.</p>
+</li>
+</ol>
+<div class="section" id="reading-error-messages">
+<h3>Reading Error Messages<a class="headerlink" href="#reading-error-messages" title="Permalink to this headline">¶</a></h3>
+<p>Python is trying to be helpful with the error messages. Sometimes python will even make a best guess about where exactly the error was triggered.</p>
+<p>How can we read a traceback?</p>
+<div id='reading_errors' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#reading_errors-TheTraceback'><span>The Traceback</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#reading_errors-Thecode'><span>The code</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='reading_errors-TheTraceback'><div class="highlight-python"><div class="highlight"><pre>Traceback (most recent call last):
+  File &quot;readingErrors.py&quot;, line 11, in &lt;module&gt;
+    print(hey_there())
+  File &quot;readingErrors.py&quot;, line 8, in hey_there
+    return why_hello()
+  File &quot;readingErrors.py&quot;, line 7, in why_hello
+    return even_more()
+  File &quot;readingErrors.py&quot;, line 6, in even_more
+    return higher_order()
+  File &quot;readingErrors.py&quot;, line 5, in higher_order
+    return 1/0
+ZeroDivisionError: division by zero
+</pre></div>
+</div>
+</div><div class='tab-pane' id='reading_errors-Thecode'>
+<div id="crashy" lang="python" >
+
+<br/>
+<div id="crashy_code_div" style="display: block">
+<textarea cols="50" rows="12" id="crashy_code" class="active_code", prefixcode="undefined" lang="python">
+def hey_there():
+    def why_hello():
+        def even_more():
+            def higher_order():
+                 return 1/0
+            return higher_order()
+        return even_more()
+    return why_hello()
+
+# I wonder what this does
+print(hey_there())
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (crashy)</span> </p>
+
+<button class='btn btn-success' id="crashy_runb" onclick="runit('crashy',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="crashy_saveb" onclick="saveEditor('crashy');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="crashy_loadb" onclick="requestCode('crashy');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#crashy_saveb').toggle();
+    $('#crashy_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="crashy_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="crashy_suffix" style="display:none">
+</pre>
+<pre id="crashy_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#reading_errors .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#reading_errors .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#reading_errors .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+<p>Sometimes, Python will tell you exactly where there was a problem with the ^ character.</p>
+<div class="highlight-python"><div class="highlight"><pre>File &quot;readingErrors.py&quot;, line 14
+  def why_hello()
+                ^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+</div>
+<div class="section" id="rubberducking">
+<h3>Rubberducking<a class="headerlink" href="#rubberducking" title="Permalink to this headline">¶</a></h3>
+<img alt="http://upload.wikimedia.org/wikipedia/commons/d/d5/Rubber_duck_assisting_with_debugging.jpg" src="http://upload.wikimedia.org/wikipedia/commons/d/d5/Rubber_duck_assisting_with_debugging.jpg" />
+<hr class="docutils" />
+<p>If you get stuck during the debugging process - it&#8217;s often helpful to just walk through your entire process out loud to another person. This often times solves the error - often without the other person helping.</p>
+<p>If you don&#8217;t want to get someone else - you can talk to a rubber duck. The rubber duck rather obviously will not solve the problem for you - but it help you walkthrough it.</p>
+</div>
+<div class="section" id="lab">
+<h3>Lab<a class="headerlink" href="#lab" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="guided">
+<h2>Guided<a class="headerlink" href="#guided" title="Permalink to this headline">¶</a></h2>
+
+<div id="sumOther" lang="python" >
+
+<br/>
+<div id="sumOther_code_div" style="display: block">
+<textarea cols="50" rows="12" id="sumOther_code" class="active_code", prefixcode="undefined" lang="python">
+def sumOther(l):
+    """ Return the sum of all the elements plus the sum of every other element
+    >>> sumOther([1,2,3])
+    >>> 10 # (1+2+3) + (1+3)
+    """
+    sumTotal = 0
+    sumOther = 0
+    for i in range(1,len(l))
+        sumTotal += i[l]
+        if (i/2 != 0):
+            sumOther += i[l]
+    return sumOther + sumTotal
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (sumOther)</span> </p>
+
+<button class='btn btn-success' id="sumOther_runb" onclick="runit('sumOther',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sumOther_saveb" onclick="saveEditor('sumOther');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="sumOther_loadb" onclick="requestCode('sumOther');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#sumOther_saveb').toggle();
+    $('#sumOther_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="sumOther_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="sumOther_suffix" style="display:none">
+</pre>
+<pre id="sumOther_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+<div class="section" id="warmups">
+<h2>Warmups<a class="headerlink" href="#warmups" title="Permalink to this headline">¶</a></h2>
+<p>Don&#8217;t fix the bug until you answer the questions first!:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">modSeven</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="s">&quot;7&quot;</span>
+<span class="n">modSeven</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output:</p>
+<div class="highlight-python"><div class="highlight"><pre>Traceback (most recent call last):
+  File &quot;mod7.py&quot;, line 4, in &lt;module&gt;
+    modSeven(21)
+  File &quot;mod7.py&quot;, line 2, in modSeven
+    return x % &quot;7&quot;
+TypeError: unsupported operand type(s) for %: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li>What do you do first?</li>
+<li>What kind of error is it? Have you seen something like this before?</li>
+<li>How could this code have produced the output. What should it have output?</li>
+<li>Do you understand it well enough to fix it now?</li>
+</ol>
+</div>
+<div class="section" id="reading-the-error">
+<h2>Reading the error<a class="headerlink" href="#reading-the-error" title="Permalink to this headline">¶</a></h2>
+<p>What happened?</p>
+<ol class="arabic">
+<li><p class="first">Read the entire error.</p>
+</li>
+<li><p class="first">Where did it happen.</p>
+</li>
+<li><p class="first">How did it happen?</p>
+</li>
+<li><p class="first">What happened?</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hi</span><span class="p">()</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">6</span>, in <span class="n">hi</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">5</span>, in <span class="n">bye</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">4</span>, in <span class="n">k</span>
+<span class="gr">ZeroDivisionError</span>: <span class="n">division by zero</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="fizzbuzz">
+<h2>FizzBuzz<a class="headerlink" href="#fizzbuzz" title="Permalink to this headline">¶</a></h2>
+<p>Autograder: &#8220;It&#8217;s not working!&#8221;</p>
+<p>Programmer: &#8220;No worries. Our debugging skills will help!&#8221;</p>
+
+<div id="fizzbuzzy" lang="python" >
+
+<br/>
+<div id="fizzbuzzy_code_div" style="display: block">
+<textarea cols="50" rows="12" id="fizzbuzzy_code" class="active_code", prefixcode="undefined" lang="python">
+def fizzybuzzy():
+    """ Performs fizzbuzz """
+    i = 0
+    while i < 100:
+        isMod3 = i % 3
+        isMod5 = i % 5
+        isMod15 = i % 15
+        if (isMod15):
+            return "FizzBuzz"
+        if (isMod3):
+            return "Fizz"
+        if (isMod5):
+            return "Fizz"
+        i += 1
+
+print(fizzybuzzy())
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (fizzbuzzy)</span> </p>
+
+<button class='btn btn-success' id="fizzbuzzy_runb" onclick="runit('fizzbuzzy',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="fizzbuzzy_saveb" onclick="saveEditor('fizzbuzzy');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="fizzbuzzy_loadb" onclick="requestCode('fizzbuzzy');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#fizzbuzzy_saveb').toggle();
+    $('#fizzbuzzy_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="fizzbuzzy_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="fizzbuzzy_suffix" style="display:none">
+</pre>
+<pre id="fizzbuzzy_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+<div class="section" id="oddsum">
+<h2>OddSum<a class="headerlink" href="#oddsum" title="Permalink to this headline">¶</a></h2>
+
+<div id="oddsum" lang="python" >
+
+<br/>
+<div id="oddsum_code_div" style="display: block">
+<textarea cols="50" rows="12" id="oddsum_code" class="active_code", prefixcode="undefined" lang="python">
+def count_odd(nums):
+    """ Sums up the odd numbers in a list """
+    def remainder(x):
+        return x % 3
+    count = 0
+    for i in nums:
+        count += remainder(i)
+    return count
+
+countup = [1,2,3,4,5]
+count_odd(countup)
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (oddsum)</span> </p>
+
+<button class='btn btn-success' id="oddsum_runb" onclick="runit('oddsum',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="oddsum_saveb" onclick="saveEditor('oddsum');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="oddsum_loadb" onclick="requestCode('oddsum');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#oddsum_saveb').toggle();
+    $('#oddsum_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="oddsum_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="oddsum_suffix" style="display:none">
+</pre>
+<pre id="oddsum_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+<div class="section" id="challenge">
+<h2>Challenge<a class="headerlink" href="#challenge" title="Permalink to this headline">¶</a></h2>
+
+<div id="challengingbug" lang="python" >
+
+<br/>
+<div id="challengingbug_code_div" style="display: block">
+<textarea cols="50" rows="12" id="challengingbug_code" class="active_code", prefixcode="undefined" lang="python">
+def unhelpful(n):
+    """Compute the Nth ?? for n >= 2."""
+    a, b = 0, 1
+    k = 2
+    while k < n:
+        a, b = b, a + b
+        k = k + 1
+    return b
+
+unhelpful(8)
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (challengingbug)</span> </p>
+
+<button class='btn btn-success' id="challengingbug_runb" onclick="runit('challengingbug',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="challengingbug_saveb" onclick="saveEditor('challengingbug');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="challengingbug_loadb" onclick="requestCode('challengingbug');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#challengingbug_saveb').toggle();
+    $('#challengingbug_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="challengingbug_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="challengingbug_suffix" style="display:none">
+</pre>
+<pre id="challengingbug_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<p>Hint: Could a print statement be helpful? If so where?  print(&#8220;p &#8221;,p, &#8220;c&#8221;,c)</p>
+<p>Hint 2: The function computes the Nth Fibonacci number, for n &gt;= 2.</p>
+<div class="section" id="avoiding-debugging">
+<h3>Avoiding Debugging<a class="headerlink" href="#avoiding-debugging" title="Permalink to this headline">¶</a></h3>
+<p>From <a class="reference external" href="DebuggingBook.html#how-to-avoid-debugging">debugging guide from How To Think Like A Computer Scientist</a></p>
+<p>Debugging can be <strong>largely avoidable</strong> &#8211; if you work carefully &amp; follow these steps.</p>
+<ol class="arabic simple">
+<li><strong>Start Small</strong>  This is probably the single biggest piece of advice for programmers at every level.  Of course its tempting to sit down and crank out an entire program at once.  But, when the program &#8211; inevitably &#8211; does not work then you have a myriad of options for things that might be wrong.  Where to start?  Where to look first?  How to figure out what went wrong?  I&#8217;ll get to that in the next section.  So, start with something really small.  Maybe just two lines and then make sure that runs ok.  Hitting the run button is quick and easy, and gives you immediate feedback about whether what you have just done is ok or not.  Another immediate benefit of having something small working is that you have something to turn in.  Turning in a small, incomplete program, is almost always better than nothing.</li>
+<li><strong>Keep it working</strong>  Once you have a small part of your program working the next step is to figure out something small to add to it.  If you keep adding small pieces of the program one at a time, it is much easier to figure out what went wrong, as it is most likely that the problem is going to be in the new code you have just added.  Less new code means its easier to figure out where the problem is. This is where good style and testing will help.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="the-mantra">
+<h2>The Mantra<a class="headerlink" href="#the-mantra" title="Permalink to this headline">¶</a></h2>
+<p><strong>Get something working and keep it working</strong>.</p>
+<p>This is a hard notion to internalize - to many it may seem like this mantra is telling them to be satisifed with incomplete code.</p>
+<p>It&#8217;s not- it&#8217;s an antidote to the inner perfectionist so we can adopt the mindset of <strong>Get something working and keep it working</strong>.</p>
+<p>This is a mantra that you can repeat throughout your career as a programmer. It&#8217;s a great way to avoid the frustrations mentioned above.</p>
+<p>Think of it this way.  Every time you have a little success, your brain releases a tiny bit of a chemical that makes you happy.  So, you can keep yourself happy and make programming more enjoyable by creating lots of small victories for yourself.</p>
+<div class="section" id="next-part">
+<h3>Next Part<a class="headerlink" href="#next-part" title="Permalink to this headline">¶</a></h3>
+<p>This is a huge guide to help you build your debugging skills. It&#8217;s pretty big (~8000 words) is a collection of debugging resources from &#8216;How To Think Like A Computer Scientist&#8217;</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="DebuggingBook.html">The Ultimate Debugging Handbook</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#syntax-errors">Syntax errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#i-can-t-get-my-program-to-run-no-matter-what-i-do">I can&#8217;t get my program to run no matter what I do.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#runtime-errors">Runtime errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#my-program-does-absolutely-nothing">My program does absolutely nothing.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#my-program-hangs">My program hangs.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#infinite-loop">Infinite Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#infinite-recursion">Infinite Recursion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#flow-of-execution">Flow of Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#when-i-run-the-program-i-get-an-exception">When I run the program I get an exception.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#i-added-so-many-print-statements-i-get-inundated-with-output">I added so many <tt class="docutils literal"><span class="pre">print</span></tt> statements I get inundated with output.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#semantic-errors">Semantic errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#my-program-doesn-t-work">My program doesn&#8217;t work.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#i-ve-got-a-big-hairy-expression-and-it-doesn-t-do-what-i-expect">I&#8217;ve got a big hairy expression and it doesn&#8217;t do what I expect.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#i-ve-got-a-function-or-method-that-doesn-t-return-what-i-expect">I&#8217;ve got a function or method that doesn&#8217;t return what I expect.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#i-m-really-really-stuck-and-i-need-help">I&#8217;m really, really stuck and I need help.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#no-i-really-need-help">No, I really need help.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#how-to-avoid-debugging">How to Avoid Debugging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="DebuggingBook.html#lab">Lab</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#the-ultimate-guide-to-error-messages">The ultimate guide to error messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DebuggingBook.html#source">Source</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Check out the <a class="reference external" href="DebuggingBook.html">debugging guide from How To Think Like A Computer Scientist</a></p>
+<p>Be sure to read the <a class="reference external" href="https://docs.google.com/document/d/1Yw6wK6PPL7x7wJB6Wo9qkWz8rgJwo-t0cXU5pFstaVA/edit">Quick Guide to Getting Unstuck!</a></p>
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

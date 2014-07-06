@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Object-Oriented Programming in Python: Defining Classes &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Object-Oriented Programming in Python: Defining Classes</a><ul>
+<li><a class="reference internal" href="#a-fraction-class">A <tt class="docutils literal"><span class="pre">Fraction</span></tt> Class</a></li>
+<li><a class="reference internal" href="#inheritance-logic-gates-and-circuits">Inheritance: Logic Gates and Circuits</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="object-oriented-programming-in-python-defining-classes">
+<h1>Object-Oriented Programming in Python: Defining Classes<a class="headerlink" href="#object-oriented-programming-in-python-defining-classes" title="Permalink to this headline">¶</a></h1>
+<p>We stated earlier that Python is an object-oriented programming
+language. So far, we have used a number of built-in classes to show
+examples of data and control structures. One of the most powerful
+features in an object-oriented programming language is the ability to
+allow a programmer (problem solver) to create new classes that model
+data that is needed to solve the problem.</p>
+<p>Remember that we use abstract data types to provide the logical
+description of what a data object looks like (its state) and what it can
+do (its methods). By building a class that implements an abstract data
+type, a programmer can take advantage of the abstraction process and at
+the same time provide the details necessary to actually use the
+abstraction in a program. Whenever we want to implement an abstract data
+type, we will do so with a new class.</p>
+<div class="section" id="a-fraction-class">
+<h2>A <tt class="docutils literal"><span class="pre">Fraction</span></tt> Class<a class="headerlink" href="#a-fraction-class" title="Permalink to this headline">¶</a></h2>
+<p>A very common example to show the details of implementing a user-defined
+class is to construct a class to implement the abstract data type
+<tt class="docutils literal"><span class="pre">Fraction</span></tt>. We have already seen that Python provides a number of
+numeric classes for our use. There are times, however, that it would be
+most appropriate to be able to create data objects that “look like”
+fractions.</p>
+<p>A fraction such as <span class="math">\(\frac {3}{5}\)</span> consists of two parts. The top
+value, known as the numerator, can be any integer. The bottom value,
+called the denominator, can be any integer greater than 0 (negative
+fractions have a negative numerator). Although it is possible to create
+a floating point approximation for any fraction, in this case we would
+like to represent the fraction as an exact value.</p>
+<p>The operations for the <tt class="docutils literal"><span class="pre">Fraction</span></tt> type will allow a <tt class="docutils literal"><span class="pre">Fraction</span></tt> data
+object to behave like any other numeric value. We need to be able to
+add, subtract, multiply, and divide fractions. We also want to be able
+to show fractions using the standard “slash” form, for example 3/5. In
+addition, all fraction methods should return results in their lowest
+terms so that no matter what computation is performed, we always end up
+with the most common form.</p>
+<p>In Python, we define a new class by providing a name and a set of method
+definitions that are syntactically similar to function definitions. For
+this example,</p>
+<div class="highlight-python"><div class="highlight"><pre>class Fraction:
+
+   #the methods go here
+</pre></div>
+</div>
+<p>provides the framework for us to define the methods. The first method
+that all classes should provide is the constructor. The constructor
+defines the way in which data objects are created. To create a
+<tt class="docutils literal"><span class="pre">Fraction</span></tt> object, we will need to provide two pieces of data, the
+numerator and the denominator. In Python, the constructor method is
+always called __init__ (two underscores before and after <tt class="docutils literal"><span class="pre">init</span></tt>)
+and is shown in <a class="reference internal" href="#lst-pyconstructor"><em>Listing 2</em></a>.</p>
+<p id="lst-pyconstructor"><strong>Listing 2</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Fraction</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">top</span><span class="p">,</span><span class="n">bottom</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">=</span> <span class="n">top</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">den</span> <span class="o">=</span> <span class="n">bottom</span>
+</pre></div>
+</div>
+<p>Notice that the formal parameter list contains three items (<tt class="docutils literal"><span class="pre">self</span></tt>,
+<tt class="docutils literal"><span class="pre">top</span></tt>, <tt class="docutils literal"><span class="pre">bottom</span></tt>). <tt class="docutils literal"><span class="pre">self</span></tt> is a special parameter that will always
+be used as a reference back to the object itself. It must always be the
+first formal parameter; however, it will never be given an actual
+parameter value upon invocation. As described earlier, fractions require
+two pieces of state data, the numerator and the denominator. The
+notation <tt class="docutils literal"><span class="pre">self.num</span></tt> in the constructor defines the <tt class="docutils literal"><span class="pre">fraction</span></tt> object
+to have an internal data object called <tt class="docutils literal"><span class="pre">num</span></tt> as part of its state.
+Likewise, <tt class="docutils literal"><span class="pre">self.den</span></tt> creates the denominator. The values of the two
+formal parameters are initially assigned to the state, allowing the new
+<tt class="docutils literal"><span class="pre">fraction</span></tt> object to know its starting value.</p>
+<p>To create an instance of the <tt class="docutils literal"><span class="pre">Fraction</span></tt> class, we must invoke the
+constructor. This happens by using the name of the class and passing
+actual values for the necessary state (note that we never directly
+<tt class="docutils literal"><span class="pre">invoke</span> <span class="pre">__init__</span></tt>). For example,</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">myfraction</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>creates an object called <tt class="docutils literal"><span class="pre">myfraction</span></tt> representing the fraction
+<span class="math">\(\frac {3}{5}\)</span> (three-fifths). <a class="reference internal" href="#fig-fraction1"><em>Figure 5</em></a> shows this
+object as it is now implemented.</p>
+<div class="figure align-center" id="fig-fraction1">
+<img alt="../_images/fraction1.png" src="../_images/fraction1.png" />
+<p class="caption">Figure 5: An Instance of the <tt class="docutils literal"><span class="pre">Fraction</span></tt> Class</p>
+</div>
+<p>The next thing we need to do is implement the behavior that the abstract
+data type requires. To begin, consider what happens when we try to print
+a <tt class="docutils literal"><span class="pre">Fraction</span></tt> object.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">myf</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">myf</span><span class="p">)</span>
+<span class="go">&lt;__main__.Fraction instance at 0x409b1acc&gt;</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">fraction</span></tt> object, <tt class="docutils literal"><span class="pre">myf</span></tt>, does not know how to respond to this
+request to print. The <tt class="docutils literal"><span class="pre">print</span></tt> function requires that the object
+convert itself into a string so that the string can be written to the
+output. The only choice <tt class="docutils literal"><span class="pre">myf</span></tt> has is to show the actual reference that
+is stored in the variable (the address itself). This is not what we
+want.</p>
+<p>There are two ways we can solve this problem. One is to define a method
+called <tt class="docutils literal"><span class="pre">show</span></tt> that will allow the <tt class="docutils literal"><span class="pre">Fraction</span></tt> object to print itself
+as a string. We can implement this method as shown in
+<a class="reference internal" href="#lst-showmethod"><em>Listing 3</em></a>. If we create a <tt class="docutils literal"><span class="pre">Fraction</span></tt> object as before, we
+can ask it to show itself, in other words, print itself in the proper
+format. Unfortunately, this does not work in general. In order to make
+printing work properly, we need to tell the <tt class="docutils literal"><span class="pre">Fraction</span></tt> class how to
+convert itself into a string. This is what the <tt class="docutils literal"><span class="pre">print</span></tt> function needs
+in order to do its job.</p>
+<p id="lst-showmethod"><strong>Listing 3</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+     <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num</span><span class="p">,</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">den</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">myf</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myf</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="go">3 / 5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">myf</span><span class="p">)</span>
+<span class="go">&lt;__main__.Fraction instance at 0x40bce9ac&gt;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>In Python, all classes have a set of standard methods that are provided
+but may not work properly. One of these, <tt class="docutils literal"><span class="pre">__str__</span></tt>, is the method to
+convert an object into a string. The default implementation for this
+method is to return the instance address string as we have already seen.
+What we need to do is provide a “better” implementation for this method.
+We will say that this implementation <strong>overrides</strong> the previous one, or
+that it redefines the method’s behavior.</p>
+<p>To do this, we simply define a method with the name <tt class="docutils literal"><span class="pre">__str__</span></tt> and
+give it a new implementation as shown in <a class="reference internal" href="#lst-str"><em>Listing 4</em></a>. This definition
+does not need any other information except the special parameter
+<tt class="docutils literal"><span class="pre">self</span></tt>. In turn, the method will build a string representation by
+converting each piece of internal state data to a string and then
+placing a <tt class="docutils literal"><span class="pre">/</span></tt> character in between the strings using string
+concatenation. The resulting string will be returned any time a
+<tt class="docutils literal"><span class="pre">Fraction</span></tt> object is asked to convert itself to a string. Notice the
+various ways that this function is used.</p>
+<p id="lst-str"><strong>Listing 4</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">den</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">myf</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">myf</span><span class="p">)</span>
+<span class="go">3/5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;I ate&quot;</span><span class="p">,</span> <span class="n">myf</span><span class="p">,</span> <span class="s">&quot;of the pizza&quot;</span><span class="p">)</span>
+<span class="go">I ate 3/5 of the pizza</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myf</span><span class="o">.</span><span class="n">__str__</span><span class="p">()</span>
+<span class="go">&#39;3/5&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">myf</span><span class="p">)</span>
+<span class="go">&#39;3/5&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>We can override many other methods for our new <tt class="docutils literal"><span class="pre">Fraction</span></tt> class. Some
+of the most important of these are the basic arithmetic operations. We
+would like to be able to create two <tt class="docutils literal"><span class="pre">Fraction</span></tt> objects and then add
+them together using the standard “+” notation. At this point, if we try
+to add two fractions, we get the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span> <span class="o">=</span> <span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">+</span><span class="n">f2</span>
+
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;pyshell#173&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">-toplevel-</span>
+    <span class="n">f1</span><span class="o">+</span><span class="n">f2</span>
+<span class="gr">TypeError</span>: <span class="n">unsupported operand type(s) for +:</span>
+<span class="go">          &#39;instance&#39; and &#39;instance&#39;</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>If you look closely at the error, you see that the problem is that the
+“+” operator does not understand the <tt class="docutils literal"><span class="pre">Fraction</span></tt> operands.</p>
+<p>We can fix this by providing the <tt class="docutils literal"><span class="pre">Fraction</span></tt> class with a method that
+overrides the addition method. In Python, this method is called
+<tt class="docutils literal"><span class="pre">__add__</span></tt> and it requires two parameters. The first, <tt class="docutils literal"><span class="pre">self</span></tt>, is
+always needed, and the second represents the other operand in the
+expression. For example,</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">f1</span><span class="o">.</span><span class="n">__add__</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>would ask the <tt class="docutils literal"><span class="pre">Fraction</span></tt> object <tt class="docutils literal"><span class="pre">f1</span></tt> to add the <tt class="docutils literal"><span class="pre">Fraction</span></tt> object
+<tt class="docutils literal"><span class="pre">f2</span></tt> to itself. This can be written in the standard notation,
+<tt class="docutils literal"><span class="pre">f1+f2</span></tt>.</p>
+<p>Two fractions must have the same denominator to be added. The easiest
+way to make sure they have the same denominator is to simply use the
+product of the two denominators as a common denominator so that
+<span class="math">\(\frac {a}{b} + \frac {c}{d} = \frac {ad}{bd} + \frac {cb}{bd} = \frac{ad+cb}{bd}\)</span>
+The implementation is shown in <a class="reference internal" href="#lst-addmethod"><em>Listing 5</em></a>. The addition
+function returns a new <tt class="docutils literal"><span class="pre">Fraction</span></tt> object with the numerator and
+denominator of the sum. We can use this method by writing a standard
+arithmetic expression involving fractions, assigning the result of the
+addition, and then printing our result.</p>
+<p id="lst-addmethod"><strong>Listing 5</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">otherfraction</span><span class="p">):</span>
+
+     <span class="n">newnum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span><span class="o">*</span><span class="n">otherfraction</span><span class="o">.</span><span class="n">den</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">den</span><span class="o">*</span><span class="n">otherfraction</span><span class="o">.</span><span class="n">num</span>
+     <span class="n">newden</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">den</span> <span class="o">*</span> <span class="n">otherfraction</span><span class="o">.</span><span class="n">den</span>
+
+     <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">newnum</span><span class="p">,</span><span class="n">newden</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f3</span><span class="o">=</span><span class="n">f1</span><span class="o">+</span><span class="n">f2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
+<span class="go">6/8</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>The addition method works as we desire, but one thing could be better.
+Note that <span class="math">\(6/8\)</span> is the correct result
+(<span class="math">\(\frac {1}{4} + \frac {1}{2}\)</span>) but that it is not in the
+“lowest terms” representation. The best representation would be
+<span class="math">\(3/4\)</span>. In order to be sure that our results are always in the
+lowest terms, we need a helper function that knows how to reduce
+fractions. This function will need to look for the greatest common
+divisor, or GCD. We can then divide the numerator and the denominator by
+the GCD and the result will be reduced to lowest terms.</p>
+<p>The best-known algorithm for finding a greatest common divisor is
+Euclid’s Algorithm, which will be discussed in detail in Chapter 8.
+Euclid’s Algorithm states that the greatest common divisor of two
+integers <span class="math">\(m\)</span> and <span class="math">\(n\)</span> is <span class="math">\(n\)</span> if <span class="math">\(n\)</span>
+divides <span class="math">\(m\)</span> evenly. However, if <span class="math">\(n\)</span> does not divide
+<span class="math">\(m\)</span> evenly, then the answer is the greatest common divisor of
+<span class="math">\(n\)</span> and the remainder of <span class="math">\(m\)</span> divided by <span class="math">\(n\)</span>. We
+will simply provide an iterative implementation here (see
+<a class="reference internal" href="#lst-gcd"><em>ActiveCode 11</em></a>). Note that this implementation of the GCD algorithm only
+works when the denominator is positive. This is acceptable for our
+fraction class because we have said that a negative fraction will be
+represented by a negative numerator.</p>
+
+<div id="gcd_cl" lang="python" >
+
+<br/>
+<div id="gcd_cl_code_div" style="display: block">
+<textarea cols="50" rows="12" id="gcd_cl_code" class="active_code", prefixcode="undefined" lang="python">
+def gcd(m,n):
+    while m%n != 0:
+        oldm = m
+        oldn = n
+
+        m = oldn
+        n = oldm%oldn
+    return n
+
+print gcd(20,10)
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text">The Greatest Common Divisor Function (gcd_cl)</span> </p>
+
+<button class='btn btn-success' id="gcd_cl_runb" onclick="runit('gcd_cl',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="gcd_cl_saveb" onclick="saveEditor('gcd_cl');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="gcd_cl_loadb" onclick="requestCode('gcd_cl');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#gcd_cl_saveb').toggle();
+    $('#gcd_cl_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="gcd_cl_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="gcd_cl_suffix" style="display:none">
+</pre>
+<pre id="gcd_cl_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<p>Now we can use this function to help reduce any fraction. To put a
+fraction in lowest terms, we will divide the numerator and the
+denominator by their greatest common divisor. So, for the fraction
+<span class="math">\(6/8\)</span>, the greatest common divisor is 2. Dividing the top and
+the bottom by 2 creates a new fraction, <span class="math">\(3/4\)</span> (see
+<a class="reference internal" href="#lst-newaddmethod"><em>Listing 6</em></a>).</p>
+<p id="lst-newaddmethod"><strong>Listing 6</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">otherfraction</span><span class="p">):</span>
+    <span class="n">newnum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span><span class="o">*</span><span class="n">otherfraction</span><span class="o">.</span><span class="n">den</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">den</span><span class="o">*</span><span class="n">otherfraction</span><span class="o">.</span><span class="n">num</span>
+    <span class="n">newden</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">den</span> <span class="o">*</span> <span class="n">otherfraction</span><span class="o">.</span><span class="n">den</span>
+    <span class="n">common</span> <span class="o">=</span> <span class="n">gcd</span><span class="p">(</span><span class="n">newnum</span><span class="p">,</span><span class="n">newden</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Fraction</span><span class="p">(</span><span class="n">newnum</span><span class="o">//</span><span class="n">common</span><span class="p">,</span><span class="n">newden</span><span class="o">//</span><span class="n">common</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f1</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f2</span><span class="o">=</span><span class="n">Fraction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f3</span><span class="o">=</span><span class="n">f1</span><span class="o">+</span><span class="n">f2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
+<span class="go">3/4</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<div class="figure align-center" id="fig-fraction2">
+<img alt="../_images/fraction2.png" src="../_images/fraction2.png" />
+<p class="caption">Figure 6: An Instance of the <tt class="docutils literal"><span class="pre">Fraction</span></tt> Class with Two Methods</p>
+</div>
+<p>Our <tt class="docutils literal"><span class="pre">Fraction</span></tt> object now has two very useful methods and looks
+like <a class="reference internal" href="#fig-fraction2"><em>Figure 6</em></a>. An additional group of methods that we need to
+include in our example <tt class="docutils literal"><span class="pre">Fraction</span></tt> class will allow two fractions to
+compare themselves to one another. Assume we have two <tt class="docutils literal"><span class="pre">Fraction</span></tt>
+objects, <tt class="docutils literal"><span class="pre">f1</span></tt> and <tt class="docutils literal"><span class="pre">f2</span></tt>. <tt class="docutils literal"><span class="pre">f1==f2</span></tt> will only be <tt class="docutils literal"><span class="pre">True</span></tt> if they are
+references to the same object. Two different objects with the same
+numerators and denominators would not be equal under this
+implementation. This is called <strong>shallow equality</strong> (see
+<a class="reference internal" href="#fig-fraction3"><em>Figure 7</em></a>).</p>
+<div class="figure align-center" id="fig-fraction3">
+<img alt="../_images/fraction3.png" src="../_images/fraction3.png" />
+<p class="caption">Figure 7: Shallow Equality Versus Deep Equality</p>
+</div>
+<p>We can create <strong>deep equality</strong> (see <a class="reference internal" href="#fig-fraction3"><em>Figure 7</em></a>)–equality by the
+same value, not the same reference–by overriding the <tt class="docutils literal"><span class="pre">__eq__</span></tt>
+method. The <tt class="docutils literal"><span class="pre">__eq__</span></tt> method is another standard method available in
+any class. The <tt class="docutils literal"><span class="pre">__eq__</span></tt> method compares two objects and returns
+<tt class="docutils literal"><span class="pre">True</span></tt> if their values are the same, <tt class="docutils literal"><span class="pre">False</span></tt> otherwise.</p>
+<p>In the <tt class="docutils literal"><span class="pre">Fraction</span></tt> class, we can implement the <tt class="docutils literal"><span class="pre">__eq__</span></tt> method by
+again putting the two fractions in common terms and then comparing the
+numerators (see <a class="reference internal" href="#lst-cmpmethod"><em>Listing 7</em></a>). It is important to note that there
+are other relational operators that can be overridden. For example, the
+<tt class="docutils literal"><span class="pre">__le__</span></tt> method provides the less than or equal functionality.</p>
+<p id="lst-cmpmethod"><strong>Listing 7</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="n">firstnum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">den</span>
+    <span class="n">secondnum</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">num</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">den</span>
+
+    <span class="k">return</span> <span class="n">firstnum</span> <span class="o">==</span> <span class="n">secondnum</span>
+</pre></div>
+</div>
+<p>The complete <tt class="docutils literal"><span class="pre">Fraction</span></tt> class, up to this point, is shown in
+<a class="reference internal" href="#lst-fractioncode"><em>ActiveCode 12</em></a>. We leave the remaining arithmetic and relational
+methods as exercises.</p>
+
+<div id="fraction_class" lang="python" >
+
+<br/>
+<div id="fraction_class_code_div" style="display: block">
+<textarea cols="50" rows="12" id="fraction_class_code" class="active_code", prefixcode="undefined" lang="python">
+def gcd(m,n):
+    while m%n != 0:
+        oldm = m
+        oldn = n
+
+        m = oldn
+        n = oldm%oldn
+    return n
+
+class Fraction:
+     def __init__(self,top,bottom):
+         self.num = top
+         self.den = bottom
+
+     def __str__(self):
+         return str(self.num)+"/"+str(self.den)
+
+     def show(self):
+         print(self.num,"/",self.den)
+
+     def __add__(self,otherfraction):
+         newnum = self.num*otherfraction.den + \
+                      self.den*otherfraction.num
+         newden = self.den * otherfraction.den
+         common = gcd(newnum,newden)
+         return Fraction(newnum//common,newden//common)
+
+     def __eq__(self, other):
+         firstnum = self.num * other.den
+         secondnum = other.num * self.den
+
+         return firstnum == secondnum
+
+x = Fraction(1,2)
+y = Fraction(2,3)
+print(x+y)
+print(x == y)
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text">The Fraction Class (fraction_class)</span> </p>
+
+<button class='btn btn-success' id="fraction_class_runb" onclick="runit('fraction_class',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="fraction_class_saveb" onclick="saveEditor('fraction_class');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="fraction_class_loadb" onclick="requestCode('fraction_class');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#fraction_class_saveb').toggle();
+    $('#fraction_class_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="fraction_class_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="fraction_class_suffix" style="display:none">
+</pre>
+<pre id="fraction_class_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<div class="admonition-self-check admonition">
+<p class="first admonition-title">Self  Check</p>
+<p>To make sure you understand how operators are implemented in Python classes, and how to properly write methods, write some methods to implement <tt class="docutils literal"><span class="pre">*,</span> <span class="pre">/,</span></tt> and <tt class="docutils literal"><span class="pre">-</span></tt> .  Also implement comparison operators &gt; and &lt;</p>
+
+<div id="self_check_4" lang="python" >
+
+<br/>
+<div id="self_check_4_code_div" style="display: none">
+<textarea cols="50" rows="12" id="self_check_4_code" class="active_code", prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (self_check_4)</span> </p>
+
+<button class='btn btn-success' id="self_check_4_runb" onclick="runit('self_check_4',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="self_check_4_saveb" onclick="saveEditor('self_check_4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="self_check_4_loadb" onclick="requestCode('self_check_4');">Load</button>
+
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#self_check_4_saveb').toggle();
+    $('#self_check_4_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="self_check_4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+
+<button class='btn btn-default' id="self_check_4_showb" onclick="$('#self_check_4_code_div').toggle();cm_editors['self_check_4_code'].refresh();$('#self_check_4_saveb').toggle();$('#self_check_4_loadb').toggle()">Show/Hide Code</button>
+
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('self_check_4')"/>
+<pre id="self_check_4_suffix" style="display:none">
+</pre>
+<pre id="self_check_4_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+<a id="fraction_thumb" style='position:relative;'>
+    <img src="../_static/videothumb.png" />
+    <div class='video-play-overlay'></div>
+</a>
+<div id="fraction" class="video_popup" >
+<video controls preload="none"  >
+    <source src="http://media.interactivepython.org/pythondsVideos/fraction.mov" type="video/mp4"></source>
+    <source src="http://media.interactivepython.org/pythondsVideos/fraction.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      $('#fraction_thumb').click(function(e) {
+         $('#fraction').show();
+         $('#fraction_thumb').hide();
+         logBookEvent({'event':'video','act':'play','div_id': 'fraction'});
+         // Log the run event
+      });
+   });
+</script>
+</div>
+<div class="section" id="inheritance-logic-gates-and-circuits">
+<h2>Inheritance: Logic Gates and Circuits<a class="headerlink" href="#inheritance-logic-gates-and-circuits" title="Permalink to this headline">¶</a></h2>
+<p>Our final section will introduce another important aspect of
+object-oriented programming. <strong>Inheritance</strong> is the ability for one
+class to be related to another class in much the same way that people
+can be related to one another. Children inherit characteristics from
+their parents. Similarly, Python child classes can inherit
+characteristic data and behavior from a parent class. These classes are
+often referred to as <strong>subclasses</strong> and <strong>superclasses</strong>.</p>
+<p><a class="reference internal" href="#fig-inherit1"><em>Figure 8</em></a> shows the built-in Python collections and their
+relationships to one another. We call a relationship structure such as
+this an <strong>inheritance hierarchy</strong>. For example, the list is a child of
+the sequential collection. In this case, we call the list the child and
+the sequence the parent (or subclass list and superclass sequence). This
+is often referred to as an <tt class="docutils literal"><span class="pre">IS-A</span> <span class="pre">Relationship</span></tt> (the list <strong>IS-A</strong>
+sequential collection). This implies that lists inherit important
+characteristics from sequences, namely the ordering of the underlying
+data and operations such as concatenation, repetition, and indexing.</p>
+<div class="figure align-center" id="fig-inherit1">
+<img alt="../_images/inheritance1.png" src="../_images/inheritance1.png" />
+<p class="caption">Figure 8: An Inheritance Hierarchy for Python Collections</p>
+</div>
+<p>Lists, tuples, and strings are all types of sequential collections. They
+all inherit common data organization and operations. However, each of
+them is distinct based on whether the data is homogeneous and whether
+the collection is immutable. The children all gain from their parents
+but distinguish themselves by adding additional characteristics.</p>
+<p>By organizing classes in this hierarchical fashion, object-oriented
+programming languages allow previously written code to be extended to
+meet the needs of a new situation. In addition, by organizing data in
+this hierarchical manner, we can better understand the relationships
+that exist. We can be more efficient in building our abstract
+representations.</p>
+<p>To explore this idea further, we will construct a <strong>simulation</strong>, an
+application to simulate digital circuits. The basic building block for
+this simulation will be the logic gate. These electronic switches
+represent boolean algebra relationships between their input and their
+output. In general, gates have a single output line. The value of the
+output is dependent on the values given on the input lines.</p>
+<p>AND gates have two input lines, each of which can be either 0 or 1
+(representing <tt class="docutils literal"><span class="pre">False</span></tt> or <tt class="docutils literal"><span class="pre">True</span></tt>, repectively). If both of the input
+lines have the value 1, the resulting output is 1. However, if either or
+both of the input lines is 0, the result is 0. OR gates also have two
+input lines and produce a 1 if one or both of the input values is a 1.
+In the case where both input lines are 0, the result is 0.</p>
+<p>NOT gates differ from the other two gates in that they only have a
+single input line. The output value is simply the opposite of the input
+value. If 0 appears on the input, 1 is produced on the output.
+Similarly, 1 produces 0. <a class="reference internal" href="#fig-truthtable"><em>Figure 9</em></a> shows how each of these
+gates is typically represented. Each gate also has a <strong>truth table</strong> of
+values showing the input-to-output mapping that is performed by the
+gate.</p>
+<div class="figure align-center" id="fig-truthtable">
+<img alt="../_images/truthtable.png" src="../_images/truthtable.png" />
+<p class="caption">Figure 9: Three Types of Logic Gates</p>
+</div>
+<p>By combining these gates in various patterns and then applying a set of
+input values, we can build circuits that have logical functions.
+<a class="reference internal" href="#fig-circuit1"><em>Figure 10</em></a> shows a circuit consisting of two AND gates, one OR
+gate, and a single NOT gate. The output lines from the two AND gates
+feed directly into the OR gate, and the resulting output from the OR
+gate is given to the NOT gate. If we apply a set of input values to the
+four input lines (two for each AND gate), the values are processed and a
+result appears at the output of the NOT gate. <a class="reference internal" href="#fig-circuit1"><em>Figure 10</em></a> also
+shows an example with values.</p>
+<div class="figure align-center" id="fig-circuit1">
+<img alt="../_images/circuit1.png" src="../_images/circuit1.png" />
+<p class="caption">Figure 10: Circuit</p>
+</div>
+<p>In order to implement a circuit, we will first build a representation
+for logic gates. Logic gates are easily organized into a class
+inheritance hierarchy as shown in <a class="reference internal" href="#fig-gates"><em>Figure 11</em></a>. At the top of the
+hierarchy, the <tt class="docutils literal"><span class="pre">LogicGate</span></tt> class represents the most general
+characteristics of logic gates: namely, a label for the gate and an
+output line. The next level of subclasses breaks the logic gates into
+two families, those that have one input line and those that have two.
+Below that, the specific logic functions of each appear.</p>
+<div class="figure align-center" id="fig-gates">
+<img alt="../_images/gates.png" src="../_images/gates.png" />
+<p class="caption">Figure 11: An Inheritance Hierarchy for Logic Gates</p>
+</div>
+<p>We can now start to implement the classes by starting with the most
+general, <tt class="docutils literal"><span class="pre">LogicGate</span></tt>. As noted earlier, each gate has a label for
+identification and a single output line. In addition, we need methods to
+allow a user of a gate to ask the gate for its label.</p>
+<p>The other behavior that every logic gate needs is the ability to know
+its output value. This will require that the gate perform the
+appropriate logic based on the current input. In order to produce
+output, the gate needs to know specifically what that logic is. This
+means calling a method to perform the logic computation. The complete
+class is shown in <a class="reference internal" href="#lst-logicgateclass"><em>Listing 8</em></a>.</p>
+<p id="lst-logicgateclass"><strong>Listing 8</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">LogicGate</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">n</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">getLabel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span>
+
+    <span class="k">def</span> <span class="nf">getOutput</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">performGateLogic</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">output</span>
+</pre></div>
+</div>
+<p>At this point, we will not implement the <tt class="docutils literal"><span class="pre">performGateLogic</span></tt> function.
+The reason for this is that we do not know how each gate will perform
+its own logic operation. Those details will be included by each
+individual gate that is added to the hierarchy. This is a very powerful
+idea in object-oriented programming. We are writing a method that will
+use code that does not exist yet. The parameter <tt class="docutils literal"><span class="pre">self</span></tt> is a reference
+to the actual gate object invoking the method. Any new logic gate that
+gets added to the hierarchy will simply need to implement the
+<tt class="docutils literal"><span class="pre">performGateLogic</span></tt> function and it will be used at the appropriate
+time. Once done, the gate can provide its output value. This ability to
+extend a hierarchy that currently exists and provide the specific
+functions that the hierarchy needs to use the new class is extremely
+important for reusing existing code.</p>
+<p>We categorized the logic gates based on the number of input lines. The
+AND gate has two input lines. The OR gate also has two input lines. NOT
+gates have one input line. The <tt class="docutils literal"><span class="pre">BinaryGate</span></tt> class will be a subclass
+of <tt class="docutils literal"><span class="pre">LogicGate</span></tt> and will add two input lines. The <tt class="docutils literal"><span class="pre">UnaryGate</span></tt> class
+will also subclass <tt class="docutils literal"><span class="pre">LogicGate</span></tt> but will have only a single input line.
+In computer circuit design, these lines are sometimes called “pins” so
+we will use that terminology in our implementation.</p>
+<p id="lst-binarygateclass"><strong>Listing 9</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">BinaryGate</span><span class="p">(</span><span class="n">LogicGate</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">LogicGate</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pinA</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pinB</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">getPinA</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">&quot;Enter Pin A input for gate &quot;</span><span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">getLabel</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;--&gt;&quot;</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">getPinB</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">&quot;Enter Pin B input for gate &quot;</span><span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">getLabel</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;--&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p id="lst-unarygateclass"><strong>Listing 10</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">UnaryGate</span><span class="p">(</span><span class="n">LogicGate</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">LogicGate</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pin</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="k">def</span> <span class="nf">getPin</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">&quot;Enter Pin input for gate &quot;</span><span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">getLabel</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;--&gt;&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#lst-logicgateclass"><em>Listing 9</em></a> and <a class="reference internal" href="#lst-logicgateclass"><em>Listing 10</em></a> implement these two
+classes. The constructors in both of these classes start with an
+explicit call to the constructor of the parent class using the parent&#8217;s <tt class="docutils literal"><span class="pre">__init__</span></tt>
+method. When creating an instance of the <tt class="docutils literal"><span class="pre">BinaryGate</span></tt> class, we
+first want to initialize any data items that are inherited from
+<tt class="docutils literal"><span class="pre">LogicGate</span></tt>. In this case, that means the label for the gate. The
+constructor then goes on to add the two input lines (<tt class="docutils literal"><span class="pre">pinA</span></tt> and
+<tt class="docutils literal"><span class="pre">pinB</span></tt>). This is a very common pattern that you should always use when
+building class hierarchies. Child class constructors need to call parent
+class constructors and then move on to their own distinguishing data.</p>
+<p>Python
+also has a function called <tt class="docutils literal"><span class="pre">super</span></tt> which can be used in place of explicitly
+naming the parent class.  This is a more general mechanism, and is widely
+used, especially when a class has more than one parent.  But, this is not something
+we are going to discuss in this introduction.  For example in our example above
+<tt class="docutils literal"><span class="pre">LogicGate.__init__(self,n)</span></tt> could be replaced with <tt class="docutils literal"><span class="pre">super(UnaryGate,self).__init__(n)</span></tt>.</p>
+<p>The only behavior that the <tt class="docutils literal"><span class="pre">BinaryGate</span></tt> class adds is the ability to
+get the values from the two input lines. Since these values come from
+some external place, we will simply ask the user via an input statement
+to provide them. The same implementation occurs for the <tt class="docutils literal"><span class="pre">UnaryGate</span></tt>
+class except that there is only one input line.</p>
+<p>Now that we have a general class for gates depending on the number of
+input lines, we can build specific gates that have unique behavior. For
+example, the <tt class="docutils literal"><span class="pre">AndGate</span></tt> class will be a subclass of <tt class="docutils literal"><span class="pre">BinaryGate</span></tt>
+since AND gates have two input lines. As before, the first line of the
+constructor calls upon the parent class constructor (<tt class="docutils literal"><span class="pre">BinaryGate</span></tt>),
+which in turn calls its parent class constructor (<tt class="docutils literal"><span class="pre">LogicGate</span></tt>). Note
+that the <tt class="docutils literal"><span class="pre">AndGate</span></tt> class does not provide any new data since it
+inherits two input lines, one output line, and a label.</p>
+<p id="lst-andgateclass"><strong>Listing 11</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">AndGate</span><span class="p">(</span><span class="n">BinaryGate</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">BinaryGate</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">performGateLogic</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getPinA</span><span class="p">()</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getPinB</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">a</span><span class="o">==</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">b</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>The only thing <tt class="docutils literal"><span class="pre">AndGate</span></tt> needs to add is the specific behavior that
+performs the boolean operation that was described earlier. This is the
+place where we can provide the <tt class="docutils literal"><span class="pre">performGateLogic</span></tt> method. For an AND
+gate, this method first must get the two input values and then only
+return 1 if both input values are 1. The complete class is shown in
+<a class="reference internal" href="#lst-andgateclass"><em>Listing 11</em></a>.</p>
+<p>We can show the <tt class="docutils literal"><span class="pre">AndGate</span></tt> class in action by creating an instance and
+asking it to compute its output. The following session shows an
+<tt class="docutils literal"><span class="pre">AndGate</span></tt> object, <tt class="docutils literal"><span class="pre">g1</span></tt>, that has an internal label <tt class="docutils literal"><span class="pre">&quot;G1&quot;</span></tt>. When we
+invoke the <tt class="docutils literal"><span class="pre">getOutput</span></tt> method, the object must first call its
+<tt class="docutils literal"><span class="pre">performGateLogic</span></tt> method which in turn queries the two input lines.
+Once the values are provided, the correct output is shown.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">AndGate</span><span class="p">(</span><span class="s">&quot;G1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span><span class="o">.</span><span class="n">getOutput</span><span class="p">()</span>
+<span class="go">Enter Pin A input for gate G1--&gt;1</span>
+<span class="go">Enter Pin B input for gate G1--&gt;0</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p>The same development can be done for OR gates and NOT gates. The
+<tt class="docutils literal"><span class="pre">OrGate</span></tt> class will also be a subclass of <tt class="docutils literal"><span class="pre">BinaryGate</span></tt> and the
+<tt class="docutils literal"><span class="pre">NotGate</span></tt> class will extend the <tt class="docutils literal"><span class="pre">UnaryGate</span></tt> class. Both of these
+classes will need to provide their own <tt class="docutils literal"><span class="pre">performGateLogic</span></tt> functions,
+as this is their specific behavior.</p>
+<p>We can use a single gate by first constructing an instance of one of the
+gate classes and then asking the gate for its output (which will in turn
+need inputs to be provided). For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span> <span class="o">=</span> <span class="n">OrGate</span><span class="p">(</span><span class="s">&quot;G2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span><span class="o">.</span><span class="n">getOutput</span><span class="p">()</span>
+<span class="go">Enter Pin A input for gate G2--&gt;1</span>
+<span class="go">Enter Pin B input for gate G2--&gt;1</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span><span class="o">.</span><span class="n">getOutput</span><span class="p">()</span>
+<span class="go">Enter Pin A input for gate G2--&gt;0</span>
+<span class="go">Enter Pin B input for gate G2--&gt;0</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g3</span> <span class="o">=</span> <span class="n">NotGate</span><span class="p">(</span><span class="s">&quot;G3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g3</span><span class="o">.</span><span class="n">getOutput</span><span class="p">()</span>
+<span class="go">Enter Pin input for gate G3--&gt;0</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>Now that we have the basic gates working, we can turn our attention to
+building circuits. In order to create a circuit, we need to connect
+gates together, the output of one flowing into the input of another. To
+do this, we will implement a new class called <tt class="docutils literal"><span class="pre">Connector</span></tt>.</p>
+<p>The <tt class="docutils literal"><span class="pre">Connector</span></tt> class will not reside in the gate hierarchy. It will,
+however, use the gate hierarchy in that each connector will have two
+gates, one on either end (see <a class="reference internal" href="#fig-connector"><em>Figure 12</em></a>). This relationship is
+very important in object-oriented programming. It is called the <strong>HAS-A
+Relationship</strong>. Recall earlier that we used the phrase “IS-A
+Relationship” to say that a child class is related to a parent class,
+for example <tt class="docutils literal"><span class="pre">UnaryGate</span></tt> IS-A <tt class="docutils literal"><span class="pre">LogicGate</span></tt>.</p>
+<div class="figure align-center" id="fig-connector">
+<img alt="../_images/connector.png" src="../_images/connector.png" />
+<p class="caption">Figure 12: A Connector Connects the Output of One Gate to the Input of Another</p>
+</div>
+<p>Now, with the <tt class="docutils literal"><span class="pre">Connector</span></tt> class, we say that a <tt class="docutils literal"><span class="pre">Connector</span></tt> HAS-A
+<tt class="docutils literal"><span class="pre">LogicGate</span></tt> meaning that connectors will have instances of the
+<tt class="docutils literal"><span class="pre">LogicGate</span></tt> class within them but are not part of the hierarchy. When
+designing classes, it is very important to distinguish between those
+that have the IS-A relationship (which requires inheritance) and those
+that have HAS-A relationships (with no inheritance).</p>
+<p><a class="reference internal" href="#lst-connectorclass"><em>Listing 12</em></a> shows the <tt class="docutils literal"><span class="pre">Connector</span></tt> class. The two gate
+instances within each connector object will be referred to as the
+<tt class="docutils literal"><span class="pre">fromgate</span></tt> and the <tt class="docutils literal"><span class="pre">togate</span></tt>, recognizing that data values will
+“flow” from the output of one gate into an input line of the next. The
+call to <tt class="docutils literal"><span class="pre">setNextPin</span></tt> is very important for making connections (see
+<a class="reference internal" href="#lst-setpin"><em>Listing 13</em></a>). We need to add this method to our gate classes so
+that each <tt class="docutils literal"><span class="pre">togate</span></tt> can choose the proper input line for the
+connection.</p>
+<p id="lst-connectorclass"><strong>Listing 12</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Connector</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fgate</span><span class="p">,</span> <span class="n">tgate</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fromgate</span> <span class="o">=</span> <span class="n">fgate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">togate</span> <span class="o">=</span> <span class="n">tgate</span>
+
+        <span class="n">tgate</span><span class="o">.</span><span class="n">setNextPin</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">getFrom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fromgate</span>
+
+    <span class="k">def</span> <span class="nf">getTo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">togate</span>
+</pre></div>
+</div>
+<p>In the <tt class="docutils literal"><span class="pre">BinaryGate</span></tt> class, for gates with two possible input lines,
+the connector must be connected to only one line. If both of them are
+available, we will choose <tt class="docutils literal"><span class="pre">pinA</span></tt> by default. If <tt class="docutils literal"><span class="pre">pinA</span></tt> is already
+connected, then we will choose <tt class="docutils literal"><span class="pre">pinB</span></tt>. It is not possible to connect
+to a gate with no available input lines.</p>
+<p id="lst-setpin"><strong>Listing 13</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">setNextPin</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">source</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pinA</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pinA</span> <span class="o">=</span> <span class="n">source</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pinB</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pinB</span> <span class="o">=</span> <span class="n">source</span>
+        <span class="k">else</span><span class="p">:</span>
+           <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;Error: NO EMPTY PINS&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now it is possible to get input from two places: externally, as before,
+and from the output of a gate that is connected to that input line. This
+requires a change to the <tt class="docutils literal"><span class="pre">getPinA</span></tt> and <tt class="docutils literal"><span class="pre">getPinB</span></tt> methods (see
+<a class="reference internal" href="#lst-newgetpin"><em>Listing 14</em></a>). If the input line is not connected to anything
+(<tt class="docutils literal"><span class="pre">None</span></tt>), then ask the user externally as before. However, if there is
+a connection, the connection is accessed and <tt class="docutils literal"><span class="pre">fromgate</span></tt>’s output value
+is retrieved. This in turn causes that gate to process its logic. This
+continues until all input is available and the final output value
+becomes the required input for the gate in question. In a sense, the
+circuit works backwards to find the input necessary to finally produce
+output.</p>
+<p id="lst-newgetpin"><strong>Listing 14</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">getPinA</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pinA</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">input</span><span class="p">(</span><span class="s">&quot;Enter Pin A input for gate &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;--&gt;&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pinA</span><span class="o">.</span><span class="n">getFrom</span><span class="p">()</span><span class="o">.</span><span class="n">getOutput</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The following fragment constructs the circuit shown earlier in the
+section:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g1</span> <span class="o">=</span> <span class="n">AndGate</span><span class="p">(</span><span class="s">&quot;G1&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g2</span> <span class="o">=</span> <span class="n">AndGate</span><span class="p">(</span><span class="s">&quot;G2&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g3</span> <span class="o">=</span> <span class="n">OrGate</span><span class="p">(</span><span class="s">&quot;G3&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g4</span> <span class="o">=</span> <span class="n">NotGate</span><span class="p">(</span><span class="s">&quot;G4&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c1</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">(</span><span class="n">g1</span><span class="p">,</span><span class="n">g3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c2</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">(</span><span class="n">g2</span><span class="p">,</span><span class="n">g3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c3</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">(</span><span class="n">g3</span><span class="p">,</span><span class="n">g4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The outputs from the two AND gates (<tt class="docutils literal"><span class="pre">g1</span></tt> and <tt class="docutils literal"><span class="pre">g2</span></tt>) are connected to
+the OR gate (<tt class="docutils literal"><span class="pre">g3</span></tt>) and that output is connected to the NOT gate
+(<tt class="docutils literal"><span class="pre">g4</span></tt>). The output from the NOT gate is the output of the entire
+circuit. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">g4</span><span class="o">.</span><span class="n">getOutput</span><span class="p">()</span>
+<span class="go">Pin A input for gate G1--&gt;0</span>
+<span class="go">Pin B input for gate G1--&gt;1</span>
+<span class="go">Pin A input for gate G2--&gt;1</span>
+<span class="go">Pin B input for gate G2--&gt;1</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+<p>Try it yourself using ActiveCode 14.</p>
+
+<div id="complete_cuircuit" lang="python" >
+
+<br/>
+<div id="complete_cuircuit_code_div" style="display: block">
+<textarea cols="50" rows="12" id="complete_cuircuit_code" class="active_code", prefixcode="undefined" lang="python">
+class LogicGate:
+
+    def __init__(self,n):
+        self.name = n
+        self.output = None
+
+    def getName(self):
+        return self.name
+
+    def getOutput(self):
+        self.output = self.performGateLogic()
+        return self.output
+
+
+class BinaryGate(LogicGate):
+
+    def __init__(self,n):
+        LogicGate.__init__(self,n)
+
+        self.pinA = None
+        self.pinB = None
+
+    def getPinA(self):
+        if self.pinA == None:
+            return int(input("Enter Pin A input for gate "+self.getName()+"-->"))
+        else:
+            return self.pinA.getFrom().getOutput()
+
+    def getPinB(self):
+        if self.pinB == None:
+            return int(input("Enter Pin B input for gate "+self.getName()+"-->"))
+        else:
+            return self.pinB.getFrom().getOutput()
+
+    def setNextPin(self,source):
+        if self.pinA == None:
+            self.pinA = source
+        else:
+            if self.pinB == None:
+                self.pinB = source
+            else:
+                print("Cannot Connect: NO EMPTY PINS on this gate")
+
+
+class AndGate(BinaryGate):
+
+    def __init__(self,n):
+        BinaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+
+        a = self.getPinA()
+        b = self.getPinB()
+        if a==1 and b==1:
+            return 1
+        else:
+            return 0
+
+class OrGate(BinaryGate):
+
+    def __init__(self,n):
+        BinaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+
+        a = self.getPinA()
+        b = self.getPinB()
+        if a ==1 or b==1:
+            return 1
+        else:
+            return 0
+
+class UnaryGate(LogicGate):
+
+    def __init__(self,n):
+        LogicGate.__init__(self,n)
+
+        self.pin = None
+
+    def getPin(self):
+        if self.pin == None:
+            return int(input("Enter Pin input for gate "+self.getName()+"-->"))
+        else:
+            return self.pin.getFrom().getOutput()
+
+    def setNextPin(self,source):
+        if self.pin == None:
+            self.pin = source
+        else:
+            print("Cannot Connect: NO EMPTY PINS on this gate")
+
+
+class NotGate(UnaryGate):
+
+    def __init__(self,n):
+        UnaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+        if self.getPin():
+            return 0
+        else:
+            return 1
+
+
+class Connector:
+
+    def __init__(self, fgate, tgate):
+        self.fromgate = fgate
+        self.togate = tgate
+
+        tgate.setNextPin(self)
+
+    def getFrom(self):
+        return self.fromgate
+
+    def getTo(self):
+        return self.togate
+
+
+def main():
+   g1 = AndGate("G1")
+   g2 = AndGate("G2")
+   g3 = OrGate("G3")
+   g4 = NotGate("G4")
+   c1 = Connector(g1,g3)
+   c2 = Connector(g2,g3)
+   c3 = Connector(g3,g4)
+   print(g4.getOutput())
+
+main()
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text">The Complete Circuit Program. (complete_cuircuit)</span> </p>
+
+<button class='btn btn-success' id="complete_cuircuit_runb" onclick="runit('complete_cuircuit',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="complete_cuircuit_saveb" onclick="saveEditor('complete_cuircuit');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="complete_cuircuit_loadb" onclick="requestCode('complete_cuircuit');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#complete_cuircuit_saveb').toggle();
+    $('#complete_cuircuit_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="complete_cuircuit_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="complete_cuircuit_suffix" style="display:none">
+</pre>
+<pre id="complete_cuircuit_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<div class="admonition-self-check admonition">
+<p class="first admonition-title">Self Check</p>
+<p>Create a two new gate classes,  one called NorGate the other called NandGate.  NandGates work like AndGates that have a Not attached to the output.  NorGates work lake OrGates that have a Not attached to the output.</p>
+<p>Create a series of gates that prove the following equality NOT (( A and B) or (C and D)) is that same as NOT( A and B ) and NOT (C and D).  Make sure to use some of your new gates in the simulation.</p>
+
+<div id="self_check_5" lang="python" >
+
+<br/>
+<div id="self_check_5_code_div" style="display: none">
+<textarea cols="50" rows="12" id="self_check_5_code" class="active_code", prefixcode="undefined" lang="python">
+class LogicGate:
+
+    def __init__(self,n):
+        self.name = n
+        self.output = None
+
+    def getName(self):
+        return self.name
+
+    def getOutput(self):
+        self.output = self.performGateLogic()
+        return self.output
+
+
+class BinaryGate(LogicGate):
+
+    def __init__(self,n):
+        LogicGate.__init__(self,n)
+
+        self.pinA = None
+        self.pinB = None
+
+    def getPinA(self):
+        if self.pinA == None:
+            return int(input("Enter Pin A input for gate "+self.getName()+"-->"))
+        else:
+            return self.pinA.getFrom().getOutput()
+
+    def getPinB(self):
+        if self.pinB == None:
+            return int(input("Enter Pin B input for gate "+self.getName()+"-->"))
+        else:
+            return self.pinB.getFrom().getOutput()
+
+    def setNextPin(self,source):
+        if self.pinA == None:
+            self.pinA = source
+        else:
+            if self.pinB == None:
+                self.pinB = source
+            else:
+                print("Cannot Connect: NO EMPTY PINS on this gate")
+
+
+class AndGate(BinaryGate):
+
+    def __init__(self,n):
+        BinaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+
+        a = self.getPinA()
+        b = self.getPinB()
+        if a==1 and b==1:
+            return 1
+        else:
+            return 0
+
+class OrGate(BinaryGate):
+
+    def __init__(self,n):
+        BinaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+
+        a = self.getPinA()
+        b = self.getPinB()
+        if a ==1 or b==1:
+            return 1
+        else:
+            return 0
+
+class UnaryGate(LogicGate):
+
+    def __init__(self,n):
+        LogicGate.__init__(self,n)
+
+        self.pin = None
+
+    def getPin(self):
+        if self.pin == None:
+            return int(input("Enter Pin input for gate "+self.getName()+"-->"))
+        else:
+            return self.pin.getFrom().getOutput()
+
+    def setNextPin(self,source):
+        if self.pin == None:
+            self.pin = source
+        else:
+            print("Cannot Connect: NO EMPTY PINS on this gate")
+
+
+class NotGate(UnaryGate):
+
+    def __init__(self,n):
+        UnaryGate.__init__(self,n)
+
+    def performGateLogic(self):
+        if self.getPin():
+            return 0
+        else:
+            return 1
+
+
+class Connector:
+
+    def __init__(self, fgate, tgate):
+        self.fromgate = fgate
+        self.togate = tgate
+
+        tgate.setNextPin(self)
+
+    def getFrom(self):
+        return self.fromgate
+
+    def getTo(self):
+        return self.togate
+
+
+
+def main():
+   g1 = AndGate("G1")
+
+   print(g1.getOutput())
+
+main()
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (self_check_5)</span> </p>
+
+<button class='btn btn-success' id="self_check_5_runb" onclick="runit('self_check_5',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="self_check_5_saveb" onclick="saveEditor('self_check_5');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="self_check_5_loadb" onclick="requestCode('self_check_5');">Load</button>
+
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#self_check_5_saveb').toggle();
+    $('#self_check_5_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="self_check_5_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+
+<button class='btn btn-default' id="self_check_5_showb" onclick="$('#self_check_5_code_div').toggle();cm_editors['self_check_5_code'].refresh();$('#self_check_5_saveb').toggle();$('#self_check_5_loadb').toggle()">Show/Hide Code</button>
+
+<input type="button" class='btn btn-default ' id="gradeb" name="Show Feedback" value="Show Feedback" onclick="createGradeSummary('self_check_5')"/>
+<pre id="self_check_5_suffix" style="display:none">
+</pre>
+<pre id="self_check_5_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+<a id="logicgates_thumb" style='position:relative;'>
+    <img src="../_static/videothumb.png" />
+    <div class='video-play-overlay'></div>
+</a>
+<div id="logicgates" class="video_popup" >
+<video controls preload="none"  >
+    <source src="http://media.interactivepython.org/pythondsVideos/logicgates.mov" type="video/mp4"></source>
+    <source src="http://media.interactivepython.org/pythondsVideos/logicgates.webm" type="video/webm"></source>
+    No supported video types
+</video>
+</div>
+<script>
+   jQuery(function($) {
+      $('#logicgates_thumb').click(function(e) {
+         $('#logicgates').show();
+         $('#logicgates_thumb').hide();
+         logBookEvent({'event':'video','act':'play','div_id': 'logicgates'});
+         // Log the run event
+      });
+   });
+</script>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

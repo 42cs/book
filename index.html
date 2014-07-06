@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="CS 42." name="description" />
+<meta content="python, CS61A, CS42, computer science" name="keywords" />
+
+    <title>First Steps &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/assess.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="_static/lib/lis.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="#" />
+    <link rel="next" title="Reasoning" href="week1/reasoning.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="#">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='#'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">First Steps</a></li>
+<li><a class="reference internal" href="#material">Material</a><ul>
+<li><a class="reference internal" href="#week-1-reasoning-grit">Week 1 - Reasoning &amp; Grit</a></li>
+<li><a class="reference internal" href="#week-2-enviroment-debugging">Week 2 - Enviroment &amp; Debugging</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#week-3-git-collaboration">Week 3 - Git &amp; Collaboration</a></li>
+<li><a class="reference internal" href="#logistics">Logistics</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#benefits-of-this-interactive-book">Benefits of this interactive book.</a></li>
+<li><a class="reference internal" href="#contact-info">Contact Info</a></li>
+<li><a class="reference internal" href="#acknowledgement-sources">Acknowledgement/Sources</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-next" title='Next Chapter - Reasoning' data-toggle="tooltip" >
+    <a href="week1/reasoning.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <h1 style="text-align: center">CS42 - Summer 2014</h1>
+<h2 style="text-align: center">Practical Problem Solving with Programming</h2>
+<div id="welcome" lang="python" >
+
+<div style="text-align: center">
+<canvas id="welcome_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+
+<br/>
+<div id="welcome_code_div" style="display: none">
+<textarea cols="50" rows="12" id="welcome_code" class="active_code", prefixcode="undefined" lang="python">
+import turtle
+import random
+
+def main():
+    tList = []
+    head = 0
+    numTurtles = 10
+    drawLogo(turtle.Turtle())
+
+    for i in range(numTurtles):
+        nt = turtle.Turtle()   # Make a new turtle, initialize values
+        nt.setheading(head)
+        nt.pensize(2)
+        nt.color(random.randrange(256),random.randrange(256),random.randrange(256))
+        nt.speed(7.5)
+        nt.tracer(30,0)
+        tList.append(nt)       # Add the new turtle to the list
+        head = head + 360/numTurtles
+
+    for i in range(100):
+        moveTurtles(tList,15,i)
+
+    drawLogo(tList[0])
+
+def moveTurtles(turtleList,dist,angle):
+    for turtle in turtleList:   # Make every turtle on the list do the same actions.
+        turtle.forward(dist)
+        turtle.right(angle)
+
+def drawLogo(turtle):
+    turtle.up()
+    turtle.goto(-100,-25)
+    turtle.write("CS 42 ",True,"center","75px Arial")
+    turtle.ht()
+
+main()
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (welcome)</span> </p>
+
+<button class='btn btn-success' id="welcome_runb" onclick="runit('welcome',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="welcome_saveb" onclick="saveEditor('welcome');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="welcome_loadb" onclick="requestCode('welcome');">Load</button>
+
+<script>
+if ('none' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#welcome_saveb').toggle();
+    $('#welcome_loadb').toggle();
+}
+</script>
+-->
+
+<button class='btn btn-default' id="welcome_showb" onclick="$('#welcome_code_div').toggle();cm_editors['welcome_code'].refresh();$('#welcome_saveb').toggle();$('#welcome_loadb').toggle()">Show/Hide Code</button>
+<pre id="welcome_suffix" style="display:none">
+</pre>
+<pre id="welcome_pre" class="active_out">
+
+</pre>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(window).load(function() {
+        var runb = document.getElementById("welcome_runb");
+        runit('welcome',runb, undefined);
+    });
+});
+</script>
+
+</div>
+
+<div class="section" id="first-steps">
+<h1>First Steps<a class="headerlink" href="#first-steps" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Check out the <a class="reference external" href="CourseInfo/index.html">course outline &amp; goals</a></li>
+<li>Take me to the first topic!  <a class="reference external" href="week1/reasoning.html">Reasoning</a></li>
+<li>View the <a class="reference internal" href="toc.html#t-o-c"><em>Table of Contents</em></a></li>
+</ul>
+</div>
+<div class="section" id="material">
+<h1>Material<a class="headerlink" href="#material" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="week-1-reasoning-grit">
+<h2>Week 1 - Reasoning &amp; Grit<a class="headerlink" href="#week-1-reasoning-grit" title="Permalink to this headline">¶</a></h2>
+<p>This week will get students excited/motivated &amp; make them comfortable reasoning through code (by converting code to english).</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="week1/reasoning.html">Reasoning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="week1/reasoning.html#intro">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week1/reasoning.html#the-process">The Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week1/reasoning.html#lab">Lab</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week1/tenacity.html">Tenacity/Grit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="week1/tenacity.html#misconceptions">Misconceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week1/tenacity.html#tenacity">Tenacity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week1/tenacity.html#a-comic">A comic</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="week-2-enviroment-debugging">
+<h2>Week 2 - Enviroment &amp; Debugging<a class="headerlink" href="#week-2-enviroment-debugging" title="Permalink to this headline">¶</a></h2>
+<p>We&#8217;ll make sure that students are comfortable and productive with their text editors and unix. Then we&#8217;ll practice
+using a methodical approach to debugging.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="week2/ProgrammingTricks.html">Programming Tricks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="week2/ProgrammingTricks.html#your-text-editor">Your Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/ProgrammingTricks.html#sublime-text">Sublime Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/ProgrammingTricks.html#terminal">Terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/ProgrammingTricks.html#ssh">SSH</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/ProgrammingTricks.html#workflow">Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/ProgrammingTricks.html#python">Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="week2/debug.html">Debugging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="week2/debug.html#situation">Situation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/debug.html#tips">Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/debug.html#guided">Guided</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/debug.html#warmups">Warmups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/debug.html#reading-the-error">Reading the error</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/debug.html#fizzbuzz">FizzBuzz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/debug.html#oddsum">OddSum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/debug.html#challenge">Challenge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="week2/debug.html#the-mantra">The Mantra</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="week2/DebuggingBook.html">The Ultimate Debugging Handbook</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="week-3-git-collaboration">
+<h2>Week 3 - Git &amp; Collaboration<a class="headerlink" href="#week-3-git-collaboration" title="Permalink to this headline">¶</a></h2>
+<p>This week will be timed with the release of the first group project.</p>
+</div>
+<div class="section" id="logistics">
+<h2>Logistics<a class="headerlink" href="#logistics" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CourseInfo/index.html">About CS42</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Extras/index.html">Cool Demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="toc.html">Table of Contents</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="benefits-of-this-interactive-book">
+<h1>Benefits of this interactive book.<a class="headerlink" href="#benefits-of-this-interactive-book" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>You can experiment with <strong>Active Code</strong> examples right in the page<ul>
+<li>Click Show/Hide Code button</li>
+<li>Click the Run button</li>
+</ul>
+</li>
+<li>You can play with code and modify the examples.</li>
+<li><strong>Interactive questions</strong> make sure that you are on track and help you focus.</li>
+<li>You can highlight text, and take notes in scratch editors</li>
+</ul>
+</div>
+<div class="section" id="contact-info">
+<h1>Contact Info<a class="headerlink" href="#contact-info" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>Sumukh Sridhara</dt>
+<dd>sumukh &#64; berkeley.edu</dd>
+</dl>
+<p>Piazza: <a class="reference external" href="http://piazza.com/berkeley/summer2014/cs42">http://piazza.com/berkeley/summer2014/cs42</a></p>
+</div>
+<div class="section" id="acknowledgement-sources">
+<h1>Acknowledgement/Sources<a class="headerlink" href="#acknowledgement-sources" title="Permalink to this headline">¶</a></h1>
+<p>The material under &#8220;Background Reading&#8221; as well as the artwork above comes directly from</p>
+<blockquote>
+<div>How to Think Like A Computer Scientist by Brad Miller, David Ranum.</div></blockquote>
+<p>Source: <a class="reference external" href="http://interactivepython.org/runestone/static/thinkcspy/index.html">http://interactivepython.org/runestone/static/thinkcspy/index.html</a></p>
+<p>The license for the above book is under Creative Commons Attribution-ShareAlike License CC BY-SA as well as the GNU FDL 1.</p>
+<p>View the book and the authors here - <a class="reference external" href="http://interactivepython.org">http://interactivepython.org</a></p>
+<p>This website itself is powered by <a class="reference external" href="http://runestoneinteractive.org/">http://runestoneinteractive.org/</a></p>
+<p>Special Thanks to ....</p>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

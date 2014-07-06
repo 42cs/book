@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Lecture 2 &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Lecture 2</a><ul>
+<li><a class="reference internal" href="#hof">HOF</a></li>
+<li><a class="reference internal" href="#pairs">Pairs</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="lecture-2">
+<h1>Lecture 2<a class="headerlink" href="#lecture-2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hof">
+<h2>HOF<a class="headerlink" href="#hof" title="Permalink to this headline">¶</a></h2>
+
+<div id="hof1." lang="python" >
+
+<br/>
+<div id="hof1._code_div" style="display: block">
+<textarea cols="50" rows="12" id="hof1._code" class="active_code", prefixcode="undefined" lang="python">
+def square(x):
+             return x * x
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (hof1.)</span> </p>
+
+<button class='btn btn-success' id="hof1._runb" onclick="runit('hof1.',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="hof1._saveb" onclick="saveEditor('hof1.');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="hof1._loadb" onclick="requestCode('hof1.');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#hof1._saveb').toggle();
+    $('#hof1._loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="hof1._canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="hof1._suffix" style="display:none">
+</pre>
+<pre id="hof1._pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+<div class="section" id="pairs">
+<h2>Pairs<a class="headerlink" href="#pairs" title="Permalink to this headline">¶</a></h2>
+
+<div id="cons"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (cons)</span> </p>
+<script type="text/javascript">
+var cons_trace = {"code": "def cons(a,b):\n    def pair(message):\n            if message == 'car':\n                    return a\n            else:\n                    return b\n    return pair\n\nz = cons(4,5)\n\nz('car')\nz('cdr')", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["cons"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"cons": ["REF", 1]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["cons"], "stdout": "", "func_name": "cons", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "b": 5}, "is_highlighted": true, "is_parent": false, "func_name": "cons", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "cons_f1", "ordered_varnames": ["a", "b"]}], "globals": {"cons": ["REF", 1]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["cons"], "stdout": "", "func_name": "cons", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "b": 5}, "is_highlighted": true, "is_parent": false, "func_name": "cons", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "cons_f1", "ordered_varnames": ["a", "b"]}], "globals": {"cons": ["REF", 1]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["cons"], "stdout": "", "func_name": "cons", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "b": 5}, "is_highlighted": true, "is_parent": true, "func_name": "cons", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "cons_f1_p", "ordered_varnames": ["a", "b", "pair"]}], "globals": {"cons": ["REF", 1]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["cons"], "stdout": "", "func_name": "cons", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": true, "is_parent": true, "func_name": "cons", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "cons_f1_p", "ordered_varnames": ["a", "b", "pair", "__return__"]}], "globals": {"cons": ["REF", 1]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 7, "event": "return"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "<module>", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "pair", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}, {"frame_id": 2, "encoded_locals": {"message": "car"}, "is_highlighted": true, "is_parent": false, "func_name": "pair", "is_zombie": false, "parent_frame_id_list": [1], "unique_hash": "pair_f2", "ordered_varnames": ["message"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 2, "event": "call"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "pair", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}, {"frame_id": 2, "encoded_locals": {"message": "car"}, "is_highlighted": true, "is_parent": false, "func_name": "pair", "is_zombie": false, "parent_frame_id_list": [1], "unique_hash": "pair_f2", "ordered_varnames": ["message"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "pair", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}, {"frame_id": 2, "encoded_locals": {"message": "car"}, "is_highlighted": true, "is_parent": false, "func_name": "pair", "is_zombie": false, "parent_frame_id_list": [1], "unique_hash": "pair_f2", "ordered_varnames": ["message"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "pair", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}, {"frame_id": 2, "encoded_locals": {"__return__": 4, "message": "car"}, "is_highlighted": true, "is_parent": false, "func_name": "pair", "is_zombie": false, "parent_frame_id_list": [1], "unique_hash": "pair_f2", "ordered_varnames": ["message", "__return__"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 4, "event": "return"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "<module>", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "pair", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}, {"frame_id": 3, "encoded_locals": {"message": "cdr"}, "is_highlighted": true, "is_parent": false, "func_name": "pair", "is_zombie": false, "parent_frame_id_list": [1], "unique_hash": "pair_f3", "ordered_varnames": ["message"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 2, "event": "call"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "pair", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}, {"frame_id": 3, "encoded_locals": {"message": "cdr"}, "is_highlighted": true, "is_parent": false, "func_name": "pair", "is_zombie": false, "parent_frame_id_list": [1], "unique_hash": "pair_f3", "ordered_varnames": ["message"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "pair", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}, {"frame_id": 3, "encoded_locals": {"message": "cdr"}, "is_highlighted": true, "is_parent": false, "func_name": "pair", "is_zombie": false, "parent_frame_id_list": [1], "unique_hash": "pair_f3", "ordered_varnames": ["message"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "pair", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}, {"frame_id": 3, "encoded_locals": {"__return__": 5, "message": "cdr"}, "is_highlighted": true, "is_parent": false, "func_name": "pair", "is_zombie": false, "parent_frame_id_list": [1], "unique_hash": "pair_f3", "ordered_varnames": ["message", "__return__"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 6, "event": "return"}, {"ordered_globals": ["cons", "z"], "stdout": "", "func_name": "<module>", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"a": 4, "pair": ["REF", 2], "__return__": ["REF", 2], "b": 5}, "is_highlighted": false, "is_parent": true, "func_name": "cons", "is_zombie": true, "parent_frame_id_list": [], "unique_hash": "cons_f1_p_z", "ordered_varnames": ["a", "b", "pair", "__return__"]}], "globals": {"cons": ["REF", 1], "z": ["REF", 2]}, "heap": {"1": ["FUNCTION", "cons(a, b)", null], "2": ["FUNCTION", "pair(message)", 1]}, "line": 12, "event": "return"}]};
+var cons_vis;
+
+$(document).ready(function() {
+    cons_vis = new ExecutionVisualizer('cons',cons_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(cons_vis,'cons');
+    allVisualizers.push(cons_vis);
+
+});
+
+$(document).ready(function() {
+    $("#cons_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'cons'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    cons_vis.redrawConnectors();
+});
+</script>
+
+<div id="other"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (other)</span> </p>
+<script type="text/javascript">
+var other_trace = {"code": "def first(s):\n    return s[0]\ndef rest(s):\n    return s[1]\n\ndef getitem_link(s, i):\n    while i > 0:\n        s, i = rest(s), i - 1\n    return first(s)\n\nfour = [1, [2, [3, [4, 'empty']]]]\ngetitem_link(four, 1)", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["first"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["first", "rest"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["first", "rest", "getitem_link"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null]}, "line": 11, "event": "step_line"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "getitem_link", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 1, "s": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 6, "event": "call"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "getitem_link", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 1, "s": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "getitem_link", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 1, "s": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "rest", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 1, "s": ["REF", 4]}, "is_highlighted": false, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}, {"frame_id": 2, "encoded_locals": {"s": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "rest", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "rest_f2", "ordered_varnames": ["s"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 3, "event": "call"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "rest", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 1, "s": ["REF", 4]}, "is_highlighted": false, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}, {"frame_id": 2, "encoded_locals": {"s": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "rest", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "rest_f2", "ordered_varnames": ["s"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "rest", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 1, "s": ["REF", 4]}, "is_highlighted": false, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}, {"frame_id": 2, "encoded_locals": {"__return__": ["REF", 5], "s": ["REF", 4]}, "is_highlighted": true, "is_parent": false, "func_name": "rest", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "rest_f2", "ordered_varnames": ["s", "__return__"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 4, "event": "return"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "getitem_link", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 0, "s": ["REF", 5]}, "is_highlighted": true, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "getitem_link", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 0, "s": ["REF", 5]}, "is_highlighted": true, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "first", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 0, "s": ["REF", 5]}, "is_highlighted": false, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}, {"frame_id": 3, "encoded_locals": {"s": ["REF", 5]}, "is_highlighted": true, "is_parent": false, "func_name": "first", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "first_f3", "ordered_varnames": ["s"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 1, "event": "call"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "first", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 0, "s": ["REF", 5]}, "is_highlighted": false, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}, {"frame_id": 3, "encoded_locals": {"s": ["REF", 5]}, "is_highlighted": true, "is_parent": false, "func_name": "first", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "first_f3", "ordered_varnames": ["s"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "first", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 0, "s": ["REF", 5]}, "is_highlighted": false, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i"]}, {"frame_id": 3, "encoded_locals": {"__return__": 2, "s": ["REF", 5]}, "is_highlighted": true, "is_parent": false, "func_name": "first", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "first_f3", "ordered_varnames": ["s", "__return__"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 2, "event": "return"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "getitem_link", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"i": 0, "__return__": 2, "s": ["REF", 5]}, "is_highlighted": true, "is_parent": false, "func_name": "getitem_link", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "getitem_link_f1", "ordered_varnames": ["s", "i", "__return__"]}], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 9, "event": "return"}, {"ordered_globals": ["first", "rest", "getitem_link", "four"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"four": ["REF", 4], "getitem_link": ["REF", 3], "rest": ["REF", 2], "first": ["REF", 1]}, "heap": {"1": ["FUNCTION", "first(s)", null], "2": ["FUNCTION", "rest(s)", null], "3": ["FUNCTION", "getitem_link(s, i)", null], "4": ["LIST", 1, ["REF", 5]], "5": ["LIST", 2, ["REF", 6]], "6": ["LIST", 3, ["REF", 7]], "7": ["LIST", 4, "empty"]}, "line": 12, "event": "return"}]};
+var other_vis;
+
+$(document).ready(function() {
+    other_vis = new ExecutionVisualizer('other',other_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(other_vis,'other');
+    allVisualizers.push(other_vis);
+
+});
+
+$(document).ready(function() {
+    $("#other_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'other'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    other_vis.redrawConnectors();
+});
+</script>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

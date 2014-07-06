@@ -1,0 +1,318 @@
+.. Author Sumukh Sridhara 2014
+
+=========
+Debugging
+=========
+
+What is debugging? It's simply the **process** of isolating a problem in a program. In someways, it's more challenging than just programming because it requires a different way of thinking. When you are debugging you are a detective.
+
+	"Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it." --Brian Kernighan
+
+Situation
+~~~~~~
+
+.. mchoicemf:: youtube
+   :answer_a: :( - IDK 
+   :answer_b: Call your internet company and ask for support. 
+   :answer_c: Restart your computer.
+   :answer_d: None of the above. 
+   :correct: d
+   :feedback_a: You really want to watch that cat video.
+   :feedback_b: The hold music is not that great. Is that what you would do first?  
+   :feedback_c: Is that what you would do first? 
+   :feedback_d: You'd probably check to see if another website works. This would help you narrow the problem down.
+
+   You want to watch a cat video. So you load up youtube.com but it doesn't load. What do you do first? 
+
+
+How to Debug
+------------------
+What not to do: randomly looking at code and making a guess. It's much easier to work on a problem once you have narrowed down some options. 
+
+The best programmers (and detectives) are systematic about collecting information and acting on it. 
+
+Debugging is not just finding out why your code is not working. It's not just diving into the code and staring at it intently for a few minutes and suddenly arriving at the solution.
+
+	The goal is not just to make the program work. The goal is to learn how to make the program work
+
+The question to ask when you are debugging is not "Why isn't it working?!". This isn't a helpful question or mindset. A better question would be:
+	
+	**How** could it have produced this output?
+
+This question sets you on the right path. Remember everything that happens on a computer - happens for a reason. 
+
+The answer to the "Why" question is simply - because the code told it to do that. The answer to the "How" question is much more useful. 
+
+Experienced programmers do this almost naturally just because of the frequency with which they run into bugs - so while they run into just as many (if not more) problems than beginnners - they always know what to do next. With practice - you can too! 
+
+Strategies
+--------------
+
+I found an error. It crashed and/or produced an output that I didn't expect. Now what?  
+
+#. Ask "How could it have produced that output?" (and not why doesn't it work)
+
+#. Approach the code with skepticism &the understanding that it's wrong (because the interpreter says so) 
+
+#. Categorize the error into a mental bucket to gain a better understanding. Examples:
+	* It was an indexing error -> so it has do with where I access elements in a list
+	* The program didn't return anything. -> Where do I return right now? 
+ 
+#. Take in any other data available to you.
+	* The code (read with a critical eye)
+	* Test Results 
+	* What was the desired functionality
+	* What bucket does the error fall into?
+
+#. Create a hypothesis in the form of:
+	* The program is outputing X when I expected Y and it is doing so because of Z and Q. 
+
+#. Test the hypothesis. 
+
+#. Check if the error appears anywhere else.
+
+Tips
+~~~~~~~~
+
+#. You are a detective and anything could be to blame (Except for Python)!  It's common for beginner programmers to blame Python, but that should be your last resort.  Remember that Python has been used to solve CS61A level problems millions of times by millions of other programmers.  So, Python is probably not the problem.
+
+#. The code is wrong. If it wasn't - you wouldn't be getting unexpected input. Approach the code with skepticism. 
+
+#. Find clues.  This is the biggest job of the detective and right now there are two important kinds of clues for you to understand.
+
+    #. Error Messages. Read them! 
+
+    #. Print Statements
+
+#. Read the error messages. 
+
+#. Always read the error messages. 
+
+#. Always read the error messages. In their entirety.
+
+
+Reading Error Messages
+-----------------------
+
+Python is trying to be helpful with the error messages. Sometimes python will even make a best guess about where exactly the error was triggered. 
+
+How can we read a traceback?
+
+.. tabbed:: reading_errors
+
+    .. tab:: The Traceback
+
+		::
+
+			Traceback (most recent call last):
+			  File "readingErrors.py", line 11, in <module>
+			    print(hey_there())
+			  File "readingErrors.py", line 8, in hey_there
+			    return why_hello()
+			  File "readingErrors.py", line 7, in why_hello
+			    return even_more()
+			  File "readingErrors.py", line 6, in even_more
+			    return higher_order()
+			  File "readingErrors.py", line 5, in higher_order
+			    return 1/0
+			ZeroDivisionError: division by zero
+
+    .. tab:: The code
+
+        .. activecode:: crashy
+
+			def hey_there():
+			    def why_hello():
+			        def even_more():
+			            def higher_order():
+			                 return 1/0
+			            return higher_order()
+			        return even_more()
+			    return why_hello()
+
+			# I wonder what this does
+			print(hey_there())
+
+
+Sometimes, Python will tell you exactly where there was a problem with the ^ character. ::
+
+  File "readingErrors.py", line 14
+    def why_hello()
+                  ^
+  SyntaxError: invalid syntax
+
+Rubberducking
+------------------
+
+.. image :: http://upload.wikimedia.org/wikipedia/commons/d/d5/Rubber_duck_assisting_with_debugging.jpg
+
+----
+
+If you get stuck during the debugging process - it's often helpful to just walk through your entire process out loud to another person. This often times solves the error - often without the other person helping.
+
+If you don't want to get someone else - you can talk to a rubber duck. The rubber duck rather obviously will not solve the problem for you - but it help you walkthrough it. 
+
+Lab
+-----
+
+Guided
+~~~~~~~~
+
+.. activecode:: sumOther
+
+	def sumOther(l):
+	    """ Return the sum of all the elements plus the sum of every other element
+	    >>> sumOther([1,2,3]) 
+	    >>> 10 # (1+2+3) + (1+3)
+	    """
+	    sumTotal = 0
+	    sumOther = 0
+	    for i in range(1,len(l))
+	        sumTotal += i[l]
+	        if (i/2 != 0): 
+	            sumOther += i[l]
+	    return sumOther + sumTotal 
+
+Warmups 
+~~~~~~~~~~~~
+Don't fix the bug until you answer the questions first!::
+
+	def modSeven(x):
+    	  	return x % "7"
+	modSeven(21)
+The output::
+
+	Traceback (most recent call last):
+	  File "mod7.py", line 4, in <module>
+	    modSeven(21)
+	  File "mod7.py", line 2, in modSeven
+	    return x % "7"
+	TypeError: unsupported operand type(s) for %: 'int' and 'str'
+
+1. What do you do first?
+2. What kind of error is it? Have you seen something like this before? 
+3. How could this code have produced the output. What should it have output?
+4. Do you understand it well enough to fix it now? 
+
+
+Reading the error
+~~~~~~~~~~~~~~~~~~~
+What happened? 
+
+1. Read the entire error. 
+2. Where did it happen.
+3. How did it happen?
+4. What happened?
+
+	>>> hi()
+	Traceback (most recent call last):
+	  File "<stdin>", line 1, in <module>
+	  File "<stdin>", line 6, in hi
+	  File "<stdin>", line 5, in bye
+	  File "<stdin>", line 4, in k
+	ZeroDivisionError: division by zero
+
+FizzBuzz
+~~~~~~~~~~~~~
+
+Autograder: "It's not working!"
+
+Programmer: "No worries. Our debugging skills will help!"
+
+
+.. activecode :: fizzbuzzy
+
+	def fizzybuzzy():
+	    """ Performs fizzbuzz """
+	    i = 0
+	    while i < 100: 
+	        isMod3 = i % 3
+	        isMod5 = i % 5
+	        isMod15 = i % 15
+	        if (isMod15):
+	            return "FizzBuzz"
+	        if (isMod3):
+	            return "Fizz"
+	        if (isMod5):
+	            return "Fizz"
+	        i += 1
+	
+	print(fizzybuzzy())
+
+
+OddSum
+~~~~~~~~~~
+.. activecode :: oddsum
+
+	def count_odd(nums):
+	    """ Sums up the odd numbers in a list """
+	    def remainder(x):
+	        return x % 3
+	    count = 0
+	    for i in nums:
+	        count += remainder(i)
+	    return count
+
+	countup = [1,2,3,4,5]
+	count_odd(countup)
+
+
+Challenge
+~~~~~~~~~~
+.. activecode :: challengingbug
+
+	def unhelpful(n):
+	    """Compute the Nth ?? for n >= 2."""
+	    a, b = 0, 1 
+	    k = 2 
+	    while k < n:
+	        a, b = b, a + b
+	        k = k + 1
+	    return b
+
+	unhelpful(8)
+
+Hint: Could a print statement be helpful? If so where?  print("p ",p, "c",c)
+
+Hint 2: The function computes the Nth Fibonacci number, for n >= 2.
+
+
+
+Avoiding Debugging
+-------------------
+From `debugging guide from How To Think Like A Computer Scientist <DebuggingBook.html#how-to-avoid-debugging>`_ 
+
+Debugging can be **largely avoidable** -- if you work carefully & follow these steps.
+
+1.  **Start Small**  This is probably the single biggest piece of advice for programmers at every level.  Of course its tempting to sit down and crank out an entire program at once.  But, when the program -- inevitably -- does not work then you have a myriad of options for things that might be wrong.  Where to start?  Where to look first?  How to figure out what went wrong?  I'll get to that in the next section.  So, start with something really small.  Maybe just two lines and then make sure that runs ok.  Hitting the run button is quick and easy, and gives you immediate feedback about whether what you have just done is ok or not.  Another immediate benefit of having something small working is that you have something to turn in.  Turning in a small, incomplete program, is almost always better than nothing.
+
+2.  **Keep it working**  Once you have a small part of your program working the next step is to figure out something small to add to it.  If you keep adding small pieces of the program one at a time, it is much easier to figure out what went wrong, as it is most likely that the problem is going to be in the new code you have just added.  Less new code means its easier to figure out where the problem is. This is where good style and testing will help. 
+
+The Mantra
+~~~~~~~~~~~~~~~~~~~
+
+**Get something working and keep it working**.  
+
+This is a hard notion to internalize - to many it may seem like this mantra is telling them to be satisifed with incomplete code. 
+
+It's not- it's an antidote to the inner perfectionist so we can adopt the mindset of **Get something working and keep it working**. 
+
+This is a mantra that you can repeat throughout your career as a programmer. It's a great way to avoid the frustrations mentioned above. 
+
+Think of it this way.  Every time you have a little success, your brain releases a tiny bit of a chemical that makes you happy.  So, you can keep yourself happy and make programming more enjoyable by creating lots of small victories for yourself.
+
+
+Next Part
+------------
+This is a huge guide to help you build your debugging skills. It's pretty big (~8000 words) is a collection of debugging resources from 'How To Think Like A Computer Scientist'
+
+.. toctree::
+    :maxdepth: 4
+
+    DebuggingBook.rst
+
+Check out the `debugging guide from How To Think Like A Computer Scientist <DebuggingBook.html>`_
+
+
+Be sure to read the `Quick Guide to Getting Unstuck! <https://docs.google.com/document/d/1Yw6wK6PPL7x7wJB6Wo9qkWz8rgJwo-t0cXU5pFstaVA/edit>`_
+

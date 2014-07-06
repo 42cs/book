@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Input and Output &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Input and Output</a><ul>
+<li><a class="reference internal" href="#string-formatting">String Formatting</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="input-and-output">
+<h1>Input and Output<a class="headerlink" href="#input-and-output" title="Permalink to this headline">¶</a></h1>
+<p>We often have a need to interact with users,
+either to get data or to provide some sort of result. Most programs
+today use a dialog box as a way of asking the user to provide some type
+of input. While Python does have a way to create dialog boxes, there is
+a much simpler function that we can use. Python provides us with a
+function that allows us to ask a user to enter some data and returns a
+reference to the data in the form of a string. The function is called
+<tt class="docutils literal"><span class="pre">input</span></tt>.</p>
+<p>Python’s input function takes a single parameter that is a string. This
+string is often called the <strong>prompt</strong> because it contains some helpful
+text prompting the user to enter something. For example, you might call
+input as follows:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">aName</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&#39;Please enter your name: &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now whatever the user types after the prompt will be stored in the
+<tt class="docutils literal"><span class="pre">aName</span></tt> variable. Using the input function, we can easily write
+instructions that will prompt the user to enter data and then
+incorporate that data into further processing. For example, in the
+following two statements, the first asks the user for their name and the
+second prints the result of some simple processing based on the string
+that is provided.</p>
+
+<div id="strstuff" lang="python" >
+
+<br/>
+<div id="strstuff_code_div" style="display: block">
+<textarea cols="50" rows="12" id="strstuff_code" class="active_code", prefixcode="undefined" lang="python">
+aName = input("Please enter your name ")
+print("Your name in all capitals is",aName.upper(),
+      "and has length", len(aName))
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text">The input Function Returns a String (strstuff)</span> </p>
+
+<button class='btn btn-success' id="strstuff_runb" onclick="runit('strstuff',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="strstuff_saveb" onclick="saveEditor('strstuff');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="strstuff_loadb" onclick="requestCode('strstuff');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#strstuff_saveb').toggle();
+    $('#strstuff_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="strstuff_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="strstuff_suffix" style="display:none">
+</pre>
+<pre id="strstuff_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<p>It is important to note that the value returned from the <tt class="docutils literal"><span class="pre">input</span></tt>
+function will be a string representing the exact characters that were
+entered after the prompt. If you want this string interpreted as another
+type, you must provide the type conversion explicitly. In the statements
+below, the string that is entered by the user is converted to a float so
+that it can be used in further arithmetic processing.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sradius</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">&quot;Please enter the radius of the circle &quot;</span><span class="p">)</span>
+<span class="n">radius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sradius</span><span class="p">)</span>
+<span class="n">diameter</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">radius</span>
+</pre></div>
+</div>
+<div class="section" id="string-formatting">
+<h2>String Formatting<a class="headerlink" href="#string-formatting" title="Permalink to this headline">¶</a></h2>
+<p>We have already seen that the <tt class="docutils literal"><span class="pre">print</span></tt>
+function provides a very simple way to output values from a Python
+program. <tt class="docutils literal"><span class="pre">print</span></tt> takes zero or more parameters and displays them using
+a single blank as the default separator. It is possible to change the
+separator character by setting the <tt class="docutils literal"><span class="pre">sep</span></tt> argument. In addition, each
+print ends with a newline character by default. This behavior can be
+changed by setting the <tt class="docutils literal"><span class="pre">end</span></tt> argument. These variations are shown in
+the following session:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="go">Hello</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">)</span>
+<span class="go">Hello World</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&quot;***&quot;</span><span class="p">)</span>
+<span class="go">Hello***World</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="s">&quot;World&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&quot;***&quot;</span><span class="p">)</span>
+<span class="go">Hello World***&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>It is often useful to have more control over the look of your output.
+Fortunately, Python provides us with an alternative called <strong>formatted
+strings</strong>. A formatted string is a template in which words or spaces
+that will remain constant are combined with placeholders for variables
+that will be inserted into the string. For example, the statement</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="n">aName</span><span class="p">,</span> <span class="s">&quot;is&quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="s">&quot;years old.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>contains the words <tt class="docutils literal"><span class="pre">is</span></tt> and <tt class="docutils literal"><span class="pre">years</span> <span class="pre">old</span></tt>, but the name and the age
+will change depending on the variable values at the time of execution.
+Using a formatted string, we write the previous statement as</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%s</span><span class="s"> is </span><span class="si">%d</span><span class="s"> years old.&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">aName</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This simple example illustrates a new string expression. The <tt class="docutils literal"><span class="pre">%</span></tt>
+operator is a string operator called the <strong>format operator</strong>. The left
+side of the expression holds the template or format string, and the
+right side holds a collection of values that will be substituted into
+the format string. Note that the number of values in the collection on
+the right side corresponds with the number of <tt class="docutils literal"><span class="pre">%</span></tt> characters in the
+format string. Values are taken—in order, left to right—from the
+collection and inserted into the format string.</p>
+<p>Let’s look at both sides of this formatting expression in more detail.
+The format string may contain one or more conversion specifications. A
+conversion character tells the format operator what type of value is
+going to be inserted into that position in the string. In the example
+above, the <tt class="docutils literal"><span class="pre">%s</span></tt> specifies a string, while the <tt class="docutils literal"><span class="pre">%d</span></tt> specifies an
+integer. Other possible type specifications include <tt class="docutils literal"><span class="pre">i</span></tt>, <tt class="docutils literal"><span class="pre">u</span></tt>, <tt class="docutils literal"><span class="pre">f</span></tt>,
+<tt class="docutils literal"><span class="pre">e</span></tt>, <tt class="docutils literal"><span class="pre">g</span></tt>, <tt class="docutils literal"><span class="pre">c</span></tt>, or <tt class="docutils literal"><span class="pre">%</span></tt>. <a class="reference internal" href="#tab-fmta"><em>Table&nbsp;9</em></a> summarizes all of the
+various type specifications.</p>
+<table border="1" class="docutils" id="tab-fmta">
+<caption><strong>Table 9: String Formatting Conversion Characters</strong></caption>
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Character</strong></th>
+<th class="head"><strong>Output Format</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">d</span></tt>, <tt class="docutils literal"><span class="pre">i</span></tt></td>
+<td>Integer</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">u</span></tt></td>
+<td>Unsigned integer</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">f</span></tt></td>
+<td>Floating point as m.ddddd</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">e</span></tt></td>
+<td>Floating point as m.ddddde+/-xx</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">E</span></tt></td>
+<td>Floating point as m.dddddE+/-xx</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">g</span></tt></td>
+<td>Use <tt class="docutils literal"><span class="pre">%e</span></tt> for exponents less than <span class="math">\(-4\)</span> or greater than <span class="math">\(+5\)</span>, otherwise use <tt class="docutils literal"><span class="pre">%f</span></tt></td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">c</span></tt></td>
+<td>Single character</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">s</span></tt></td>
+<td>String, or any Python data object that can be converted to a string by using the <tt class="docutils literal"><span class="pre">str</span></tt> function.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">%</span></tt></td>
+<td>Insert a literal % character</td>
+</tr>
+</tbody>
+</table>
+<p>In addition to the format character, you can also include a format
+modifier between the <tt class="docutils literal"><span class="pre">%</span></tt> and the format character. Format modifiers may
+be used to left-justify or right-justifiy the value with a specified
+field width. Modifiers can also be used to specify the field width along
+with a number of digits after the decimal point. <a class="reference internal" href="#tab-fmtaddsa"><em>Table&nbsp;10</em></a>
+explains these format modifiers</p>
+<table border="1" class="docutils" id="tab-fmtaddsa">
+<caption><strong>Table 10: Additional formatting options</strong></caption>
+<colgroup>
+<col width="18%" />
+<col width="10%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Modifier</strong></th>
+<th class="head"><strong>Example</strong></th>
+<th class="head"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>number</td>
+<td><tt class="docutils literal"><span class="pre">%20d</span></tt></td>
+<td>Put the value in a field width of 20</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">-</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">%-20d</span></tt></td>
+<td>Put the value in a field 20 characters wide, left-justified</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">+</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">%+20d</span></tt></td>
+<td>Put the value in a field 20 characters wide, right-justified</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">0</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">%020d</span></tt></td>
+<td>Put the value in a field 20 characters wide, fill in with leading zeros.</td>
+</tr>
+<tr class="row-even"><td><tt class="docutils literal"><span class="pre">.</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">%20.2f</span></tt></td>
+<td>Put the value in a field 20 characters wide with 2 characters to the right of the decimal point.</td>
+</tr>
+<tr class="row-odd"><td><tt class="docutils literal"><span class="pre">(name)</span></tt></td>
+<td><tt class="docutils literal"><span class="pre">%(name)d</span></tt></td>
+<td>Get the value from the supplied dictionary using <tt class="docutils literal"><span class="pre">name</span></tt> as the key.</td>
+</tr>
+</tbody>
+</table>
+<p>The right side of the format operator is a collection of values that
+will be inserted into the format string. The collection will be either a
+tuple or a dictionary. If the collection is a tuple, the values are
+inserted in order of position. That is, the first element in the tuple
+corresponds to the first format character in the format string. If the
+collection is a dictionary, the values are inserted according to their
+keys. In this case all format characters must use the <tt class="docutils literal"><span class="pre">(name)</span></tt>
+modifier to specify the name of the key.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">price</span> <span class="o">=</span> <span class="mi">24</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">item</span> <span class="o">=</span> <span class="s">&quot;banana&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;The </span><span class="si">%s</span><span class="s"> costs </span><span class="si">%d</span><span class="s"> cents&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="n">price</span><span class="p">))</span>
+<span class="go">The banana costs 24 cents</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;The </span><span class="si">%+10s</span><span class="s"> costs </span><span class="si">%5.2f</span><span class="s"> cents&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="n">price</span><span class="p">))</span>
+<span class="go">The     banana costs 24.00 cents</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;The </span><span class="si">%+10s</span><span class="s"> costs </span><span class="si">%10.2f</span><span class="s"> cents&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">item</span><span class="p">,</span><span class="n">price</span><span class="p">))</span>
+<span class="go">The     banana costs      24.00 cents</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">itemdict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;item&quot;</span><span class="p">:</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;cost&quot;</span><span class="p">:</span><span class="mi">24</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;The </span><span class="si">%(item)s</span><span class="s"> costs </span><span class="si">%(cost)7.1f</span><span class="s"> cents&quot;</span><span class="o">%</span><span class="n">itemdict</span><span class="p">)</span>
+<span class="go">The banana costs    24.0 cents</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>In addition to format strings that use format characters and format
+modifiers, Python strings also include a <tt class="docutils literal"><span class="pre">format</span></tt> method that can be
+used in conjunction with a new <tt class="docutils literal"><span class="pre">Formatter</span></tt> class to implement complex
+string formatting. More about these features can be found in the Python
+library reference manual.</p>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

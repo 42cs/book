@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reasoning &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="../index.html" />
+    <link rel="up" title="Table of Contents" href="../toc.html" />
+    <link rel="next" title="Tenacity/Grit" href="tenacity.html" />
+    <link rel="prev" title="About CS42" href="../CourseInfo/index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Reasoning</a><ul>
+<li><a class="reference internal" href="#intro">Intro</a></li>
+<li><a class="reference internal" href="#the-process">The Process</a><ul>
+<li><a class="reference internal" href="#what-does-it-do">What does it do?</a></li>
+<li><a class="reference internal" href="#converting-to-english">Converting to English</a></li>
+<li><a class="reference internal" href="#testing-your-hypothesis">Testing your hypothesis</a></li>
+<li><a class="reference internal" href="#exercise">Exercise</a></li>
+<li><a class="reference internal" href="#using-testing-first">Using testing first.</a></li>
+<li><a class="reference internal" href="#english-into-code">English into code.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lab">Lab</a><ul>
+<li><a class="reference internal" href="#warmups">Warmups.</a></li>
+<li><a class="reference internal" href="#exercises">Exercises</a></li>
+<li><a class="reference internal" href="#composing">Composing</a></li>
+<li><a class="reference internal" href="#fizzbuzz">Fizzbuzz</a></li>
+<li><a class="reference internal" href="#assorted">Assorted</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - About CS42" data-toggle="tooltip">
+    <a href="../CourseInfo/index.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Tenacity/Grit' data-toggle="tooltip" >
+    <a href="tenacity.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="reasoning">
+<h1>Reasoning<a class="headerlink" href="#reasoning" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>&#8220;Computers are incredibly fast, accurate and stupid; humans are incredibly slow, inaccurate and brilliant; together they are powerful beyond imagination&#8221;</div></blockquote>
+<p>Everything that happens on a computer happens for a reason.</p>
+<p>Our job as programmers is to understand the reasoning so we can make the computer do what we want it do. We don&#8217;t quite understanding the reasoning yet - but we can build up our understanding by working through sample problems.</p>
+<p>Learning to reason about code is kind of like learning how to drive. You might not understand all of the intracies of how the engine actually works - but you build an understanding of how it works by working with the inputs and observing what happens. As you use the car and use the different controls your intution about how the car works builds up.</p>
+</div>
+<div class="section" id="the-process">
+<h2>The Process<a class="headerlink" href="#the-process" title="Permalink to this headline">¶</a></h2>
+<p>If we want to understand a piece of code, we&#8217;re going to have to reason through it by following some basic steps. Every programmer follows these basic steps in some form. Over time, you&#8217;ll find your own process but for now let&#8217;s work through these steps.</p>
+<div class="section" id="what-does-it-do">
+<h3>What does it do?<a class="headerlink" href="#what-does-it-do" title="Permalink to this headline">¶</a></h3>
+<p>One of the first things you want to do when you are presented with code is to figure out what it even does.
+You want use info from the code to help you understand what the code is doing. This list is not comprehensive and you might not need to take all of the steps.</p>
+<ul class="simple">
+<li>Function &amp; Variable Names</li>
+<li>Domain &amp; Range (Input &amp; Output)</li>
+<li>Conditional Statements</li>
+<li>Mentally inserting values and testing what would happen</li>
+<li>Top-down line by line review of what happens</li>
+</ul>
+</div>
+<div class="section" id="converting-to-english">
+<h3>Converting to English<a class="headerlink" href="#converting-to-english" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Computers need specific instructions, Humans need simple instructions.</div></blockquote>
+<p>With a basic understanding of the code, we can start form a hypothesis about what the code actually does. We are converting the code into English so we can better understand it.</p>
+<p>English:
+-       This function determines whether or not a number is even.
+-       This code computes a specific fibbonacci number.</p>
+<p>Not Quite English:
+-       This function takes the variable x and returns true if x modulo (%) 2 is true.
+-       This piece of code uses iteration to sum up x and the previous value of x...</p>
+<p>While the &#8220;Not Quite English&#8221; descriptions are accurate (and in english), they still rely on the language of programming and that makes it hard to work with. It&#8217;s much easier for us to reason in a spoken language - especially since we already use English to communicate.</p>
+</div>
+<div class="section" id="testing-your-hypothesis">
+<h3>Testing your hypothesis<a class="headerlink" href="#testing-your-hypothesis" title="Permalink to this headline">¶</a></h3>
+<p>Now that we&#8217;ve formed our hypothesis, we need to verify it. There are a few ways we can approach it</p>
+<ul class="simple">
+<li>Come up with a few valid inputs and determine what should output (using only the english translation)</li>
+<li>Actually run the code with <strong>multiple</strong> valid inputs and observe what it returns</li>
+<li>Sometimes we can&#8217;t run the code, so we can act like a interpreter and mentally run through multiple inputs and verify that the result matches what we&#8217;d predict.</li>
+<li>Mentally verify that the result that we&#8217;d predict from the code makes sense when it&#8217;s used.</li>
+<li>Bonus: Test invalid inputs.</li>
+</ul>
+</div>
+<div class="section" id="exercise">
+<h3>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">¶</a></h3>
+
+<div id="doesSomething" lang="python" >
+
+<br/>
+<div id="doesSomething_code_div" style="display: block">
+<textarea cols="50" rows="12" id="doesSomething_code" class="active_code", prefixcode="undefined" lang="python">
+def doSomething(x):
+        temp = 0
+        while ((temp * temp) < x):
+                temp += 1
+        return temp*temp == x
+
+# Hypothesis?
+
+# Test:
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (doesSomething)</span> </p>
+
+<button class='btn btn-success' id="doesSomething_runb" onclick="runit('doesSomething',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="doesSomething_saveb" onclick="saveEditor('doesSomething');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="doesSomething_loadb" onclick="requestCode('doesSomething');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#doesSomething_saveb').toggle();
+    $('#doesSomething_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="doesSomething_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="doesSomething_suffix" style="display:none">
+</pre>
+<pre id="doesSomething_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+<div class="section" id="using-testing-first">
+<h3>Using testing first.<a class="headerlink" href="#using-testing-first" title="Permalink to this headline">¶</a></h3>
+<p>How you use the above steps depends on the type of code and your personal preferences. Sometimes it makes sense to attempt to mentally go through the steps above. Other times, it can help to work backwards - that is first attempt to test valid inputs and then form a hypothesis. This is often used when there is a lot of code because it can be faster than trying to come up with a hypothesis from just looking at the code.</p>
+
+<div id="test" lang="python" >
+
+<br/>
+<div id="test_code_div" style="display: block">
+<textarea cols="50" rows="12" id="test_code" class="active_code", prefixcode="undefined" lang="python">
+def doSomething2(x):
+    return x ** (0.5) % 1 == 0
+
+# Tests:
+print(doSomething2(0))
+
+
+# Hypothesis?
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (test)</span> </p>
+
+<button class='btn btn-success' id="test_runb" onclick="runit('test',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="test_saveb" onclick="saveEditor('test');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="test_loadb" onclick="requestCode('test');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#test_saveb').toggle();
+    $('#test_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="test_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="test_suffix" style="display:none">
+</pre>
+<pre id="test_pre" class="active_out">
+
+</pre>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(window).load(function() {
+        var runb = document.getElementById("test_runb");
+        runit('test',runb, undefined);
+    });
+});
+</script>
+
+</div>
+
+</div>
+<div class="section" id="english-into-code">
+<h3>English into code.<a class="headerlink" href="#english-into-code" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have an understanding of what the code does, lets start using that by turning english statements into code.</p>
+<ul class="simple">
+<li>Idenitfy important parts of the function</li>
+<li>What parts can you change to get different outputs?</li>
+<li>How do you read the question and identify the inputs and outputs.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lab">
+<h2>Lab<a class="headerlink" href="#lab" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="warmups">
+<h3>Warmups.<a class="headerlink" href="#warmups" title="Permalink to this headline">¶</a></h3>
+<p>3 minutes.</p>
+<p>What does the function doMath do? (in english, not in code) (and no math is not an acceptable answer)</p>
+
+<div id="swimming_ex2" lang="python" >
+
+<br/>
+<div id="swimming_ex2_code_div" style="display: block">
+<textarea cols="50" rows="12" id="swimming_ex2_code" class="active_code", prefixcode="undefined" lang="python">
+def doMath(a,b,c,d):
+    if (a > b and b > c and c > d):
+        x = a * b * c * d
+        y = a + b + c + d
+    else:
+        y = 0
+        x = 0
+    return y
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (swimming_ex2)</span> </p>
+
+<button class='btn btn-success' id="swimming_ex2_runb" onclick="runit('swimming_ex2',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="swimming_ex2_saveb" onclick="saveEditor('swimming_ex2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="swimming_ex2_loadb" onclick="requestCode('swimming_ex2');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#swimming_ex2_saveb').toggle();
+    $('#swimming_ex2_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="swimming_ex2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="swimming_ex2_suffix" style="display:none">
+</pre>
+<pre id="swimming_ex2_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+<div class="section" id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
+<p>What does this do? Try to use the rules from above to form a hypothesis. 5 minutes.</p>
+
+<div id="swimming_ex" lang="python" >
+
+<br/>
+<div id="swimming_ex_code_div" style="display: block">
+<textarea cols="50" rows="12" id="swimming_ex_code" class="active_code", prefixcode="undefined" lang="python">
+def summer(x, y):
+    return x + y
+def muler(x, y):
+    return x * y
+def scuba(x, y, z):
+
+    return max(x, y)
+def total(x,y):
+    return scuba(summer(x,y), muler(x,y), 42)
+#Convert a call to Total to english
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (swimming_ex)</span> </p>
+
+<button class='btn btn-success' id="swimming_ex_runb" onclick="runit('swimming_ex',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="swimming_ex_saveb" onclick="saveEditor('swimming_ex');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="swimming_ex_loadb" onclick="requestCode('swimming_ex');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#swimming_ex_saveb').toggle();
+    $('#swimming_ex_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="swimming_ex_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="swimming_ex_suffix" style="display:none">
+</pre>
+<pre id="swimming_ex_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+<p>Side note: This is a also problem to practice your enviroment diagraming skills. You should work this out later.
+Why are enviroment diagrams useful for this class and others!</p>
+
+<div id="swimming"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (swimming)</span> </p>
+<script type="text/javascript">
+var swimming_trace = {"code": "def summer(x, y):\n    return x + y\ndef muler(x, y):\n    return x * y\ndef scuba(x, y, z):\n    return max(x, y)\ndef total(x,y):\n    return scuba(summer(x,y), muler(x,y), 42)\nprint(total(10,0))", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["summer"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"summer": ["REF", 1]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null]}, "line": 3, "event": "step_line"}, {"ordered_globals": ["summer", "muler"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"summer": ["REF", 1], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null]}, "line": 5, "event": "step_line"}, {"ordered_globals": ["summer", "muler", "scuba"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"summer": ["REF", 1], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 9, "event": "step_line"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "total", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 7, "event": "call"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "total", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 8, "event": "step_line"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "summer", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": false, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}, {"frame_id": 2, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "summer", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "summer_f2", "ordered_varnames": ["x", "y"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 1, "event": "call"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "summer", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": false, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}, {"frame_id": 2, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "summer", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "summer_f2", "ordered_varnames": ["x", "y"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 2, "event": "step_line"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "summer", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": false, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}, {"frame_id": 2, "encoded_locals": {"y": 0, "x": 10, "__return__": 10}, "is_highlighted": true, "is_parent": false, "func_name": "summer", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "summer_f2", "ordered_varnames": ["x", "y", "__return__"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 2, "event": "return"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "muler", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": false, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}, {"frame_id": 3, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "muler", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "muler_f3", "ordered_varnames": ["x", "y"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 3, "event": "call"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "muler", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": false, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}, {"frame_id": 3, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": true, "is_parent": false, "func_name": "muler", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "muler_f3", "ordered_varnames": ["x", "y"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "muler", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": false, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}, {"frame_id": 3, "encoded_locals": {"y": 0, "x": 10, "__return__": 0}, "is_highlighted": true, "is_parent": false, "func_name": "muler", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "muler_f3", "ordered_varnames": ["x", "y", "__return__"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 4, "event": "return"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "scuba", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": false, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}, {"frame_id": 4, "encoded_locals": {"y": 0, "x": 10, "z": 42}, "is_highlighted": true, "is_parent": false, "func_name": "scuba", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "scuba_f4", "ordered_varnames": ["x", "y", "z"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 5, "event": "call"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "scuba", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": false, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}, {"frame_id": 4, "encoded_locals": {"y": 0, "x": 10, "z": 42}, "is_highlighted": true, "is_parent": false, "func_name": "scuba", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "scuba_f4", "ordered_varnames": ["x", "y", "z"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 6, "event": "step_line"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "scuba", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10}, "is_highlighted": false, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y"]}, {"frame_id": 4, "encoded_locals": {"y": 0, "x": 10, "__return__": 10, "z": 42}, "is_highlighted": true, "is_parent": false, "func_name": "scuba", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "scuba_f4", "ordered_varnames": ["x", "y", "z", "__return__"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 6, "event": "return"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "", "func_name": "total", "stack_to_render": [{"frame_id": 1, "encoded_locals": {"y": 0, "x": 10, "__return__": 10}, "is_highlighted": true, "is_parent": false, "func_name": "total", "is_zombie": false, "parent_frame_id_list": [], "unique_hash": "total_f1", "ordered_varnames": ["x", "y", "__return__"]}], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 8, "event": "return"}, {"ordered_globals": ["summer", "muler", "scuba", "total"], "stdout": "10\n", "func_name": "<module>", "stack_to_render": [], "globals": {"summer": ["REF", 1], "total": ["REF", 4], "scuba": ["REF", 3], "muler": ["REF", 2]}, "heap": {"1": ["FUNCTION", "summer(x, y)", null], "2": ["FUNCTION", "muler(x, y)", null], "3": ["FUNCTION", "scuba(x, y, z)", null], "4": ["FUNCTION", "total(x, y)", null]}, "line": 9, "event": "return"}]};
+var swimming_vis;
+
+$(document).ready(function() {
+    swimming_vis = new ExecutionVisualizer('swimming',swimming_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(swimming_vis,'swimming');
+    allVisualizers.push(swimming_vis);
+
+});
+
+$(document).ready(function() {
+    $("#swimming_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'swimming'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    swimming_vis.redrawConnectors();
+});
+</script>
+<p><a href="#id1"><span class="problematic" id="id2">**</span></a><a href="#id3"><span class="problematic" id="id4">*</span></a></p>
+<p>What about this function that is called &#8220;doSomethingElse&#8221;. What does it do in english?</p>
+
+<div id="doSomethingElse" lang="python" >
+
+<br/>
+<div id="doSomethingElse_code_div" style="display: block">
+<textarea cols="50" rows="12" id="doSomethingElse_code" class="active_code", prefixcode="undefined" lang="python">
+def doSomethingElse(x,y):
+    if (x - y  == 0):
+        z =  0
+    if (x - y > 0):
+        z = 1
+    if (x - y < 0):
+        z = -1
+
+print(doSomethingElse(6,5))
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (doSomethingElse)</span> </p>
+
+<button class='btn btn-success' id="doSomethingElse_runb" onclick="runit('doSomethingElse',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="doSomethingElse_saveb" onclick="saveEditor('doSomethingElse');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="doSomethingElse_loadb" onclick="requestCode('doSomethingElse');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#doSomethingElse_saveb').toggle();
+    $('#doSomethingElse_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="doSomethingElse_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="doSomethingElse_suffix" style="display:none">
+</pre>
+<pre id="doSomethingElse_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+<div class="section" id="composing">
+<h3>Composing<a class="headerlink" href="#composing" title="Permalink to this headline">¶</a></h3>
+
+<div id="composing2"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (composing2)</span> </p>
+<script type="text/javascript">
+var composing2_trace = {"code": "def square(x):\n    return x * x\n\ndef next(x):\n    return x + 1\n\ndef curry(f, g):\n    def h(x):\n        return f(g(x))\n    return h\n\ndef foo(y):\n    x = curry(square,next)\n    return x(y)\n\n# What does foo(y) do ?", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["square"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1]}, "heap": {"1": ["FUNCTION", "square(x)", null]}, "line": 4, "event": "step_line"}, {"ordered_globals": ["square", "next"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "next": ["REF", 2]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["FUNCTION", "next(x)", null]}, "line": 7, "event": "step_line"}, {"ordered_globals": ["square", "next", "curry"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "curry": ["REF", 3], "next": ["REF", 2]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["FUNCTION", "next(x)", null], "3": ["FUNCTION", "curry(f, g)", null]}, "line": 12, "event": "step_line"}, {"ordered_globals": ["square", "next", "curry", "foo"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"square": ["REF", 1], "curry": ["REF", 3], "foo": ["REF", 4], "next": ["REF", 2]}, "heap": {"1": ["FUNCTION", "square(x)", null], "2": ["FUNCTION", "next(x)", null], "3": ["FUNCTION", "curry(f, g)", null], "4": ["FUNCTION", "foo(y)", null]}, "line": 12, "event": "return"}]};
+var composing2_vis;
+
+$(document).ready(function() {
+    composing2_vis = new ExecutionVisualizer('composing2',composing2_trace,
+                                {embeddedMode: true,
+                                verticalStack: false,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(composing2_vis,'composing2');
+    allVisualizers.push(composing2_vis);
+
+});
+
+$(document).ready(function() {
+    $("#composing2_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'composing2'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    composing2_vis.redrawConnectors();
+});
+</script>
+</div>
+<div class="section" id="fizzbuzz">
+<h3>Fizzbuzz<a class="headerlink" href="#fizzbuzz" title="Permalink to this headline">¶</a></h3>
+<p>What does this function do (in English?)</p>
+
+<div id="fizzbuzz" lang="python" >
+
+<br/>
+<div id="fizzbuzz_code_div" style="display: block">
+<textarea cols="50" rows="12" id="fizzbuzz_code" class="active_code", prefixcode="undefined" lang="python">
+def fizzbuzz():
+    i = 1
+    while (i <= 100):
+        msg = ""
+        if (i % 3 == 0):
+            msg += "Fizz"
+        if (i % 5 == 0):
+            msg += "Buzz"
+        if (msg != ""):
+            print(msg)
+        else:
+            print(i)
+        i += 1
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (fizzbuzz)</span> </p>
+
+<button class='btn btn-success' id="fizzbuzz_runb" onclick="runit('fizzbuzz',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="fizzbuzz_saveb" onclick="saveEditor('fizzbuzz');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="fizzbuzz_loadb" onclick="requestCode('fizzbuzz');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#fizzbuzz_saveb').toggle();
+    $('#fizzbuzz_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="fizzbuzz_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="fizzbuzz_suffix" style="display:none">
+</pre>
+<pre id="fizzbuzz_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+
+    <button type='button' id='reavelexer5_show' class='btn btn-default' style='margin-bottom:10px;' onclick="$(this).hide();$('#reavelexer5').show();$('#reavelexer5_hide').show();$('#reavelexer5').find('.CodeMirror').each(function(i, el){el.CodeMirror.refresh();});">
+        Show Next Fizzbuzz
+    </button>
+    <button type='button' id='reavelexer5_hide' class='btn btn-default' onclick="$(this).hide();$('#reavelexer5').hide();$('#reavelexer5_show').show();" style='display:none'>Hide Exercise</button>
+    <div id='reavelexer5' style='display:none'>
+Now that we know what FizzBuzz does in English, let&#8217;s make some changes.
+    </div>
+</div>
+<div class="section" id="assorted">
+<h3>Assorted<a class="headerlink" href="#assorted" title="Permalink to this headline">¶</a></h3>
+<p>What does this do?</p>
+
+<div id="xyz" lang="python" >
+
+<br/>
+<div id="xyz_code_div" style="display: block">
+<textarea cols="50" rows="12" id="xyz_code" class="active_code", prefixcode="undefined" lang="python">
+def xyz(total, selection):
+    ways = 1
+    sel = 0
+    while sel < selection:
+        sel = sel + 1
+        ways, total = ways * total // sel, total - 1
+    return ways
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (xyz)</span> </p>
+
+<button class='btn btn-success' id="xyz_runb" onclick="runit('xyz',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="xyz_saveb" onclick="saveEditor('xyz');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="xyz_loadb" onclick="requestCode('xyz');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#xyz_saveb').toggle();
+    $('#xyz_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="xyz_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="xyz_suffix" style="display:none">
+</pre>
+<pre id="xyz_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

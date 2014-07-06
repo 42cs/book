@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Programming Tricks &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="../index.html" />
+    <link rel="up" title="Table of Contents" href="../toc.html" />
+    <link rel="next" title="Debugging" href="debug.html" />
+    <link rel="prev" title="Tenacity/Grit" href="../week1/tenacity.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Programming Tricks</a><ul>
+<li><a class="reference internal" href="#your-text-editor">Your Text Editor</a><ul>
+<li><a class="reference internal" href="#what-is-a-text-editor">What is a text editor</a></li>
+<li><a class="reference internal" href="#examples-of-text-editors">Examples of text editors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sublime-text">Sublime Text</a><ul>
+<li><a class="reference internal" href="#multiple-selection">Multiple Selection</a></li>
+<li><a class="reference internal" href="#plugins">Plugins</a></li>
+<li><a class="reference internal" href="#sidebar">Sidebar</a></li>
+<li><a class="reference internal" href="#drag-drop">Drag &amp; Drop</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#terminal">Terminal</a><ul>
+<li><a class="reference internal" href="#tricks">Tricks</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ssh">SSH</a></li>
+<li><a class="reference internal" href="#workflow">Workflow</a><ul>
+<li><a class="reference internal" href="#how-do-i-get-those-colors">How do I get those colors?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python">Python</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Tenacity/Grit" data-toggle="tooltip">
+    <a href="../week1/tenacity.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Debugging' data-toggle="tooltip" >
+    <a href="debug.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="programming-tricks">
+<h1>Programming Tricks<a class="headerlink" href="#programming-tricks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="your-text-editor">
+<h2>Your Text Editor<a class="headerlink" href="#your-text-editor" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-is-a-text-editor">
+<h3>What is a text editor<a class="headerlink" href="#what-is-a-text-editor" title="Permalink to this headline">¶</a></h3>
+<p>A text editor is a way to edit files.
+This is the primary tool that programmers work with - so often people have strong opinons about them.</p>
+<p>You should feel free to experiement with a variety of editors - but any modern text editor is good enough for now.
+Most students in CS61A use Sublime Text (<a class="reference external" href="http://www.sublimetext.com">http://www.sublimetext.com</a>) - so that&#8217;s what we&#8217;re going to work with.</p>
+</div>
+<div class="section" id="examples-of-text-editors">
+<h3>Examples of text editors<a class="headerlink" href="#examples-of-text-editors" title="Permalink to this headline">¶</a></h3>
+<p>Common text editors include Sublime Text, Vim, Notepad++, Emacs</p>
+<img alt="../_images/sublime.png" src="../_images/sublime.png" />
+<p>You might hear about Vim from other programmers - it&#8217;s simply a command line based editor (runs in the terminal) that takes advantage of modes (insert vs. scroll) and keyboard shortcuts. It has a high learning curve so we&#8217;re not going to cover it in this class.</p>
+<p>Bad text editors (Avoid these!): Notepad.exe, TextEdit (on mac), Microsoft Word, IDLE, Python Interactive Mode.</p>
+</div>
+</div>
+<div class="section" id="sublime-text">
+<h2>Sublime Text<a class="headerlink" href="#sublime-text" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="multiple-selection">
+<h3>Multiple Selection<a class="headerlink" href="#multiple-selection" title="Permalink to this headline">¶</a></h3>
+<img alt="http://i.imgur.com/62RS0C8.gif" src="http://i.imgur.com/62RS0C8.gif" />
+</div>
+<div class="section" id="plugins">
+<h3>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h3>
+<p>You can install plugins to make things easier.</p>
+</div>
+<div class="section" id="sidebar">
+<h3>Sidebar<a class="headerlink" href="#sidebar" title="Permalink to this headline">¶</a></h3>
+<p>View all the files in the directory so you can switch easily!</p>
+<img alt="../_images/sidebar.png" src="../_images/sidebar.png" />
+</div>
+<div class="section" id="drag-drop">
+<h3>Drag &amp; Drop<a class="headerlink" href="#drag-drop" title="Permalink to this headline">¶</a></h3>
+<p>You can drag and drop folders/files into sublime text</p>
+</div>
+<div class="section" id="commands">
+<h3>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h3>
+<p>Using the keyboard is faster than using the mouse or scrolling. Trying to find that function? Why scroll through when Sublime will find it for you.</p>
+<p>Press Command/Control - P to open up the window and type &#8216;&#64;&#8217; followed by your function name. Sublime will automatically take you there.</p>
+<img alt="../_images/atsearch.png" src="../_images/atsearch.png" />
+<p>You can also search for different files in the same folder with the same command - just press Command/Control - P and the name of hte file</p>
+<p>Use the find command for more. Command/Control-F.</p>
+</div>
+</div>
+<div class="section" id="terminal">
+<h2>Terminal<a class="headerlink" href="#terminal" title="Permalink to this headline">¶</a></h2>
+<p>The terminal is an interface to work with your computer. Many years ago, the terminal was the only way to interact with a computer. Eventually, computers became powerful enough to support a display and the idea of a desktop and visual interface become possible. You might traditionally use your mouse to navigate around your files or to launch an application, but you can do all of that through the terminal. It&#8217;s your text-based interface to your computer.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="63%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Task</th>
+<th class="head">Command</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Open Folder</td>
+<td>cd</td>
+</tr>
+<tr class="row-odd"><td>List files</td>
+<td>ls</td>
+</tr>
+<tr class="row-even"><td>Run python</td>
+<td>python</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="tricks">
+<h3>Tricks<a class="headerlink" href="#tricks" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The terminal remembers your history - so if you want to rerun a command, just press the up arrow. If you want to see your entire history, run the &#8216;history&#8217; command.</li>
+<li>Need to change someting near the beginning of the line? Don&#8217;t delete the entire line, just press Control+A to move your cursor the beginning of the line. Now want to move back to the end of the line? Control-E</li>
+<li>You can use the up/down keys or Control-P to search your recent commands. Use Control+R to search for a command and rerun it.</li>
+<li>To exit from a program, you can use Control+C and to force quit a session Control+D.</li>
+<li>Use Control + and Control - to control the size of the window.</li>
+<li>You can have tabs! Control/Command - T</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ssh">
+<h2>SSH<a class="headerlink" href="#ssh" title="Permalink to this headline">¶</a></h2>
+<p>SSH stands for secure shell. It&#8217;s a way to connect to another computer. With SSH you have a direct interface to the remote computer and your terminal is now a terminal to the remote computer. Any programs you run will be on the remote computer, not yours. The files you see when you are connected are the files on the remote computer, not yours.</p>
+<p>Once you leave SSH you will be back to your own computer.</p>
+<ul class="simple">
+<li>Why is SSH not as fast as using my own computer? That&#8217;s because it needs to send every keystroke to the remote computer and wait for a response, once it gets a response - it will display the output.</li>
+<li>You can use all of the terminal tricks from above while you are in a SSH session.</li>
+</ul>
+</div>
+<div class="section" id="workflow">
+<h2>Workflow<a class="headerlink" href="#workflow" title="Permalink to this headline">¶</a></h2>
+<p>A common setup is to have your terminal next to your text editor so you can type into your editor and then run commands in your terminal.</p>
+<img alt="http://inst.eecs.berkeley.edu/~cs61a/su14/lab/lab00/assets/productive_workflow.png" src="http://inst.eecs.berkeley.edu/~cs61a/su14/lab/lab00/assets/productive_workflow.png" />
+<div class="section" id="how-do-i-get-those-colors">
+<h3>How do I get those colors?<a class="headerlink" href="#how-do-i-get-those-colors" title="Permalink to this headline">¶</a></h3>
+<p>The theme is called Solarized Dark. (<a class="reference external" href="http://ethanschoonover.com/solarized">http://ethanschoonover.com/solarized</a>)</p>
+<p>OSX Terminal: <a class="reference external" href="https://github.com/tomislav/osx-terminal.app-colors-solarized">https://github.com/tomislav/osx-terminal.app-colors-solarized</a>
+Sublime Text: <a class="reference external" href="https://github.com/SublimeColors/Solarized">https://github.com/SublimeColors/Solarized</a> (Follow the instructions)</p>
+</div>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Interactive Mode:</dt>
+<dd><p class="first">$ python3 -i</p>
+<p>Python 3.4.1 (default, May 19 2014, 13:10:29)
+[GCC 4.2.1 Compatible Apple LLVM 5.1 (clang-503.0.40)] on darwin
+Type &#8220;help&#8221;, &#8220;copyright&#8221;, &#8220;credits&#8221; or &#8220;license&#8221; for more information.</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="go">hello world</span>
+</pre></div>
+</div>
+</dd>
+<dt>Python program:</dt>
+<dd><p class="first">$ python3 file.py</p>
+<p class="last">hello world</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>
