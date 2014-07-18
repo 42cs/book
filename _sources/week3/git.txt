@@ -1,0 +1,87 @@
+.. Author Sumukh Sridhara 2014
+.. for CS42
+
+=========
+Version Control - git 
+=========
+
+.. notes 
+
+
+Question
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. mchoicema:: question_git1
+   :answer_a: Carrier Pigeons. Duh. 
+   :answer_b: Email files back and forth and copy and paste. 
+   :answer_c: Read the code alound while the other person copies it down. 
+   :answer_d: Use a specialized tool that solves this exact problem and is used by millions of programmers 
+   :correct: d
+   :feedback_a: Uh no.
+   :feedback_b: That's really annoying though. 
+   :feedback_c: Even if you had 100s of lines? 
+   :feedback_d: Yes. That tool is called git?   
+
+   How should multiple programmers work on the same file at the same time?
+
+Setup 
+----------------
+#. Install Git Here (Required):  http://git-scm.com/downloads
+#. If you want a GUI (optional) :  http://git-scm.com/downloads/guis
+#. Use git bash if you are on windows. 
+
+Presentation
+-------------------------
+Follow along with your own computer! 
+
+.. raw:: html
+
+	<iframe src="https://docs.google.com/presentation/d/11Q05ylxGIfxb-ZH7WkqdwTNtnjTZDlWJFpJu3wqHWZ8/embed?start=false&loop=false&delayms=10000000" frameborder="0" width="667" height="390" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+Demo
+-------------------------
+
+We're going to now work as a groups. Find two other people and practice commiting, pushing, and pulling. 
+
+
+Commands
+--------------------------
+
+	#. git add – adds a file to the tracked files and stages it for commit
+
+		#. Common use - git add "file.py" or git add * (To add everything)
+
+	#. git status – shows you the current status of your repository (like changed / added / deleted files)
+
+	#. git log – shows you the n last commit messages with some other data
+
+	#. git commit – it will “save” current state of files locally, and prepare them for git push
+
+		#. Common use - git commit -m 'Commit Message' or git commit -am 'Commit Messge'
+
+	#. git push – it will collect all of your current commits that havent been commited and push them to remote repository
+
+		#. Common use - Git push origin master
+
+	#. git pull – combination of git fetch and git merge
+
+		#. Common use - Git pull origin master
+
+	#. git fetch – it fetches the remote changes to your local repository, but it doesn’t change your current source contents
+
+	#. git merge – it’s used for merging 2 branches into one, if theres no need for 2 anymore
+
+	#. git branch <new-branch-name> – creates a branch with name “new-branch-name”
+
+	#. git diff – if you fetch the changes from remote, you can then see the difference between your code current version and last one on remote
+
+A cheat sheet
+--------------------
+
+.. raw:: html
+
+	<iframe src="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf" frameborder="0" width="667" height="800" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+
+ 

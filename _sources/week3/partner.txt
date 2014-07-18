@@ -1,0 +1,89 @@
+.. Author Sumukh Sridhara 2014
+.. for CS42
+
+=========
+Be a good programming partner. 
+=========
+
+.. notes 
+
+	Programming is a team sport. It's not a solitary. 
+
+	What defines a great programmer? It's not just ridicious skills. 
+
+	Who believes me? You are a hiring manager - and you have a choice of people to hire. 
+
+	One potential hire is a great programmer - but they seem to alienate your team and can't really work with others. 
+
+	Do you hire this candidate? Why or why not? 
+
+	It doesn't matter how good you are - if you can't work with others. 
+
+	We'll be going over how to be a good project partner and how to get help. 
+
+.. figure::  Figures/rlduck.jpg
+   :scale: 50%
+   :align: center
+
+   Figure 1: The ideal partner - a human rubber duck
+
+
+A good project partner: 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Has a similiar skill level 
+	* Why do you think this is  good? 
+#. Communicates a lot
+	* You can reach them anytime. 
+	* Close (Proximity).
+#. Wants to learn and is willing to work for it. 
+#. Helps & supports you.
+
+
+A bad project parter: 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Has a drastically different skill level
+	* Why do you think this is a problem? 
+#. Lack of communication
+	* You can't talk to them or they are unresponsive. 
+	* Can't meet due to distances/times.
+#. Doesn't want to learn or work. 
+#. Doesn't help you or support you.
+
+
+Steps to being a good partner:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Dont't be a bad project partner. 
+#. ...?
+#. Profit! 
+
+
+General tips
+-------------
+
+#. Pair programming is awesome. 
+	#. tl;dr - A real life rubberduck!!!!
+	#. Helps catch mistakes and ensures that both of you work on it. 
+	#. One person types and the other watches over closely and assists. 
+	#. Why is this good? 
+#. Don't just split the work in half and not touch the other parts
+	#. Most importantly, you cut your learning in half
+	#. Can't help the other person
+	#. What if the other person can't finish? 
+	#. Hard to estimate workload
+#. Be sure to make the distribution of work relatively equal. 
+	#. Not good to feel like you are doing more of the work 
+	#. No-one should be “carrying” 
+#. Communicate a lot
+#. Don't email or use google docs to share code. Use a private version control system 
+
+#. Conflicts
+	#. Occur usually because one person is doing more work
+	#. Make sure your partner is reachable. Proximity, Messaging, Calls
+	#. Always look at other persons contributions - make sure you understand it. 
+	#. Address issues right away. 
+	#. You can change partners!
+
+
+
+ 

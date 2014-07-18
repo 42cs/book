@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Exercises &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="../index.html" />
+    <link rel="up" title="CS61A Material" href="../61a.html" />
+    <link rel="prev" title="Glossary" href="Glossary.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Exercises</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Glossary" data-toggle="tooltip">
+    <a href="Glossary.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+    <li class="divider-vertical"></li>
+  
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="exercises">
+<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic">
+<li><div id='q1' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q1-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q1-Answer'><span>Answer</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q1-Discussion'><span>Discussion</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q1-Question'><p>We can represent a rectangle by knowing three things: the location of its lower left corner, its width, and its height.
+Create a class definition for a Rectangle class using this idea.  To create a Rectangle object at location (4,5) with width 6
+and height 5, we would do the following:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div><div class='tab-pane' id='q1-Answer'>
+<div id="ch_cl2_answer1" lang="python" >
+
+<br/>
+<div id="ch_cl2_answer1_code_div" style="display: block">
+<textarea cols="50" rows="12" id="ch_cl2_answer1_code" class="active_code", prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def __str__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+
+class Rectangle:
+    """Rectangle class using Point, width and height"""
+
+    def __init__(self, initP, initW, initH):
+
+        self.location = initP
+        self.width = initW
+        self.height = initH
+
+loc = Point(4, 5)
+r = Rectangle(loc, 6, 5)
+print(r)
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch_cl2_answer1)</span> </p>
+
+<button class='btn btn-success' id="ch_cl2_answer1_runb" onclick="runit('ch_cl2_answer1',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_answer1_saveb" onclick="saveEditor('ch_cl2_answer1');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_answer1_loadb" onclick="requestCode('ch_cl2_answer1');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch_cl2_answer1_saveb').toggle();
+    $('#ch_cl2_answer1_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="ch_cl2_answer1_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch_cl2_answer1_suffix" style="display:none">
+</pre>
+<pre id="ch_cl2_answer1_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div><div class='tab-pane' id='q1-Discussion'><script type="text/javascript">
+    function disqus_ch_cl2_q1_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'disqus_ch_cl2_q1_' + eBookConfig.course;
+                    this.page.url = 'http://disqus_ch_cl2_q1_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'interactivepython';    
+            disqus_identifier = 'disqus_ch_cl2_q1_' + eBookConfig.course;
+            disqus_url = 'http://disqus_ch_cl2_q1_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="disqus_ch_cl2_q1" onclick="disqus_ch_cl2_q1_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='disqus_ch_cl2_q1']").attr('data-disqus-identifier', 'disqus_ch_cl2_q1_' + eBookConfig.course);
+</script>
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q1 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q1 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q1 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first">Add the following accessor methods to the Rectangle class: <tt class="docutils literal"><span class="pre">getWidth</span></tt>, <tt class="docutils literal"><span class="pre">getHeight</span></tt>, <tt class="docutils literal"><span class="pre">__str__</span></tt>.</p>
+
+<div id="ch_cl2_q2" lang="python" >
+
+<br/>
+<div id="ch_cl2_q2_code_div" style="display: block">
+<textarea cols="50" rows="12" id="ch_cl2_q2_code" class="active_code", prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch_cl2_q2)</span> </p>
+
+<button class='btn btn-success' id="ch_cl2_q2_runb" onclick="runit('ch_cl2_q2',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_q2_saveb" onclick="saveEditor('ch_cl2_q2');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_q2_loadb" onclick="requestCode('ch_cl2_q2');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch_cl2_q2_saveb').toggle();
+    $('#ch_cl2_q2_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="ch_cl2_q2_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch_cl2_q2_suffix" style="display:none">
+</pre>
+<pre id="ch_cl2_q2_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</li>
+<li><div id='q3' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q3-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q3-Answer'><span>Answer</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q3-Discussion'><span>Discussion</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q3-Question'><p>Add a method <tt class="docutils literal"><span class="pre">area</span></tt> to the Rectangle class that returns the area of any instance:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">area</span><span class="p">(),</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div><div class='tab-pane' id='q3-Answer'>
+<div id="ch_cl2_q3answer" lang="python" >
+
+<br/>
+<div id="ch_cl2_q3answer_code_div" style="display: block">
+<textarea cols="50" rows="12" id="ch_cl2_q3answer_code" class="active_code", prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def __str__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+
+class Rectangle:
+    """Rectangle class using Point, width and height"""
+
+    def __init__(self, initP, initW, initH):
+
+        self.location = initP
+        self.width = initW
+        self.height = initH
+
+    def area(self):
+        return self.width * self.height
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch_cl2_q3answer)</span> </p>
+
+<button class='btn btn-success' id="ch_cl2_q3answer_runb" onclick="runit('ch_cl2_q3answer',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_q3answer_saveb" onclick="saveEditor('ch_cl2_q3answer');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_q3answer_loadb" onclick="requestCode('ch_cl2_q3answer');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch_cl2_q3answer_saveb').toggle();
+    $('#ch_cl2_q3answer_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="ch_cl2_q3answer_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch_cl2_q3answer_suffix" style="display:none">
+</pre>
+<pre id="ch_cl2_q3answer_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div><div class='tab-pane' id='q3-Discussion'><script type="text/javascript">
+    function disqus_d43c8f8afb2c4c808917bb7e948dbcbe_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'disqus_d43c8f8afb2c4c808917bb7e948dbcbe_' + eBookConfig.course;
+                    this.page.url = 'http://disqus_d43c8f8afb2c4c808917bb7e948dbcbe_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'interactivepython';    
+            disqus_identifier = 'disqus_d43c8f8afb2c4c808917bb7e948dbcbe_' + eBookConfig.course;
+            disqus_url = 'http://disqus_d43c8f8afb2c4c808917bb7e948dbcbe_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="disqus_d43c8f8afb2c4c808917bb7e948dbcbe" onclick="disqus_d43c8f8afb2c4c808917bb7e948dbcbe_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='disqus_d43c8f8afb2c4c808917bb7e948dbcbe']").attr('data-disqus-identifier', 'disqus_d43c8f8afb2c4c808917bb7e948dbcbe_' + eBookConfig.course);
+</script>
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q3 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q3 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q3 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first">Write a <tt class="docutils literal"><span class="pre">perimeter</span></tt> method in the Rectangle class so that we can find
+the perimeter of any rectangle instance:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">perimeter</span><span class="p">(),</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+
+<div id="ch_cl2_q4" lang="python" >
+
+<br/>
+<div id="ch_cl2_q4_code_div" style="display: block">
+<textarea cols="50" rows="12" id="ch_cl2_q4_code" class="active_code", prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch_cl2_q4)</span> </p>
+
+<button class='btn btn-success' id="ch_cl2_q4_runb" onclick="runit('ch_cl2_q4',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_q4_saveb" onclick="saveEditor('ch_cl2_q4');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_q4_loadb" onclick="requestCode('ch_cl2_q4');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch_cl2_q4_saveb').toggle();
+    $('#ch_cl2_q4_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="ch_cl2_q4_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch_cl2_q4_suffix" style="display:none">
+</pre>
+<pre id="ch_cl2_q4_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</li>
+<li><div id='q5' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q5-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q5-Answer'><span>Answer</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q5-Discussion'><span>Discussion</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q5-Question'><p>Write a <tt class="docutils literal"><span class="pre">transpose</span></tt> method in the Rectangle class that swaps the width
+and the height of any rectangle instance:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div><div class='tab-pane' id='q5-Answer'>
+<div id="ch_cl2_q5answer" lang="python" >
+
+<br/>
+<div id="ch_cl2_q5answer_code_div" style="display: block">
+<textarea cols="50" rows="12" id="ch_cl2_q5answer_code" class="active_code", prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def __str__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+
+class Rectangle:
+    """Rectangle class using Point, width and height"""
+
+    def __init__(self, initP, initW, initH):
+
+        self.location = initP
+        self.width = initW
+        self.height = initH
+
+    def transpose(self):
+        temp = self.width
+        self.width = self.height
+        self.height = temp
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch_cl2_q5answer)</span> </p>
+
+<button class='btn btn-success' id="ch_cl2_q5answer_runb" onclick="runit('ch_cl2_q5answer',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_q5answer_saveb" onclick="saveEditor('ch_cl2_q5answer');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_q5answer_loadb" onclick="requestCode('ch_cl2_q5answer');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch_cl2_q5answer_saveb').toggle();
+    $('#ch_cl2_q5answer_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="ch_cl2_q5answer_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch_cl2_q5answer_suffix" style="display:none">
+</pre>
+<pre id="ch_cl2_q5answer_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div><div class='tab-pane' id='q5-Discussion'><script type="text/javascript">
+    function disqus_chcl_q5disc_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'disqus_chcl_q5disc_' + eBookConfig.course;
+                    this.page.url = 'http://disqus_chcl_q5disc_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'interactivepython';    
+            disqus_identifier = 'disqus_chcl_q5disc_' + eBookConfig.course;
+            disqus_url = 'http://disqus_chcl_q5disc_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="disqus_chcl_q5disc" onclick="disqus_chcl_q5disc_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='disqus_chcl_q5disc']").attr('data-disqus-identifier', 'disqus_chcl_q5disc_' + eBookConfig.course);
+</script>
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q5 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q5 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q5 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first">Write a new method in the Rectangle class to test if a Point falls within
+the rectangle.  For this exercise, assume that a rectangle at (0,0) with
+width 10 and height 5 has <em>open</em> upper bounds on the width and height,
+i.e. it stretches in the x direction from [0 to 10), where 0 is included
+but 10 is excluded, and from [0 to 5) in the y direction.  So
+it does not contain the point (10, 2).  These tests should pass:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">r</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)),</span> <span class="bp">False</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span> <span class="bp">False</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">4.99999</span><span class="p">)),</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">test</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">)),</span> <span class="bp">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><div id='q7' class='alert alert-warning'><ul class='nav nav-tabs' id='%(divid)s_tab'>
+<li>
+    <a data-toggle='tab' href='#q7-Question'><span>Question</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q7-Answer'><span>Answer</span></a>
+</li>
+
+<li>
+    <a data-toggle='tab' href='#q7-Discussion'><span>Discussion</span></a>
+</li>
+</ul><div class='tab-content'><div class='tab-pane' id='q7-Question'><p>Write a new method called <tt class="docutils literal"><span class="pre">diagonal</span></tt> that will return the length of the diagonal that runs
+from the lower left corner to the opposite corner.</p>
+</div><div class='tab-pane' id='q7-Answer'>
+<div id="ch_cl2_answer7" lang="python" >
+
+<br/>
+<div id="ch_cl2_answer7_code_div" style="display: block">
+<textarea cols="50" rows="12" id="ch_cl2_answer7_code" class="active_code", prefixcode="undefined" lang="python">
+class Point:
+    """ Point class for representing and manipulating x,y coordinates. """
+
+    def __init__(self, initX, initY):
+
+        self.x = initX
+        self.y = initY
+
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def __str__(self):
+        return "x=" + str(self.x) + ", y=" + str(self.y)
+
+
+class Rectangle:
+    """Rectangle class using Point, width and height"""
+
+    def __init__(self, initP, initW, initH):
+
+        self.location = initP
+        self.width = initW
+        self.height = initH
+
+    def diagonal(self):
+
+        d = (self.width**2 + self.height**2) ** 0.5
+        return d
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch_cl2_answer7)</span> </p>
+
+<button class='btn btn-success' id="ch_cl2_answer7_runb" onclick="runit('ch_cl2_answer7',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_answer7_saveb" onclick="saveEditor('ch_cl2_answer7');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_answer7_loadb" onclick="requestCode('ch_cl2_answer7');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch_cl2_answer7_saveb').toggle();
+    $('#ch_cl2_answer7_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="ch_cl2_answer7_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch_cl2_answer7_suffix" style="display:none">
+</pre>
+<pre id="ch_cl2_answer7_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</div><div class='tab-pane' id='q7-Discussion'><script type="text/javascript">
+    function disqus_5f1e3f17064f44088a896e9bc0e10b4d_disqus(source) { 
+        if (window.DISQUS) {
+
+            $('#disqus_thread').insertAfter(source); //put the DIV for the Disqus box after the link
+
+            //if Disqus exists, call it's reset method with new parameters
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = 'disqus_5f1e3f17064f44088a896e9bc0e10b4d_' + eBookConfig.course;
+                    this.page.url = 'http://disqus_5f1e3f17064f44088a896e9bc0e10b4d_'+eBookConfig.course+'.interactivepython.com/#!';
+                }
+            });
+
+        } else {
+            //insert a wrapper in HTML after the relevant "show comments" link
+            $('<div id="disqus_thread"></div>').insertAfter(source);
+
+            // set Disqus required vars
+            disqus_shortname = 'interactivepython';    
+            disqus_identifier = 'disqus_5f1e3f17064f44088a896e9bc0e10b4d_' + eBookConfig.course;
+            disqus_url = 'http://disqus_5f1e3f17064f44088a896e9bc0e10b4d_'+eBookConfig.course+'.interactivepython.com/#!';
+
+            //append the Disqus embed script to HTML
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            $('head').append(dsq);
+
+        }
+    }
+</script>
+
+<a href="#disqus_thread" class='disqus_thread_link' data-disqus-identifier="disqus_5f1e3f17064f44088a896e9bc0e10b4d" onclick="disqus_5f1e3f17064f44088a896e9bc0e10b4d_disqus(this);">Show Comments</a>
+<script type='text/javascript'>
+    $("a[data-disqus-identifier='disqus_5f1e3f17064f44088a896e9bc0e10b4d']").attr('data-disqus-identifier', 'disqus_5f1e3f17064f44088a896e9bc0e10b4d_' + eBookConfig.course);
+</script>
+</div></div>
+    </div>
+    <script type='text/javascript'>
+        $('#q7 .nav-tabs a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+
+        // activate the first tab
+        var el = $('#q7 .nav-tabs a')[0];
+        $(el).tab('show');
+
+        $('#q7 .nav-tabs a').on('shown.bs.tab', function (e) {
+            var content_div = $(e.target.attributes.href.value);
+            content_div.find('.disqus_thread_link').each(function() {
+                $(this).click();
+            });
+
+            content_div.find('.CodeMirror').each(function(i, el) {
+                el.CodeMirror.refresh();
+            });
+        })
+    </script>
+</li>
+<li><p class="first">In games, we often put a rectangular &#8220;bounding box&#8221; around our sprites in
+the game.  We can then do <em>collision detection</em> between, say, bombs and
+spaceships, by comparing whether their rectangles overlap anywhere.</p>
+<p>Write a function to determine whether two rectangles collide. <em>Hint:
+this might be quite a tough exercise!  Think carefully about all the
+cases before you code.</em></p>
+
+<div id="ch_cl2_q8" lang="python" >
+
+<br/>
+<div id="ch_cl2_q8_code_div" style="display: block">
+<textarea cols="50" rows="12" id="ch_cl2_q8_code" class="active_code", prefixcode="undefined" lang="python">
+
+
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (ch_cl2_q8)</span> </p>
+
+<button class='btn btn-success' id="ch_cl2_q8_runb" onclick="runit('ch_cl2_q8',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_q8_saveb" onclick="saveEditor('ch_cl2_q8');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="ch_cl2_q8_loadb" onclick="requestCode('ch_cl2_q8');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#ch_cl2_q8_saveb').toggle();
+    $('#ch_cl2_q8_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="ch_cl2_q8_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="ch_cl2_q8_suffix" style="display:none">
+</pre>
+<pre id="ch_cl2_q8_pre" class="active_out">
+
+</pre>
+
+
+</div>
+
+</li>
+</ol>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

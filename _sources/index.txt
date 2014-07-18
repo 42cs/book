@@ -90,16 +90,19 @@ using a methodical approach to debugging.
 
     week2/DebuggingBook.rst
 
+Week 3 - Collaboration & Git 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Most programming doesn't happen alone - This week we'll go over strategies and tools to collaborate effectively. We'll be using a tool called Git - which can help you on your first group project. 
+
+.. toctree::
+    :maxdepth: 2
+
+    week2/questions.rst
+    week2/partner.rst
+    week2/git.rst
 
 
-
-Week 3 - Git & Collaboration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This week will be timed with the release of the first group project. 
-
-
-
-Logistics
+Logistics & Extras
 ~~~~~~~~~~~~
 .. toctree::
     :maxdepth: 1
@@ -107,6 +110,13 @@ Logistics
     CourseInfo/index.rst
     Extras/index.rst
     toc.rst
+
+61A Material:
+
+.. toctree::
+    :maxdepth: 2
+
+    61a.rst
 
 
 

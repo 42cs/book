@@ -1,0 +1,105 @@
+.. Author Sumukh Sridhara 2014
+.. for CS42
+.. These are more of a personal notes for me on what to talk about - not something that is readable. 
+
+=========
+Asking good questions
+=========
+
+.. notes 
+
+	Programming is a team sport. It's not a solitary. 
+
+	What defines a great programmer? It's not just ridicious skills. 
+
+	Who believes me? You are a hiring manager - and you have a choice of people to hire. 
+
+	One potential hire is a great programmer - but they seem to alienate your team and can't really work with others. 
+
+	Do you hire this candidate? Why or why not? 
+
+	It doesn't matter how good you are - if you can't work with others. 
+
+	We'll be going over how to be a good project partner and how to get help. 
+
+
+How to ask for help
+------------------------
+
+Steps to solving a problem:
+
+#. Talk to your rubberduck. 
+#. ...?
+#. Profit! 
+
+.. figure::  Figures/ducky.JPG
+   :scale: 50%
+   :align: center
+
+   Figure 1: Rubber Duck Using Piazza
+
+Sometimes you actually need a response from an animate object. If you actually want a helpful response, it helps to provide the right information. 
+
+Things to consider. 
+
+#. Did you search for it first! 
+	* This is a critical step. Why wait for a response when there is already one?
+#. Where are you posting your question? 
+	* Is it Piazza? StackOverflow? Email?
+#. Don't just dump a question onto piazza and expect to have it sovled without effort on your part. 
+	#. People like helping others who put in effort. 
+#. Vauge questions get vauge answers.
+
+The guideline for posting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#. Include the approriate details 
+	#. Title: What is the issue. 
+		* "It doesn't work" - isn't an issue. 
+	#. If it crashes or errors. Include the entire error! 
+		* Your test cases
+		* The error message
+		* What you think the error message means
+		* What you think might have caused the error
+	#. Explain the question in your own words so others can quickly understand it. 
+		#. Often, you'll solve the issue or think of something as you are doing this. 
+		#. Make sure to mention what you've tried.
+		#. Screenshots and formatted code make it easier to understand
+	#. Make it clear how someone can help you. 
+	#. If you resolve it makes sure to help others who would have solved it.
+
+.. figure:: http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png
+
+.. notes
+	
+	What makes a good question when it comes to a question. 
+
+Practice
+~~~~~~~~~~~
+
+What looks easier to read? 
+
+::
+
+	def square(x):
+		return x*x
+
+	def sum_of_squares(x, y):
+		return square(x) + square(y)
+or 
+
+def square(x):
+
+return x * x
+
+def sum_of_squares(x, y):
+
+return square(x) + square(y)
+
+**********
+
+Good or bad? 
+
+.. figure:: Figures/badquestion.png
+	:align: center
+
+	Figure 2: No repsonse ... I wonder why? 

@@ -1,0 +1,49 @@
+CS61A Material
+--------------
+
+Background Reading
+::::::::::::::::
+
+.. toctree::
+    :maxdepth: 1
+
+    Introduction/WhatIsProgramming.rst
+    Introduction/WhatIsComputerScience.rst
+    GeneralIntro/ThePythonProgrammingLanguage.rst
+    GeneralIntro/SpecialWaystoExecutePythoninthisBook.rst
+    GeneralIntro/MoreAboutPrograms.rst
+    GeneralIntro/Glossary.rst
+    BookLabs/pythonshell.rst
+
+Object Oriented Programming - the Basics
+::::::::::::::::
+(From How To Think Like a Computer Scientist)
+
+.. toctree::
+   :maxdepth: 2
+
+   ClassesBasics/Object-orientedprogramming.rst
+   ClassesBasics/Achangeofperspective.rst
+   ClassesBasics/ObjectsRevisited.rst
+   ClassesBasics/UserDefinedClasses.rst
+   ClassesBasics/ImprovingourConstructor.rst
+   ClassesBasics/AddingOtherMethodstoourClass.rst
+   ClassesBasics/ObjectsasArgumentsandParameters.rst
+   ClassesBasics/ConvertinganObjecttoaString.rst
+   ClassesBasics/InstancesasReturnValues.rst
+   ClassesBasics/Glossary.rst
+   ClassesBasics/Exercises.rst
+
+
+OOP (Classes & Objects) - Digging a little deeper
+::::::::::::::::
+
+.. toctree::
+   :maxdepth: 2
+
+   ClassesDiggingDeeper/Fractions.rst
+   ClassesDiggingDeeper/ObjectsareMutable.rst
+   ClassesDiggingDeeper/Sameness.rst
+   ClassesDiggingDeeper/ArithmeticMethods.rst
+   ClassesDiggingDeeper/Glossary.rst
+   ClassesDiggingDeeper/Exercises.rst

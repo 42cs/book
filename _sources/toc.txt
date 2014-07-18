@@ -40,7 +40,7 @@ Enviroment Information
    BookLabs/pythonshell.rst
    
 
-Background Reading
+Background Reading & Extras
 ----------------------
 From 'How to Think Like A Computer Scientist by Brad Miller, David Ranum'
 
@@ -53,4 +53,9 @@ From 'How to Think Like A Computer Scientist by Brad Miller, David Ranum'
     GeneralIntro/MoreAboutPrograms.rst
     GeneralIntro/Glossary.rst
     BookLabs/pythonshell.rst
+
+.. toctree::
+    :maxdepth: 2
+
+    61a.rst
 
