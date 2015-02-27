@@ -61,9 +61,9 @@ First Steps
 
 
 Material
-----------  
+----------
 
-Week 1 - Reasoning & Grit 
+Week 1 - Reasoning & Grit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 This week will get students excited/motivated & make them comfortable reasoning through code (by converting code to english).
 
@@ -77,7 +77,7 @@ This week will get students excited/motivated & make them comfortable reasoning 
 Week 2 - Enviroment & Debugging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We'll make sure that students are comfortable and productive with their text editors and unix. Then we'll practice
-using a methodical approach to debugging. 
+using a methodical approach to debugging.
 
 
 .. toctree::
@@ -90,9 +90,9 @@ using a methodical approach to debugging.
 
     week2/DebuggingBook.rst
 
-Week 3 - Collaboration & Git 
+Week 3 - Collaboration & Git
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Most programming doesn't happen alone - This week we'll go over strategies and tools to collaborate effectively. We'll be using a tool called Git - which can help you on your first group project. 
+Most programming doesn't happen alone - This week we'll go over strategies and tools to collaborate effectively. We'll be using a tool called Git - which can help you on your first group project.
 
 .. toctree::
     :maxdepth: 2
@@ -102,9 +102,9 @@ Most programming doesn't happen alone - This week we'll go over strategies and t
     week3/git.rst
 
 
-Week 4 - Reading Code 
+Week 4 - Reading Code
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A lot of programming is just reading code - this week we will practice skills to read & understand code. We'll also go over what makes for good style & how to use documentation.  
+A lot of programming is just reading code - this week we will practice skills to read & understand code. We'll also go over what makes for good style & how to use documentation.
 
 .. toctree::
     :maxdepth: 2
@@ -112,9 +112,9 @@ A lot of programming is just reading code - this week we will practice skills to
     week4/index.rst
     week4/style.rst
 
-Week 5 - Building Real Things 
+Week 5 - Building Real Things
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This is where the course ties everything backtogether and we learn how to build real things. We'll build a version of IBM's Watson supercomputer with just the skills we've learnt so far in our CS classes. This will also cover how to think of ideas for a project or startup. These skills will help you be able to make your own projects and eventually land an awesome internship or job.    
+This is where the course ties everything backtogether and we learn how to build real things. We'll build a version of IBM's Watson supercomputer with just the skills we've learnt so far in our CS classes. This will also cover how to think of ideas for a project or startup. These skills will help you be able to make your own projects and eventually land an awesome internship or job.
 
 .. toctree::
     :maxdepth: 2
@@ -152,9 +152,9 @@ Piazza: http://piazza.com/berkeley/summer2014/cs42
 
 Acknowledgement/Sources
 -----------------------
-The material under "Background Reading" as well as the artwork above comes directly from 
+The material under "Background Reading" as well as the artwork above comes directly from
 
-  How to Think Like A Computer Scientist by Brad Miller, David Ranum.  
+  How to Think Like A Computer Scientist by Brad Miller, David Ranum.
 
 Source: http://interactivepython.org/runestone/static/thinkcspy/index.html
 
@@ -164,5 +164,5 @@ View the book and the authors here - http://interactivepython.org
 
 This website itself is powered by http://runestoneinteractive.org/
 
-Special Thanks to .... 
+Special Thanks to ....
 
