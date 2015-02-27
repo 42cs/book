@@ -1,10 +1,10 @@
 .. meta::
-   :description: CS 42.
+   :description: CS 98
    :keywords: python, CS61A, CS42, computer science
 
 .. raw:: html
 
-   <h1 style="text-align: center">CS42 - Summer 2014</h1>
+   <h1 style="text-align: center">CS98 - Spring 2015</h1>
    <h2 style="text-align: center">Practical Problem Solving with Programming</h2>
 
 .. activecode:: welcome
@@ -97,9 +97,29 @@ Most programming doesn't happen alone - This week we'll go over strategies and t
 .. toctree::
     :maxdepth: 2
 
-    week2/questions.rst
-    week2/partner.rst
-    week2/git.rst
+    week3/questions.rst
+    week3/partner.rst
+    week3/git.rst
+
+
+Week 4 - Reading Code 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A lot of programming is just reading code - this week we will practice skills to read & understand code. We'll also go over what makes for good style & how to use documentation.  
+
+.. toctree::
+    :maxdepth: 2
+
+    week4/index.rst
+    week4/style.rst
+
+Week 5 - Building Real Things 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This is where the course ties everything backtogether and we learn how to build real things. We'll build a version of IBM's Watson supercomputer with just the skills we've learnt so far in our CS classes. This will also cover how to think of ideas for a project or startup. These skills will help you be able to make your own projects and eventually land an awesome internship or job.    
+
+.. toctree::
+    :maxdepth: 2
+
+    week5/index.rst
 
 
 Logistics & Extras
@@ -119,18 +139,8 @@ Logistics & Extras
     61a.rst
 
 
+----------
 
-Benefits of this interactive book.
--------------------------------------
-
-* You can experiment with **Active Code** examples right in the page
-
-  * Click Show/Hide Code button
-  * Click the Run button
-
-* You can play with code and modify the examples.
-* **Interactive questions** make sure that you are on track and help you focus.
-* You can highlight text, and take notes in scratch editors
 
 Contact Info
 ---------------

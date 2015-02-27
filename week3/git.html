@@ -73,6 +73,9 @@
     <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="CS42" href="../index.html" />
+    <link rel="up" title="Table of Contents" href="../toc.html" />
+    <link rel="next" title="Reading Code" href="../week4/index.html" />
+    <link rel="prev" title="Be a good programming partner." href="partner.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -212,14 +215,11 @@
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
 <li><a class="reference internal" href="#">Version Control - git</a><ul>
-<li><a class="reference internal" href="#question">Question</a><ul>
 <li><a class="reference internal" href="#setup">Setup</a></li>
 <li><a class="reference internal" href="#presentation">Presentation</a></li>
 <li><a class="reference internal" href="#demo">Demo</a></li>
 <li><a class="reference internal" href="#commands">Commands</a></li>
 <li><a class="reference internal" href="#a-cheat-sheet">A cheat sheet</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -229,6 +229,18 @@
         
         
           
+  <li id="relations-prev" title="Previous Chapter - Be a good programming partner." data-toggle="tooltip">
+    <a href="partner.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Reading Code' data-toggle="tooltip" >
+    <a href="../week4/index.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
 
 <script type="text/javascript">
   opts = {'placement':'bottom',
@@ -252,11 +264,9 @@
   
   <div class="section" id="version-control-git">
 <h1>Version Control - git<a class="headerlink" href="#version-control-git" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="question">
-<h2>Question<a class="headerlink" href="#question" title="Permalink to this headline">¶</a></h2>
 
             <div id="question_git1" class="alert alert-warning">
-            Q-56: How should multiple programmers work on the same file at the same time?<form name="question_git1_form" method="get" action="" onsubmit="return false;">
+            Q-58: How should multiple programmers work on the same file at the same time?<form name="question_git1_form" method="get" action="" onsubmit="return false;">
             <input type="checkbox" name="group1" value="a" id="question_git1_opt_a" />
             <label for= "question_git1_opt_a">  a) Carrier Pigeons. Duh.</label><br />
             
@@ -272,14 +282,14 @@
             <script>
             $(document).ready(function(){checkMultipleSelect('question_git1');});
             </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMAStorage('question_git1','d',['Uh no.', 'That\u0027s really annoying though.', 'Even if you had 100s of lines?', 'Yes. That tool is called git?'])">Check Me</button>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMAStorage('question_git1','d',['Uh no.', 'That\u0027s really annoying though.', 'Even if you had 100s of lines?', 'Yes. That tool is called git!'])">Check Me</button>
             <button class='btn btn-default' id="question_git1_bcomp" disabled name="compare" onclick="compareAnswers('question_git1');">Compare Me</button>
             </form><br />
             <div id="question_git1_feedback">
             </div>
             </div>
             <div class="section" id="setup">
-<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Install Git Here (Required):  <a class="reference external" href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></li>
 <li>If you want a GUI (optional) :  <a class="reference external" href="http://git-scm.com/downloads/guis">http://git-scm.com/downloads/guis</a></li>
@@ -287,15 +297,15 @@
 </ol>
 </div>
 <div class="section" id="presentation">
-<h3>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h3>
+<h2>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h2>
 <p>Follow along with your own computer!</p>
 <iframe src="https://docs.google.com/presentation/d/11Q05ylxGIfxb-ZH7WkqdwTNtnjTZDlWJFpJu3wqHWZ8/embed?start=false&loop=false&delayms=10000000" frameborder="0" width="667" height="390" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
 <div class="section" id="demo">
-<h3>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h3>
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
 <p>We&#8217;re going to now work as a groups. Find two other people and practice commiting, pushing, and pulling.</p>
 </div>
 <div class="section" id="commands">
-<h3>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h3>
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="arabic">
 <li><p class="first">git add – adds a file to the tracked files and stages it for commit</p>
@@ -342,9 +352,8 @@
 </div></blockquote>
 </div>
 <div class="section" id="a-cheat-sheet">
-<h3>A cheat sheet<a class="headerlink" href="#a-cheat-sheet" title="Permalink to this headline">¶</a></h3>
+<h2>A cheat sheet<a class="headerlink" href="#a-cheat-sheet" title="Permalink to this headline">¶</a></h2>
 <iframe src="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf" frameborder="0" width="667" height="800" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>
-</div>
 </div>
 
 

@@ -8,9 +8,6 @@ Version Control - git
 .. notes 
 
 
-Question
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. mchoicema:: question_git1
    :answer_a: Carrier Pigeons. Duh. 
    :answer_b: Email files back and forth and copy and paste. 
@@ -20,7 +17,7 @@ Question
    :feedback_a: Uh no.
    :feedback_b: That's really annoying though. 
    :feedback_c: Even if you had 100s of lines? 
-   :feedback_d: Yes. That tool is called git?   
+   :feedback_d: Yes. That tool is called git!  
 
    How should multiple programmers work on the same file at the same time?
 

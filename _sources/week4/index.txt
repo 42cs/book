@@ -1,0 +1,88 @@
+.. Author Sumukh Sridhara 2014
+
+=========
+Reading Code
+=========
+
+You learn to swim by swimming. Similarly, you learn to read code by reading code. 
+
+	Every programmer writes code that the computer understands. The far more difficult task is to write code that people can understand. 
+
+.. figure::  Figures/read_the_source.jpg
+   :scale: 50%
+   :align: center
+
+   Figure 1: Read the source Luke! (From: http://blog.codinghorror.com/learn-to-read-the-source-luke/)
+
+
+Reading code can be hard because you trying to internalize computer instructions into human instructions. The only information you have are the instructions and from that you need to find out 
+the intention of the programmer who wrote it. 
+
+Why should I read code? 
+-------------------------
+
+	Most of programming is actually just reading. 
+
+	It's good to practice reading code because it builds your confidence. 
+
+	Everything on a computer happens for a reason - the code instructed it to. If we want to understand the reason, we need to understand the code. 
+
+	If there is a problem - one of the first steps is to read over your code. 
+
+	If you train your skills, you'll learn how to spot syntax errors really quickly. 
+
+	To become a great programmer, Read Great Programs. - Peter Norvig
+
+
+The best way to do this is just start reading code. 
+
+	When you do this exercise, think of yourself as an anthropologist, trucking through a new land with just barely enough of the local language to get around and survive. Except, of course, that you will actually get out alive because the internet isn't a jungle. - Zed Shaw in Learn Python the Hard Way. 
+
+The process
+------------
+You are trying to internalize something that isn’t yours - so your mind will try to reject it - which is why it’s hard. 
+
+- First, figure out how it works
+ 	- Similar process to debugging. 
+ 	- Break it down into parts
+	- Translating what each part does to english helps you internalize
+- You’ll see that everyone has a style and quirks. 
+- Here’s how the specification/language helps, you can make assumptions about how language works. 
+	- Imagine if python did different things on every computer. 
+	- It serves as a common language/interface for programmers. 
+- You won’t know what everything does - so look it up! 
+	- Documentation helps! 
+
+
+Examples: 
+
+1. Let's look at a python file that does something useful
+	
+	https://github.com/Sumukh/piazza-search
+
+2. Let's look at the Ants project. 
+
+	There's a lot of code in Ants_Gui.py - Let's take a look and read it. 
+
+	Can we use the specification to help us read the code and solve the problems? 
+
+3. Midterm 1 
+
+	Sometimes on exams, you'll be given some code, but not all of it. You need to learn how to adapt your thinking to fit this prewritten code. Let's take a look at Where's Waldo from the Summer 2014 Midterm. (Page 5). 
+
+	- We notice a few things right away, like the recursion. How can this fact help us?
+
+	http://www.ocf.berkeley.edu/~shidi/cs61a/61a-su14-midterm1.pdf
+
+4. Write a really hard to understand piece of code & ask someone in class to understand it. 
+
+Here's mine: 
+
+.. activecode:: complicated
+
+	a = [(lambda x: x**x + y)(y) for y in [(lambda q: q + 1)(z) for z in range(10)] if y % 3 == 0]
+	print(a)
+
+
+.. notes:
+

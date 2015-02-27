@@ -5,14 +5,14 @@ Table of Contents
 
 
 Course Information
----------
+---------------------------
 .. toctree::
    :maxdepth: 2
 
    CourseInfo/index.rst
 
 Reasoning (Week 1)
----------
+---------------------------
 
 .. toctree::
     :maxdepth: 2
@@ -22,7 +22,7 @@ Reasoning (Week 1)
 
    
 Debugging (Week 2)
----------
+------------------
 
 .. toctree::
     :maxdepth: 2
@@ -31,8 +31,39 @@ Debugging (Week 2)
     week2/debug.rst
     week2/DebuggingBook.rst
 
+
+Collaboration (Week 3)
+---------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    week3/questions.rst
+    week3/partner.rst
+    week3/git.rst
+
+
+Reading Code (Week 4)
+---------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    week4/index.rst
+    week4/style.rst
+
+Building Real Things (Week 5)
+---------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    week5/index.rst
+
+Building Watson Demo (Coming Soon)
+
 Enviroment Information
----------
+---------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -41,8 +72,8 @@ Enviroment Information
    
 
 Background Reading & Extras
-----------------------
-From 'How to Think Like A Computer Scientist by Brad Miller, David Ranum'
+-------------------------------
+The below is from 'How to Think Like A Computer Scientist by Brad Miller, David Ranum'
 
 .. toctree::
     :maxdepth: 1

@@ -1,0 +1,181 @@
+.. Author Sumukh Sridhara 2014
+
+=========
+Style
+=========
+
+
+Code is actually written for humans - not computers.  Computers don't understand python directly - they need an interpreter to convert it to instructions that the computer knows. Similiarly humans don't automatically understand python, they need an interpreter to understand it - their brain. 
+
+
+- Comprehension >>> Cleverness
+	- Certain kinds of cleverness impairs your debugging ability. 
+- The best “comment” is a cleanly laid out program. 
+- You’re making your program easy to understand/reason with
+- As well as handling/considering ways in which it could fail 
+
+- Aspects of style: Variable Names, Modularization, Spacing. 
+
+.. activecode:: this
+	:autorun:
+
+	import this
+
+
+What not to do:
+----------------
+- Variable names that don’t clarify: a, test, test1
+- Leaving everything as one big hunk of code. 
+- Too many comments because  the program is unclear.
+- Use the o and 0 or I,l,1 - leading to confusion if that's a 0 or a 1 
+
+
+
+
+Examples
+------------
+
+Useful names
+~~~~~~~~~~~~~~
+1. Have useful variable names
+
+:: 
+
+	# Bad
+	a, y = 25, 60 
+	z = y 
+	asdad = "Win"
+	print(asdad)
+
+:: 
+	
+	# Better
+	time_left, points = 25, 60
+	high_score = points
+	message = "Win"
+	print(message)
+
+
+----
+
+Variable Names.
+~~~~~~~~~~~~~~~~~~ 
+
+Bad ::
+
+	y = "something"
+	z = y 		
+	print(z)
+
+Better ::
+
+	y = "something"
+	print(y) # If y will never change, print("something")
+
+
+Conditionals
+~~~~~~~~~~~~~~~~~
+:: 
+
+	# Bad
+	if attr == True:
+	    print 'True!'
+
+	if attr == None:
+	    print 'attr is None!'
+
+:: 
+	
+	# Better
+	# Just check the value
+	if attr:
+	    print 'attr is truthy!'
+
+	# or check for the opposite
+	if not attr:
+	    print 'attr is falsey!'
+
+	# or, since None is considered false, explicitly check for it
+	if attr is None:
+	    print 'attr is None!'
+
+
+:: 
+	# Not great
+	def notSoGreat(x):
+	    if (x == 1):
+	        return True
+	    else: 
+	        return False
+::
+
+	# better
+	def better(x):
+	    return x == 1
+
+
+
+What if you wanted to do the opposite of the conditional? 
+
+	return not CONDITIONALSTATMENT
+
+But be careful when you are chaining conditional statements. 
+
+.. activecode:: Conditional
+	:autorun:
+
+	def multipleWays(complexCond):
+		return not complexCond
+		# return complexCond != True
+
+	def notGoodWays(complexCond):
+		return not not (not (not not not not complexCond))
+
+	print(multipleWays(True))
+	print(notGoodWays(True))
+
+Comments
+~~~~~~~~~~
+Comments begin with the # character. Triple quotes are not actually comments - they are strings. 
+
+The best code doesn't need comments - but comments are useful tools. The comments should give context about what you are doing. 
+
+::
+
+	# Don't do this
+	x = x + 1                 # Increment x
+	# At least you have context now. 
+	x = x + 1                 # Compensate for border
+	# Best
+	x += 1
+
+What does this code do? 
+
+.. activecode:: remove_comments
+	:autorun:
+
+	# a = ["Hi", "My", "Name", "Hi"]
+	# for i in a:
+	#     print (a.index(i), i)
+
+Answer: Nothing. You should remove commented out code when you are submitting. 
+
+
+
+Where to get more information
+-----------------------------
+
+PEP8 - is a style guide that is used for Python code and it's worth taking a look at to see what others consider good style. 
+	
+	http://legacy.python.org/dev/peps/pep-0008/#code-lay-out
+
+Albert Wu - who was a TA for CS61A a while ago - wrote a style guide that is really useful. 
+
+You can view it here.
+
+	http://albertwu.org/cs61a/notes/style_guide
+
+
+
+
+

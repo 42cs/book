@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Asking good questions &mdash; CS42</title>
+    <title>Building Things &mdash; CS42</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,8 +74,8 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="CS42" href="../index.html" />
     <link rel="up" title="Table of Contents" href="../toc.html" />
-    <link rel="next" title="Be a good programming partner." href="partner.html" />
-    <link rel="prev" title="The Ultimate Debugging Handbook" href="../week2/DebuggingBook.html" />
+    <link rel="next" title="About the Python Shell" href="../BookLabs/pythonshell.html" />
+    <link rel="prev" title="Style" href="../week4/style.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -214,12 +214,16 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Asking good questions</a><ul>
-<li><a class="reference internal" href="#how-to-ask-for-help">How to ask for help</a><ul>
-<li><a class="reference internal" href="#the-guideline-for-posting">The guideline for posting</a></li>
-<li><a class="reference internal" href="#practice">Practice</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Building Things</a><ul>
+<li><a class="reference internal" href="#common-objections">Common Objections</a></li>
+<li><a class="reference internal" href="#the-process-of-building-things">The process of building things</a></li>
+<li><a class="reference internal" href="#coming-up-with-ideas">Coming up with ideas</a></li>
+<li><a class="reference internal" href="#don-t-reinvent-the-wheel">Don&#8217;t reinvent the wheel</a></li>
+<li><a class="reference internal" href="#making-software">Making Software</a></li>
+<li><a class="reference internal" href="#excercise-building-our-own-version-of-ibm-s-watson">Excercise - Building our own version of IBM&#8217;s Watson</a></li>
+<li><a class="reference internal" href="#getting-a-job-internship">Getting a job/internship</a></li>
+<li><a class="reference internal" href="#resources-and-ways-to-learn-more">Resources and Ways to Learn More</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -229,14 +233,14 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - The Ultimate Debugging Handbook" data-toggle="tooltip">
-    <a href="../week2/DebuggingBook.html" >
+  <li id="relations-prev" title="Previous Chapter - Style" data-toggle="tooltip">
+    <a href="../week4/style.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Be a good programming partner.' data-toggle="tooltip" >
-    <a href="partner.html" >
+  <li id="relations-next" title='Next Chapter - About the Python Shell' data-toggle="tooltip" >
+    <a href="../BookLabs/pythonshell.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -262,161 +266,152 @@
 
 <div class="container">
   
-  <div class="section" id="asking-good-questions">
-<h1>Asking good questions<a class="headerlink" href="#asking-good-questions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="how-to-ask-for-help">
-<h2>How to ask for help<a class="headerlink" href="#how-to-ask-for-help" title="Permalink to this headline">¶</a></h2>
-<p>Steps to solving a problem:</p>
-<ol class="arabic simple">
-<li>Talk to your rubberduck.</li>
-<li>...?</li>
-<li>Profit!</li>
-</ol>
+  <div class="section" id="building-things">
+<h1>Building Things<a class="headerlink" href="#building-things" title="Permalink to this headline">¶</a></h1>
+<p>So&#8217;ve you&#8217;re going through your computer science class and you are learning a lot - but you aren&#8217;t sure about how you can actually use the things you are learning. This lesson will help you take the skills you&#8217;ve learnt and use them to build useful or fun projects!</p>
+<p>This class will cover all of the material we&#8217;ve learnt in earlier weeks to build a cool project! What is the cool project you ask?
+We&#8217;ll be building a version of IBM&#8217;s Watson - a Jeopardy answering supercomputer.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/ducky.JPG"><img alt="../_images/ducky.JPG" src="../_images/ducky.JPG" /></a>
-<p class="caption">Figure 1: Rubber Duck Using Piazza</p>
+<a class="reference internal image-reference" href="http://ceasefiremagazine.co.uk/wp-content/uploads/IBM-Watson-Jeopardy.jpg"><img alt="caption" src="http://ceasefiremagazine.co.uk/wp-content/uploads/IBM-Watson-Jeopardy.jpg" /></a>
 </div>
-<p>Sometimes you actually need a response from an animate object. If you actually want a helpful response, it helps to provide the right information.</p>
-<p>Things to consider.</p>
-<ol class="arabic">
+<div class="figure align-center">
+<a class="reference internal image-reference" href="http://www.wired.com/wp-content/uploads/blogs/wiredenterprise/wp-content/uploads/2012/03/watson_blue.jpg"><img alt="caption" src="http://www.wired.com/wp-content/uploads/blogs/wiredenterprise/wp-content/uploads/2012/03/watson_blue.jpg" /></a>
+</div>
+<div class="section" id="common-objections">
+<h2>Common Objections<a class="headerlink" href="#common-objections" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>But Sumukh, I can&#8217;t build anything - I don&#8217;t know that much! I need to take more classes and then I can think of building something!</div></blockquote>
+<p>False. Just by learning how to use a programming language and having a basic understanding the concepts taught in an intro CS course - you&#8217;ve unlocked a world of opportunity. You can truely build <em>anything</em>. A lot of times, we are our own biggest roadblock, and in this case the belief that you are not capable of doing something is the only thing holding you back from actually doing it.</p>
+<blockquote>
+<div>I&#8217;ve never done this before and I don&#8217;t know where to start. I only have done stuff for class and not stuff outside.</div></blockquote>
+<p>There&#8217;s always a first time for everything! The important thing is to start. Once you start, you can see that you don&#8217;t need experience, just the willingness to learn as you go.</p>
+<blockquote>
+<div>I can&#8217;t think of any ideas or projects to work on.</div></blockquote>
+<p>There&#8217;s a couple of solutions to this. You can work with other people, use the guide below to come up with your ideas, or just work with a common idea for practice/fun.</p>
+<blockquote>
+<div>I just don&#8217;t know - I&#8217;m not sure if I&#8217;m ready.</div></blockquote>
+<p>If you&#8217;re asking that question - that usually means that you are ready. Even when experienced programmers start working on something - they think &#8216;Hmm... I don&#8217;t know if I can even do that?&#8217; ... but the difference is that they answer with &#8216;Well, I&#8217;ll find out when I start&#8217;.</p>
+<p>If you still have objections - just give building things a try!</p>
+</div>
+<div class="section" id="the-process-of-building-things">
+<h2>The process of building things<a class="headerlink" href="#the-process-of-building-things" title="Permalink to this headline">¶</a></h2>
+<ul>
 <li><dl class="first docutils">
-<dt>Did you search for it first!</dt>
+<dt>Think of something that you want to work on</dt>
 <dd><ul class="first last simple">
-<li>This is a critical step. Why wait for a response when there is already one?</li>
+<li>This can be an idea for a project or game that you want to make</li>
+<li>Maybe you are working on something where programming can help.</li>
+<li>You are asked to get something working (a website or a project)</li>
+<li>Then think of what you want the final result to look like</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Where are you posting your question?</dt>
+<dt>Figure out what is the minimum you need to do to accomplish your goal.</dt>
+<dd><ul class="first last">
+<li><p class="first">What is the core interaction/purpose</p>
+</li>
+<li><p class="first">To solve that problem/need - what do you need to make</p>
+</li>
+<li><p class="first">What problems do you need to solve?</p>
+</li>
+<li><dl class="first docutils">
+<dt>How can you solve those problems?</dt>
 <dd><ul class="first last simple">
-<li>Is it Piazza? StackOverflow? Email?</li>
+<li>What language?</li>
+<li>What computer?</li>
+<li>What medium? (Website, App, Command?)</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>Don&#8217;t just dump a question onto piazza and expect to have it sovled without effort on your part.</dt>
-<dd><ol class="first last arabic simple">
-<li>People like helping others who put in effort.</li>
-</ol>
+<dt>Have any of those problems been solved by someone else?</dt>
+<dd><ul class="first last simple">
+<li>Are they common problems? Is there a way to avoid writing it ourselves?</li>
+</ul>
 </dd>
 </dl>
 </li>
-<li><p class="first">Vague questions get vague answers.</p>
+</ul>
+</dd>
+</dl>
 </li>
-</ol>
-<div class="section" id="the-guideline-for-posting">
-<h3>The guideline for posting<a class="headerlink" href="#the-guideline-for-posting" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
+<li><p class="first">Search the internet to see if other people have worked on the same thing</p>
+</li>
 <li><dl class="first docutils">
-<dt>Include the approriate details</dt>
-<dd><ol class="first last arabic">
-<li><dl class="first docutils">
-<dt>Title: What is the issue.</dt>
+<dt>Start and get the minimal version up quickly</dt>
 <dd><ul class="first last simple">
-<li>&#8220;It doesn&#8217;t work&#8221; - isn&#8217;t an issue.</li>
+<li>Don&#8217;t worry about how good it is for now.</li>
+<li>If you don&#8217;t know how to do something - Search for it!</li>
 </ul>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>If it crashes or errors. Include the entire error!</dt>
+<dt>You won’t know what everything does - so look it up!</dt>
 <dd><ul class="first last simple">
-<li>Your test cases</li>
-<li>The error message</li>
-<li>What you think the error message means</li>
-<li>What you think might have caused the error</li>
+<li>Documentation helps!</li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Explain the question in your own words so others can quickly understand it.</dt>
-<dd><ol class="first last arabic simple">
-<li>Often, you&#8217;ll solve the issue or think of something as you are doing this.</li>
-<li>Make sure to mention what you&#8217;ve tried.</li>
-<li>Screenshots and formatted code make it easier to understand</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><p class="first">Make it clear how someone can help you.</p>
-</li>
-<li><p class="first">If you resolve it makes sure to help others who would have solved it.</p>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-</ol>
-<div class="figure">
-<img alt="http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" src="http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" />
+</ul>
+</div>
+<div class="section" id="coming-up-with-ideas">
+<h2>Coming up with ideas<a class="headerlink" href="#coming-up-with-ideas" title="Permalink to this headline">¶</a></h2>
+<p>This applies for fun projects or startups and a bunch of other things.</p>
+<blockquote>
+<div><p>The best way to solve your own problems.</p>
+<p>Always think of ways you can use your skills to solve a problem.</p>
+<p>For projects: Think of fun or cool games.</p>
+<p>Put a twist on an existing concept.</p>
+<p>Wouldn&#8217;t it be cool if?</p>
+<p>What is your vision for the future?</p>
+</div></blockquote>
+</div>
+<div class="section" id="don-t-reinvent-the-wheel">
+<h2>Don&#8217;t reinvent the wheel<a class="headerlink" href="#don-t-reinvent-the-wheel" title="Permalink to this headline">¶</a></h2>
+<p>A lot of times, someone else has solved the problem for us! If we effectively search the internet - we can save ourselves a lot of time.</p>
+<p>When it comes to code, we can use libraries that other people have written to do common functions. Instead of writing it - we just need to install the library. In python this is often done with the use of <cite>pip</cite> or <cite>pip3</cite>. Some common examples include, instead of donwloading a website and checking its contents - we can use a library called BeautifulSoup to do most of the heavy lifting. If we wanted to use natural language processing, we don&#8217;t have to implement everything. We can use a library called nltk. You do need to look up the installation instructions.</p>
+<p>When it comes to tasks, there things called APIs that will help do tasks like sending a text message from your code. These APIs can help you get data from other places and talk to other services. This is how you could information about a YouTube video or about a user on Facebook.</p>
+<p>Some examples APIs that you can look at - and maybe use:
+Make Phone Calls &amp; Send Text Messages with Code - <a class="reference external" href="https://www.twilio.com">https://www.twilio.com</a>
+Accept credit cards online - <a class="reference external" href="https://stripe.com">https://stripe.com</a>
+YouTube, Facebook, Chrome extensions</p>
+</div>
+<div class="section" id="making-software">
+<h2>Making Software<a class="headerlink" href="#making-software" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="http://leehughes.wpengine.netdna-cdn.com/wp-content/uploads/2013/05/learn-programming.png"><img alt="http://leehughes.wpengine.netdna-cdn.com/wp-content/uploads/2013/05/learn-programming.png" src="http://leehughes.wpengine.netdna-cdn.com/wp-content/uploads/2013/05/learn-programming.png" /></a>
+<p class="caption">Figure 1: Making things! (From: <a class="reference external" href="http://wpreviews.net/learn-programming/">http://wpreviews.net/learn-programming/</a>)</p>
 </div>
 </div>
-<div class="section" id="practice">
-<h3>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h3>
-<p>What looks easier to read?</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
-
-<span class="k">def</span> <span class="nf">sum_of_squares</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">square</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
+<div class="section" id="excercise-building-our-own-version-of-ibm-s-watson">
+<h2>Excercise - Building our own version of IBM&#8217;s Watson<a class="headerlink" href="#excercise-building-our-own-version-of-ibm-s-watson" title="Permalink to this headline">¶</a></h2>
+<p>In-class: Follow along with Sumukh&#8217;s directions. Pull out a laptop - or work with a partner.</p>
+<p>Not in class? - I&#8217;ll post a link to work through it yourself after CS42</p>
 </div>
-<p>or</p>
-<p>def square(x):</p>
-<p>return x * x</p>
-<p>def sum_of_squares(x, y):</p>
-<p>return square(x) + square(y)</p>
-<hr class="docutils" />
-
-            <div id="question1_1" class="alert alert-warning">
-            Q-59: Is this a good question or a bad question?<form name="question1_1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="question1_1_opt_a" />
-            <label for= "question1_1_opt_a">  a) good</label><br />
-            
-            <input type="radio" name="group1" value="b" id="question1_1_opt_b" />
-            <label for= "question1_1_opt_b">  b) bad</label><br />
-            
-
-            <script>
-            $(document).ready(function(){checkRadio('question1_1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('question1_1','b',['note the lack of responses in 10 months!.', 'Yes,'])">Check Me</button>
-            <button class='btn btn-default' id="question1_1_bcomp" disabled name="compare" onclick="compareAnswers('question1_1');">Compare Me</button>
-            </form><br />
-            <div id="question1_1_feedback">
-            </div>
-            </div>
-            <div class="figure align-center">
-<img alt="../_images/badquestion.png" src="../_images/badquestion.png" />
-<p class="caption">Figure 2: No repsonse ... I wonder why?</p>
+<div class="section" id="getting-a-job-internship">
+<h2>Getting a job/internship<a class="headerlink" href="#getting-a-job-internship" title="Permalink to this headline">¶</a></h2>
+<p>Believe it or not - the most important part of your resume is the projects you&#8217;ve been working on. By actually working on fun projects and having things that you&#8217;ve built to show off is huge boost. It&#8217;s like a cheat code for finding a job. You could literally hand in a resume consisting of only your side projects and what you&#8217;ve done before and have a solid resume. Having actual projects that you are excited about shows creativity, ambition, and drive - which are skills that employers care about.</p>
 </div>
-
-            <div id="question1_2" class="alert alert-warning">
-            Q-60: Is this a good question or a bad question?<form name="question1_2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="question1_2_opt_a" />
-            <label for= "question1_2_opt_a">  a) good</label><br />
-            
-            <input type="radio" name="group1" value="b" id="question1_2_opt_b" />
-            <label for= "question1_2_opt_b">  b) bad</label><br />
-            
-
-            <script>
-            $(document).ready(function(){checkRadio('question1_2');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('question1_2','a',['\u003D)', 'Try again'])">Check Me</button>
-            <button class='btn btn-default' id="question1_2_bcomp" disabled name="compare" onclick="compareAnswers('question1_2');">Compare Me</button>
-            </form><br />
-            <div id="question1_2_feedback">
-            </div>
-            </div>
-            <div class="figure align-center">
-<img alt="../_images/goodquestion.png" src="../_images/goodquestion.png" />
-<p class="caption">Figure 2: This was responded to?</p>
+<div class="section" id="resources-and-ways-to-learn-more">
+<h2>Resources and Ways to Learn More<a class="headerlink" href="#resources-and-ways-to-learn-more" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Google.com</li>
+<li>StackOverflow.com</li>
+<li>HackerNews (news.ycombinator.com)</li>
+<li>Github.com</li>
+<li>Sumukh&#8217;s Hackathon Guide -  (APIs, Ideas, Examples, Tips) <a class="reference external" href="https://github.com/Sumukh/HackathonWorkshop">https://github.com/Sumukh/HackathonWorkshop</a></li>
+<li>Examples of hackathon projects -  <a class="reference external" href="https://github.com/Sumukh/HackathonWorkshop/blob/master/winners">https://github.com/Sumukh/HackathonWorkshop/blob/master/winners</a>.</li>
+<li>Hackers &#64; Berkeley -  <a class="reference external" href="https://www.facebook.com/groups/hackberkeley/">https://www.facebook.com/groups/hackberkeley/</a></li>
+</ul>
 </div>
-</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>You might not realize it yet, but you have the power to build things. If you embrace it and take advantage of that skill you&#8217;ll find yourself doing incredible things!</p>
 </div>
 </div>
 

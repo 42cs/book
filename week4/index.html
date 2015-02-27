@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Asking good questions &mdash; CS42</title>
+    <title>Reading Code &mdash; CS42</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -74,8 +74,8 @@
     <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
     <link rel="top" title="CS42" href="../index.html" />
     <link rel="up" title="Table of Contents" href="../toc.html" />
-    <link rel="next" title="Be a good programming partner." href="partner.html" />
-    <link rel="prev" title="The Ultimate Debugging Handbook" href="../week2/DebuggingBook.html" />
+    <link rel="next" title="Style" href="style.html" />
+    <link rel="prev" title="Version Control - git" href="../week3/git.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -214,12 +214,9 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Asking good questions</a><ul>
-<li><a class="reference internal" href="#how-to-ask-for-help">How to ask for help</a><ul>
-<li><a class="reference internal" href="#the-guideline-for-posting">The guideline for posting</a></li>
-<li><a class="reference internal" href="#practice">Practice</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Reading Code</a><ul>
+<li><a class="reference internal" href="#why-should-i-read-code">Why should I read code?</a></li>
+<li><a class="reference internal" href="#the-process">The process</a></li>
 </ul>
 </li>
 </ul>
@@ -229,14 +226,14 @@
         
         
           
-  <li id="relations-prev" title="Previous Chapter - The Ultimate Debugging Handbook" data-toggle="tooltip">
-    <a href="../week2/DebuggingBook.html" >
+  <li id="relations-prev" title="Previous Chapter - Version Control - git" data-toggle="tooltip">
+    <a href="../week3/git.html" >
       <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
     </a>
   </li>
   
-  <li id="relations-next" title='Next Chapter - Be a good programming partner.' data-toggle="tooltip" >
-    <a href="partner.html" >
+  <li id="relations-next" title='Next Chapter - Style' data-toggle="tooltip" >
+    <a href="style.html" >
       <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
     </a>
   </li>
@@ -262,161 +259,132 @@
 
 <div class="container">
   
-  <div class="section" id="asking-good-questions">
-<h1>Asking good questions<a class="headerlink" href="#asking-good-questions" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="how-to-ask-for-help">
-<h2>How to ask for help<a class="headerlink" href="#how-to-ask-for-help" title="Permalink to this headline">¶</a></h2>
-<p>Steps to solving a problem:</p>
-<ol class="arabic simple">
-<li>Talk to your rubberduck.</li>
-<li>...?</li>
-<li>Profit!</li>
-</ol>
+  <div class="section" id="reading-code">
+<h1>Reading Code<a class="headerlink" href="#reading-code" title="Permalink to this headline">¶</a></h1>
+<p>You learn to swim by swimming. Similarly, you learn to read code by reading code.</p>
+<blockquote>
+<div>Every programmer writes code that the computer understands. The far more difficult task is to write code that people can understand.</div></blockquote>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="../_images/ducky.JPG"><img alt="../_images/ducky.JPG" src="../_images/ducky.JPG" /></a>
-<p class="caption">Figure 1: Rubber Duck Using Piazza</p>
+<a class="reference internal image-reference" href="../_images/read_the_source.jpg"><img alt="../_images/read_the_source.jpg" src="../_images/read_the_source.jpg" /></a>
+<p class="caption">Figure 1: Read the source Luke! (From: <a class="reference external" href="http://blog.codinghorror.com/learn-to-read-the-source-luke/">http://blog.codinghorror.com/learn-to-read-the-source-luke/</a>)</p>
 </div>
-<p>Sometimes you actually need a response from an animate object. If you actually want a helpful response, it helps to provide the right information.</p>
-<p>Things to consider.</p>
+<p>Reading code can be hard because you trying to internalize computer instructions into human instructions. The only information you have are the instructions and from that you need to find out
+the intention of the programmer who wrote it.</p>
+<div class="section" id="why-should-i-read-code">
+<h2>Why should I read code?<a class="headerlink" href="#why-should-i-read-code" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Most of programming is actually just reading.</p>
+<p>It&#8217;s good to practice reading code because it builds your confidence.</p>
+<p>Everything on a computer happens for a reason - the code instructed it to. If we want to understand the reason, we need to understand the code.</p>
+<p>If there is a problem - one of the first steps is to read over your code.</p>
+<p>If you train your skills, you&#8217;ll learn how to spot syntax errors really quickly.</p>
+<p>To become a great programmer, Read Great Programs. - Peter Norvig</p>
+</div></blockquote>
+<p>The best way to do this is just start reading code.</p>
+<blockquote>
+<div>When you do this exercise, think of yourself as an anthropologist, trucking through a new land with just barely enough of the local language to get around and survive. Except, of course, that you will actually get out alive because the internet isn&#8217;t a jungle. - Zed Shaw in Learn Python the Hard Way.</div></blockquote>
+</div>
+<div class="section" id="the-process">
+<h2>The process<a class="headerlink" href="#the-process" title="Permalink to this headline">¶</a></h2>
+<p>You are trying to internalize something that isn’t yours - so your mind will try to reject it - which is why it’s hard.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>First, figure out how it works</dt>
+<dd><ul class="first last simple">
+<li>Similar process to debugging.</li>
+<li>Break it down into parts</li>
+<li>Translating what each part does to english helps you internalize</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">You’ll see that everyone has a style and quirks.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Here’s how the specification/language helps, you can make assumptions about how language works.</dt>
+<dd><ul class="first last simple">
+<li>Imagine if python did different things on every computer.</li>
+<li>It serves as a common language/interface for programmers.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>You won’t know what everything does - so look it up!</dt>
+<dd><ul class="first last simple">
+<li>Documentation helps!</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Examples:</p>
 <ol class="arabic">
-<li><dl class="first docutils">
-<dt>Did you search for it first!</dt>
-<dd><ul class="first last simple">
-<li>This is a critical step. Why wait for a response when there is already one?</li>
+<li><p class="first">Let&#8217;s look at a python file that does something useful</p>
+<blockquote>
+<div><p><a class="reference external" href="https://github.com/Sumukh/piazza-search">https://github.com/Sumukh/piazza-search</a></p>
+</div></blockquote>
+</li>
+<li><p class="first">Let&#8217;s look at the Ants project.</p>
+<blockquote>
+<div><p>There&#8217;s a lot of code in Ants_Gui.py - Let&#8217;s take a look and read it.</p>
+<p>Can we use the specification to help us read the code and solve the problems?</p>
+</div></blockquote>
+</li>
+<li><p class="first">Midterm 1</p>
+<blockquote>
+<div><p>Sometimes on exams, you&#8217;ll be given some code, but not all of it. You need to learn how to adapt your thinking to fit this prewritten code. Let&#8217;s take a look at Where&#8217;s Waldo from the Summer 2014 Midterm. (Page 5).</p>
+<ul class="simple">
+<li>We notice a few things right away, like the recursion. How can this fact help us?</li>
 </ul>
-</dd>
-</dl>
+<p><a class="reference external" href="http://www.ocf.berkeley.edu/~shidi/cs61a/61a-su14-midterm1.pdf">http://www.ocf.berkeley.edu/~shidi/cs61a/61a-su14-midterm1.pdf</a></p>
+</div></blockquote>
 </li>
-<li><dl class="first docutils">
-<dt>Where are you posting your question?</dt>
-<dd><ul class="first last simple">
-<li>Is it Piazza? StackOverflow? Email?</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Don&#8217;t just dump a question onto piazza and expect to have it sovled without effort on your part.</dt>
-<dd><ol class="first last arabic simple">
-<li>People like helping others who put in effort.</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><p class="first">Vague questions get vague answers.</p>
+<li><p class="first">Write a really hard to understand piece of code &amp; ask someone in class to understand it.</p>
 </li>
 </ol>
-<div class="section" id="the-guideline-for-posting">
-<h3>The guideline for posting<a class="headerlink" href="#the-guideline-for-posting" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><dl class="first docutils">
-<dt>Include the approriate details</dt>
-<dd><ol class="first last arabic">
-<li><dl class="first docutils">
-<dt>Title: What is the issue.</dt>
-<dd><ul class="first last simple">
-<li>&#8220;It doesn&#8217;t work&#8221; - isn&#8217;t an issue.</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>If it crashes or errors. Include the entire error!</dt>
-<dd><ul class="first last simple">
-<li>Your test cases</li>
-<li>The error message</li>
-<li>What you think the error message means</li>
-<li>What you think might have caused the error</li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt>Explain the question in your own words so others can quickly understand it.</dt>
-<dd><ol class="first last arabic simple">
-<li>Often, you&#8217;ll solve the issue or think of something as you are doing this.</li>
-<li>Make sure to mention what you&#8217;ve tried.</li>
-<li>Screenshots and formatted code make it easier to understand</li>
-</ol>
-</dd>
-</dl>
-</li>
-<li><p class="first">Make it clear how someone can help you.</p>
-</li>
-<li><p class="first">If you resolve it makes sure to help others who would have solved it.</p>
-</li>
-</ol>
-</dd>
-</dl>
-</li>
-</ol>
-<div class="figure">
-<img alt="http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" src="http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" />
-</div>
-</div>
-<div class="section" id="practice">
-<h3>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h3>
-<p>What looks easier to read?</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<p>Here&#8217;s mine:</p>
 
-<span class="k">def</span> <span class="nf">sum_of_squares</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">square</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">square</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
+<div id="complicated" lang="python" >
+
+<br/>
+<div id="complicated_code_div" style="display: block">
+<textarea cols="50" rows="12" id="complicated_code" class="active_code", prefixcode="undefined" lang="python">
+a = [(lambda x: x**x + y)(y) for y in [(lambda q: q + 1)(z) for z in range(10)] if y % 3 == 0]
+print(a)
+</textarea>
 </div>
-<p>or</p>
-<p>def square(x):</p>
-<p>return x * x</p>
-<p>def sum_of_squares(x, y):</p>
-<p>return square(x) + square(y)</p>
-<hr class="docutils" />
+<p class="ac_caption"><span class="ac_caption_text"> (complicated)</span> </p>
 
-            <div id="question1_1" class="alert alert-warning">
-            Q-59: Is this a good question or a bad question?<form name="question1_1_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="question1_1_opt_a" />
-            <label for= "question1_1_opt_a">  a) good</label><br />
-            
-            <input type="radio" name="group1" value="b" id="question1_1_opt_b" />
-            <label for= "question1_1_opt_b">  b) bad</label><br />
-            
+<button class='btn btn-success' id="complicated_runb" onclick="runit('complicated',this, undefined);">Run</button>
 
-            <script>
-            $(document).ready(function(){checkRadio('question1_1');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('question1_1','b',['note the lack of responses in 10 months!.', 'Yes,'])">Check Me</button>
-            <button class='btn btn-default' id="question1_1_bcomp" disabled name="compare" onclick="compareAnswers('question1_1');">Compare Me</button>
-            </form><br />
-            <div id="question1_1_feedback">
-            </div>
-            </div>
-            <div class="figure align-center">
-<img alt="../_images/badquestion.png" src="../_images/badquestion.png" />
-<p class="caption">Figure 2: No repsonse ... I wonder why?</p>
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="complicated_saveb" onclick="saveEditor('complicated');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="complicated_loadb" onclick="requestCode('complicated');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#complicated_saveb').toggle();
+    $('#complicated_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="complicated_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="complicated_suffix" style="display:none">
+</pre>
+<pre id="complicated_pre" class="active_out">
+
+</pre>
+
+
 </div>
 
-            <div id="question1_2" class="alert alert-warning">
-            Q-60: Is this a good question or a bad question?<form name="question1_2_form" method="get" action="" onsubmit="return false;">
-            <input type="radio" name="group1" value="a" id="question1_2_opt_a" />
-            <label for= "question1_2_opt_a">  a) good</label><br />
-            
-            <input type="radio" name="group1" value="b" id="question1_2_opt_b" />
-            <label for= "question1_2_opt_b">  b) bad</label><br />
-            
-
-            <script>
-            $(document).ready(function(){checkRadio('question1_2');});
-            </script>
-            <button class='btn btn-success' name="do answer" onclick="checkMCMFStorage('question1_2','a',['\u003D)', 'Try again'])">Check Me</button>
-            <button class='btn btn-default' id="question1_2_bcomp" disabled name="compare" onclick="compareAnswers('question1_2');">Compare Me</button>
-            </form><br />
-            <div id="question1_2_feedback">
-            </div>
-            </div>
-            <div class="figure align-center">
-<img alt="../_images/goodquestion.png" src="../_images/goodquestion.png" />
-<p class="caption">Figure 2: This was responded to?</p>
-</div>
-</div>
 </div>
 </div>
 

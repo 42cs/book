@@ -1,0 +1,316 @@
+
+Building something useful - Watson!
+===================================
+
+Have you heard of IBM's Watson? We're going to build something like it!
+-----------------------------------------------------------------------
+
+.. figure:: http://ceasefiremagazine.co.uk/wp-content/uploads/IBM-Watson-Jeopardy.jpg
+   :alt: caption
+
+   caption
+
+|caption| ## A video: |Watson video|
+
+.. |caption| image:: http://www.wired.com/wp-content/uploads/blogs/wiredenterprise/wp-content/uploads/2012/03/watson_blue.jpg
+.. |Watson video| image:: http://img.youtube.com/vi/WFR3lOm_xhE/0.jpg
+   :target: http://www.youtube.com/watch?v=WFR3lOm_xhE
+
+How can we build something like this?
+=====================================
+
+-  We just need some way to lookup information
+-  It doesn't have to be super advanced
+-  Well, we're going to use Python
+-  What if we could use python to search Google & Wikipedia for the
+   jeopardy question
+
+The problems we need to solve:
+==============================
+
+-  Searching Google/Wikipedia with Python
+-  Getting input from the user and then outputing an answer
+
+How can we solve them
+=====================
+
+-  Search for them
+-  Getting input from the user
+-  Search Google for "python3 documentation input user"
+-  Search Google for "Python script to search google"
+-  Click on the stackoverflow links
+
+
+.. code:: python
+
+    # Let's try each piece
+    input("Test")
+
+.. parsed-literal::
+
+    TestOKAYYYYY
+
+
+
+
+.. parsed-literal::
+
+    'OKAYYYYY'
+
+
+
+
+.. code:: python
+
+    import urllib
+    import json as m_json
+    query = raw_input ( 'Query: ' )
+    query = urllib.urlencode ( { 'q' : query } )
+    response = urllib.urlopen ( 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&' + query ).read()
+    json = m_json.loads ( response )
+    results = json [ 'responseData' ] [ 'results' ]
+    for result in results:
+        title = result['title']
+        url = result['url']   # was URL in the original and that threw a name error exception
+        print ( title + '; ' + url )
+
+
+::
+
+
+    ---------------------------------------------------------------------------
+    NameError                                 Traceback (most recent call last)
+
+    <ipython-input-2-cb97e4039feb> in <module>()
+          1 import urllib
+          2 import json as m_json
+    ----> 3 query = raw_input ( 'Query: ' )
+          4 query = urllib.urlencode ( { 'q' : query } )
+          5 response = urllib.urlopen ( 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&' + query ).read()
+
+
+    NameError: name 'raw_input' is not defined
+
+
+.. code:: python
+
+    # Uh oh. An error. That's okay. We can search for it! 
+    # If we google the error, the number 1 result has the fix
+.. code:: python
+
+    import urllib
+    import json as m_json
+    query = input ( 'Query: ' )
+    query = urllib.urlencode ( { 'q' : query } )
+    response = urllib.urlopen ( 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&' + query ).read()
+    json = m_json.loads ( response )
+    results = json [ 'responseData' ] [ 'results' ]
+    for result in results:
+        title = result['title']
+        url = result['url']   # was URL in the original and that threw a name error exception
+        print ( title + '; ' + url )
+
+
+.. parsed-literal::
+
+    Query: test
+
+
+::
+
+
+    ---------------------------------------------------------------------------
+    AttributeError                            Traceback (most recent call last)
+
+    <ipython-input-4-1be6b285e7fd> in <module>()
+          2 import json as m_json
+          3 query = input ( 'Query: ' )
+    ----> 4 query = urllib.urlencode ( { 'q' : query } )
+          5 response = urllib.urlopen ( 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&' + query ).read()
+          6 json = m_json.loads ( response )
+
+
+    AttributeError: 'module' object has no attribute 'urlencode'
+
+
+.. code:: python
+
+    # Another error. Let's search for it again
+.. code:: python
+
+    import urllib
+    import json as m_json
+    query = input ( 'Query: ' )
+    query = urllib.parse.urlencode ( { 'q' : query } )
+    response = urllib.request.urlopen ( 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&' + query ).read()
+    json = m_json.loads ( response.decode('utf8') )
+    results = json [ 'responseData' ] [ 'results' ]
+    for result in results:
+        title = result['title']
+        url = result['url']   # was URL in the original and that threw a name error exception
+        print ( title + '; ' + url )
+
+
+.. parsed-literal::
+
+    Query: Golf superstar
+    <b>Superstar Golf</b>! free online flash game - Free flash games, football <b>...</b>; http://www.mousebreaker.com/games/superstargolf
+    Play <b>Superstar Golf</b>! - Sport Games – Free Online <b>...</b> - Mousebreaker; http://www.mousebreaker.com/games/superstargolf/playgame
+    <b>Superstar Golf</b> - Free online games at Agame.com; http://www.agame.com/game/superstar-golf
+    <b>Superstar Golf</b> - Mini Putt; http://www.mini-putt.org/superstargolf.html
+
+
+.. code:: python
+
+    # Wait a sec - we want actual data - not web results. How can we get wikipedia only? Search for it! 
+.. code:: python
+
+    import urllib
+    import json as m_json
+    query = input ( 'Query: ' )
+    query += ' site:wikipedia.org'
+    query = urllib.parse.urlencode ( { 'q' : query } )
+    response = urllib.request.urlopen ( 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&' + query ).read()
+    json = m_json.loads ( response.decode('utf8') )
+    results = json [ 'responseData' ] [ 'results' ]
+    for result in results:
+        title = result['title']
+        url = result['url']   # was URL in the original and that threw a name error exception
+        print ( title + '; ' + url )
+
+
+.. parsed-literal::
+
+    Query: Golf superstar
+    Arnold Palmer - Wikipedia, the free encyclopedia; http://en.wikipedia.org/wiki/Arnold_Palmer
+    Mario <b>Superstar</b> Baseball - Wikipedia, the free encyclopedia; http://en.wikipedia.org/wiki/Mario_Superstar_Baseball
+    Harry Vardon - Wikipedia, the free encyclopedia; http://en.wikipedia.org/wiki/Harry_Vardon
+    Mario <b>Superstar</b> Baseball - Wikipedia; http://it.wikipedia.org/wiki/Mario_Superstar_Baseball
+
+
+.. code:: python
+
+    # That's more like it! Let's just return the first result and format it to be in the form of Jeopardy
+.. code:: python
+
+    # To do that, let's make this a function and do some string replacing so that it just returns the first answer! 
+.. code:: python
+
+    import urllib
+    import json as m_json
+    
+    def watson1(query):
+        query += ' site:wikipedia.org'
+        query = urllib.parse.urlencode ( { 'q' : query } )
+        response = urllib.request.urlopen ( 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&' + query ).read()
+        json = m_json.loads ( response.decode('utf8') )
+        results = json [ 'responseData' ] [ 'results' ]
+        for result in results:
+            title = result['title']
+            url = result['url']   # was URL in the original and that threw a name error exception
+            return title.replace(' - Wikipedia, the free encyclopedia','')
+    
+    query = input ( 'Question: ' )
+    print(watson1(query))
+
+.. parsed-literal::
+
+    Question: He is a golf superstar
+    Arnold Palmer
+
+
+Finished Code - with more enhancements:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    import json as m_json
+    import urllib
+    
+    query = input ( 'Query: ' )
+    query += ' site:wikipedia.org '
+    query = urllib.parse.urlencode ( { 'q' : query } )
+    response = urllib.request.urlopen ( 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&' + query ).read()
+    json = m_json.loads ( response.decode('utf8')  )
+    
+    results = json [ 'responseData' ] [ 'results' ]
+    answers = []
+    
+    for result in results:
+        title = result['title']
+        url = result['url']
+        answers += [title]
+    for answer in answers:
+        if query.lower().strip() not in answer.lower().strip():
+    #         res = answer.replace(' - <b>Wikipedia</b>, the free encyclopedia','')
+            res = answer.replace(' - Wikipedia, the free encyclopedia','')
+            res = res.replace('<b>','')
+            res = res.replace('</b>','')
+            print("What is " + res + '?')
+            break
+
+.. parsed-literal::
+
+    Query: 
+    What is Wikipedia?
+
+
+.. code:: python
+
+    # As a function
+.. code:: python
+
+    import json as m_json
+    import urllib
+    
+    def watson(query):
+        query += ' site:wikipedia.org '
+        query = urllib.parse.urlencode ( { 'q' : query } )
+        response = urllib.request.urlopen ( 'http://ajax.googleapis.com/ajax/services/search/web?v=1.0&' + query ).read()
+        json = m_json.loads ( response.decode('utf8')  )
+    
+        results = json [ 'responseData' ] [ 'results' ]
+        answers = []
+        for result in results:
+            title = result['title']
+            url = result['url']
+            answers += [title]
+    
+        for answer in answers:
+            if query not in answer:
+        #         res = answer.replace(' - <b>Wikipedia</b>, the free encyclopedia','')
+                res = answer.replace(' - Wikipedia, the free encyclopedia','')
+                res = res.replace('<b>','')
+                res = res.replace('</b>','')
+                return "What is " + res + '?'
+            
+        return "No Results :("
+    
+    football = "He was the highest paid football player in 2008."
+    print("Q:" + football)
+    print(watson(football))
+    
+    query = input ( 'Jeopardy Question: ' )
+    print(watson(query))
+
+.. parsed-literal::
+
+    Q:He was the highest paid football player in 2008.
+    What is Cristiano Ronaldo?
+    Jeopardy Question: Who is the best jeopardy player of all time?
+    What is Ken Jennings?
+
+
+.. code:: python
+
+    #Search Wikipedia Directly Instead of Google
+    import urllib
+    
+    def searchWiki(q):
+        query = urllib.parse.urlencode ( { 'gsrsearch' : q } )
+        response = urllib.request.urlopen ( 'http://en.wikipedia.org/w/api.php?action=query&generator=search&prop=info&format=json&' + query ).read()
+        json = m_json.loads ( response.decode('utf8') )
+    #     print(json)
+        return json['query']['pages']
+    
+    # searchWiki("Highest paid football player")

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Building something useful - Watson! &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Building something useful - Watson!</a><ul>
+<li><a class="reference internal" href="#have-you-heard-of-ibm-s-watson-we-re-going-to-build-something-like-it">Have you heard of IBM&#8217;s Watson? We&#8217;re going to build something like it!</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#how-can-we-build-something-like-this">How can we build something like this?</a></li>
+<li><a class="reference internal" href="#the-problems-we-need-to-solve">The problems we need to solve:</a></li>
+<li><a class="reference internal" href="#how-can-we-solve-them">How can we solve them</a></li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="building-something-useful-watson">
+<h1>Building something useful - Watson!<a class="headerlink" href="#building-something-useful-watson" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="have-you-heard-of-ibm-s-watson-we-re-going-to-build-something-like-it">
+<h2>Have you heard of IBM&#8217;s Watson? We&#8217;re going to build something like it!<a class="headerlink" href="#have-you-heard-of-ibm-s-watson-we-re-going-to-build-something-like-it" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="caption" src="http://ceasefiremagazine.co.uk/wp-content/uploads/IBM-Watson-Jeopardy.jpg" />
+<p class="caption">caption</p>
+</div>
+<p><img alt="caption" src="http://www.wired.com/wp-content/uploads/blogs/wiredenterprise/wp-content/uploads/2012/03/watson_blue.jpg" /> ## A video: <a class="reference external" href="http://www.youtube.com/watch?v=WFR3lOm_xhE"><img alt="Watson video" src="http://img.youtube.com/vi/WFR3lOm_xhE/0.jpg" /></a></p>
+</div>
+</div>
+<div class="section" id="how-can-we-build-something-like-this">
+<h1>How can we build something like this?<a class="headerlink" href="#how-can-we-build-something-like-this" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>We just need some way to lookup information</li>
+<li>It doesn&#8217;t have to be super advanced</li>
+<li>Well, we&#8217;re going to use Python</li>
+<li>What if we could use python to search Google &amp; Wikipedia for the
+jeopardy question</li>
+</ul>
+</div>
+<div class="section" id="the-problems-we-need-to-solve">
+<h1>The problems we need to solve:<a class="headerlink" href="#the-problems-we-need-to-solve" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Searching Google/Wikipedia with Python</li>
+<li>Getting input from the user and then outputing an answer</li>
+</ul>
+</div>
+<div class="section" id="how-can-we-solve-them">
+<h1>How can we solve them<a class="headerlink" href="#how-can-we-solve-them" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Search for them</li>
+<li>Getting input from the user</li>
+<li>Search Google for &#8220;python3 documentation input user&#8221;</li>
+<li>Search Google for &#8220;Python script to search google&#8221;</li>
+<li>Click on the stackoverflow links</li>
+</ul>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="c"># Let&#39;s try each piece</span>
+<span class="nb">input</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">TestOKAYYYYY</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&#39;OKAYYYYY&#39;</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">json</span> <span class="kn">as</span> <span class="nn">m_json</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nb">raw_input</span> <span class="p">(</span> <span class="s">&#39;Query: &#39;</span> <span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span> <span class="p">(</span> <span class="p">{</span> <span class="s">&#39;q&#39;</span> <span class="p">:</span> <span class="n">query</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span> <span class="p">(</span> <span class="s">&#39;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;&#39;</span> <span class="o">+</span> <span class="n">query</span> <span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">json</span> <span class="o">=</span> <span class="n">m_json</span><span class="o">.</span><span class="n">loads</span> <span class="p">(</span> <span class="n">response</span> <span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">json</span> <span class="p">[</span> <span class="s">&#39;responseData&#39;</span> <span class="p">]</span> <span class="p">[</span> <span class="s">&#39;results&#39;</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span>   <span class="c"># was URL in the original and that threw a name error exception</span>
+    <span class="k">print</span> <span class="p">(</span> <span class="n">title</span> <span class="o">+</span> <span class="s">&#39;; &#39;</span> <span class="o">+</span> <span class="n">url</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+
+&lt;ipython-input-2-cb97e4039feb&gt; in &lt;module&gt;()
+      1 import urllib
+      2 import json as m_json
+----&gt; 3 query = raw_input ( &#39;Query: &#39; )
+      4 query = urllib.urlencode ( { &#39;q&#39; : query } )
+      5 response = urllib.urlopen ( &#39;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;&#39; + query ).read()
+
+
+NameError: name &#39;raw_input&#39; is not defined
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="c"># Uh oh. An error. That&#39;s okay. We can search for it!</span>
+<span class="c"># If we google the error, the number 1 result has the fix</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">json</span> <span class="kn">as</span> <span class="nn">m_json</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span> <span class="s">&#39;Query: &#39;</span> <span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlencode</span> <span class="p">(</span> <span class="p">{</span> <span class="s">&#39;q&#39;</span> <span class="p">:</span> <span class="n">query</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span> <span class="p">(</span> <span class="s">&#39;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;&#39;</span> <span class="o">+</span> <span class="n">query</span> <span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">json</span> <span class="o">=</span> <span class="n">m_json</span><span class="o">.</span><span class="n">loads</span> <span class="p">(</span> <span class="n">response</span> <span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">json</span> <span class="p">[</span> <span class="s">&#39;responseData&#39;</span> <span class="p">]</span> <span class="p">[</span> <span class="s">&#39;results&#39;</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span>   <span class="c"># was URL in the original and that threw a name error exception</span>
+    <span class="k">print</span> <span class="p">(</span> <span class="n">title</span> <span class="o">+</span> <span class="s">&#39;; &#39;</span> <span class="o">+</span> <span class="n">url</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Query: test
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+
+&lt;ipython-input-4-1be6b285e7fd&gt; in &lt;module&gt;()
+      2 import json as m_json
+      3 query = input ( &#39;Query: &#39; )
+----&gt; 4 query = urllib.urlencode ( { &#39;q&#39; : query } )
+      5 response = urllib.urlopen ( &#39;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;&#39; + query ).read()
+      6 json = m_json.loads ( response )
+
+
+AttributeError: &#39;module&#39; object has no attribute &#39;urlencode&#39;
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="c"># Another error. Let&#39;s search for it again</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">json</span> <span class="kn">as</span> <span class="nn">m_json</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span> <span class="s">&#39;Query: &#39;</span> <span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span> <span class="p">(</span> <span class="p">{</span> <span class="s">&#39;q&#39;</span> <span class="p">:</span> <span class="n">query</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span> <span class="p">(</span> <span class="s">&#39;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;&#39;</span> <span class="o">+</span> <span class="n">query</span> <span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">json</span> <span class="o">=</span> <span class="n">m_json</span><span class="o">.</span><span class="n">loads</span> <span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf8&#39;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">json</span> <span class="p">[</span> <span class="s">&#39;responseData&#39;</span> <span class="p">]</span> <span class="p">[</span> <span class="s">&#39;results&#39;</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span>   <span class="c"># was URL in the original and that threw a name error exception</span>
+    <span class="k">print</span> <span class="p">(</span> <span class="n">title</span> <span class="o">+</span> <span class="s">&#39;; &#39;</span> <span class="o">+</span> <span class="n">url</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Query: Golf superstar
+&lt;b&gt;Superstar Golf&lt;/b&gt;! free online flash game - Free flash games, football &lt;b&gt;...&lt;/b&gt;; http://www.mousebreaker.com/games/superstargolf
+Play &lt;b&gt;Superstar Golf&lt;/b&gt;! - Sport Games – Free Online &lt;b&gt;...&lt;/b&gt; - Mousebreaker; http://www.mousebreaker.com/games/superstargolf/playgame
+&lt;b&gt;Superstar Golf&lt;/b&gt; - Free online games at Agame.com; http://www.agame.com/game/superstar-golf
+&lt;b&gt;Superstar Golf&lt;/b&gt; - Mini Putt; http://www.mini-putt.org/superstargolf.html
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="c"># Wait a sec - we want actual data - not web results. How can we get wikipedia only? Search for it!</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">json</span> <span class="kn">as</span> <span class="nn">m_json</span>
+<span class="n">query</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span> <span class="s">&#39;Query: &#39;</span> <span class="p">)</span>
+<span class="n">query</span> <span class="o">+=</span> <span class="s">&#39; site:wikipedia.org&#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span> <span class="p">(</span> <span class="p">{</span> <span class="s">&#39;q&#39;</span> <span class="p">:</span> <span class="n">query</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span> <span class="p">(</span> <span class="s">&#39;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;&#39;</span> <span class="o">+</span> <span class="n">query</span> <span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">json</span> <span class="o">=</span> <span class="n">m_json</span><span class="o">.</span><span class="n">loads</span> <span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf8&#39;</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">json</span> <span class="p">[</span> <span class="s">&#39;responseData&#39;</span> <span class="p">]</span> <span class="p">[</span> <span class="s">&#39;results&#39;</span> <span class="p">]</span>
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span>   <span class="c"># was URL in the original and that threw a name error exception</span>
+    <span class="k">print</span> <span class="p">(</span> <span class="n">title</span> <span class="o">+</span> <span class="s">&#39;; &#39;</span> <span class="o">+</span> <span class="n">url</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Query: Golf superstar
+Arnold Palmer - Wikipedia, the free encyclopedia; http://en.wikipedia.org/wiki/Arnold_Palmer
+Mario &lt;b&gt;Superstar&lt;/b&gt; Baseball - Wikipedia, the free encyclopedia; http://en.wikipedia.org/wiki/Mario_Superstar_Baseball
+Harry Vardon - Wikipedia, the free encyclopedia; http://en.wikipedia.org/wiki/Harry_Vardon
+Mario &lt;b&gt;Superstar&lt;/b&gt; Baseball - Wikipedia; http://it.wikipedia.org/wiki/Mario_Superstar_Baseball
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="c"># That&#39;s more like it! Let&#39;s just return the first result and format it to be in the form of Jeopardy</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="c"># To do that, let&#39;s make this a function and do some string replacing so that it just returns the first answer!</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">import</span> <span class="nn">json</span> <span class="kn">as</span> <span class="nn">m_json</span>
+
+<span class="k">def</span> <span class="nf">watson1</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="n">query</span> <span class="o">+=</span> <span class="s">&#39; site:wikipedia.org&#39;</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span> <span class="p">(</span> <span class="p">{</span> <span class="s">&#39;q&#39;</span> <span class="p">:</span> <span class="n">query</span> <span class="p">}</span> <span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span> <span class="p">(</span> <span class="s">&#39;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;&#39;</span> <span class="o">+</span> <span class="n">query</span> <span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="n">m_json</span><span class="o">.</span><span class="n">loads</span> <span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf8&#39;</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">json</span> <span class="p">[</span> <span class="s">&#39;responseData&#39;</span> <span class="p">]</span> <span class="p">[</span> <span class="s">&#39;results&#39;</span> <span class="p">]</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span>   <span class="c"># was URL in the original and that threw a name error exception</span>
+        <span class="k">return</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39; - Wikipedia, the free encyclopedia&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span> <span class="s">&#39;Question: &#39;</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">watson1</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Question: He is a golf superstar
+Arnold Palmer
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">json</span> <span class="kn">as</span> <span class="nn">m_json</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span> <span class="s">&#39;Query: &#39;</span> <span class="p">)</span>
+<span class="n">query</span> <span class="o">+=</span> <span class="s">&#39; site:wikipedia.org &#39;</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span> <span class="p">(</span> <span class="p">{</span> <span class="s">&#39;q&#39;</span> <span class="p">:</span> <span class="n">query</span> <span class="p">}</span> <span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span> <span class="p">(</span> <span class="s">&#39;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;&#39;</span> <span class="o">+</span> <span class="n">query</span> <span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">json</span> <span class="o">=</span> <span class="n">m_json</span><span class="o">.</span><span class="n">loads</span> <span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf8&#39;</span><span class="p">)</span>  <span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">json</span> <span class="p">[</span> <span class="s">&#39;responseData&#39;</span> <span class="p">]</span> <span class="p">[</span> <span class="s">&#39;results&#39;</span> <span class="p">]</span>
+<span class="n">answers</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span>
+    <span class="n">answers</span> <span class="o">+=</span> <span class="p">[</span><span class="n">title</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">answers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">query</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">answer</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+<span class="c">#         res = answer.replace(&#39; - &lt;b&gt;Wikipedia&lt;/b&gt;, the free encyclopedia&#39;,&#39;&#39;)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">answer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39; - Wikipedia, the free encyclopedia&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&lt;b&gt;&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&lt;/b&gt;&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;What is &quot;</span> <span class="o">+</span> <span class="n">res</span> <span class="o">+</span> <span class="s">&#39;?&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Query:
+What is Wikipedia?
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="c"># As a function</span>
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">json</span> <span class="kn">as</span> <span class="nn">m_json</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+
+<span class="k">def</span> <span class="nf">watson</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="n">query</span> <span class="o">+=</span> <span class="s">&#39; site:wikipedia.org &#39;</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span> <span class="p">(</span> <span class="p">{</span> <span class="s">&#39;q&#39;</span> <span class="p">:</span> <span class="n">query</span> <span class="p">}</span> <span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span> <span class="p">(</span> <span class="s">&#39;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;&#39;</span> <span class="o">+</span> <span class="n">query</span> <span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="n">m_json</span><span class="o">.</span><span class="n">loads</span> <span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf8&#39;</span><span class="p">)</span>  <span class="p">)</span>
+
+    <span class="n">results</span> <span class="o">=</span> <span class="n">json</span> <span class="p">[</span> <span class="s">&#39;responseData&#39;</span> <span class="p">]</span> <span class="p">[</span> <span class="s">&#39;results&#39;</span> <span class="p">]</span>
+    <span class="n">answers</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">]</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s">&#39;url&#39;</span><span class="p">]</span>
+        <span class="n">answers</span> <span class="o">+=</span> <span class="p">[</span><span class="n">title</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">answers</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">query</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">answer</span><span class="p">:</span>
+    <span class="c">#         res = answer.replace(&#39; - &lt;b&gt;Wikipedia&lt;/b&gt;, the free encyclopedia&#39;,&#39;&#39;)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">answer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39; - Wikipedia, the free encyclopedia&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&lt;b&gt;&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&lt;/b&gt;&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="s">&quot;What is &quot;</span> <span class="o">+</span> <span class="n">res</span> <span class="o">+</span> <span class="s">&#39;?&#39;</span>
+
+    <span class="k">return</span> <span class="s">&quot;No Results :(&quot;</span>
+
+<span class="n">football</span> <span class="o">=</span> <span class="s">&quot;He was the highest paid football player in 2008.&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="s">&quot;Q:&quot;</span> <span class="o">+</span> <span class="n">football</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">watson</span><span class="p">(</span><span class="n">football</span><span class="p">))</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="nb">input</span> <span class="p">(</span> <span class="s">&#39;Jeopardy Question: &#39;</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">watson</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre>Q:He was the highest paid football player in 2008.
+What is Cristiano Ronaldo?
+Jeopardy Question: Who is the best jeopardy player of all time?
+What is Ken Jennings?
+</pre></div>
+</div>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="c">#Search Wikipedia Directly Instead of Google</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+
+<span class="k">def</span> <span class="nf">searchWiki</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">urlencode</span> <span class="p">(</span> <span class="p">{</span> <span class="s">&#39;gsrsearch&#39;</span> <span class="p">:</span> <span class="n">q</span> <span class="p">}</span> <span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span> <span class="p">(</span> <span class="s">&#39;http://en.wikipedia.org/w/api.php?action=query&amp;generator=search&amp;prop=info&amp;format=json&amp;&#39;</span> <span class="o">+</span> <span class="n">query</span> <span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">json</span> <span class="o">=</span> <span class="n">m_json</span><span class="o">.</span><span class="n">loads</span> <span class="p">(</span> <span class="n">response</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">&#39;utf8&#39;</span><span class="p">)</span> <span class="p">)</span>
+<span class="c">#     print(json)</span>
+    <span class="k">return</span> <span class="n">json</span><span class="p">[</span><span class="s">&#39;query&#39;</span><span class="p">][</span><span class="s">&#39;pages&#39;</span><span class="p">]</span>
+
+<span class="c"># searchWiki(&quot;Highest paid football player&quot;)</span>
+</pre></div>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Style &mdash; CS42</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-3.0.0/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/video.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/poll.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/tabbedstuff.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/pytutor.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/codemirror.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/activecode.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/parsons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/lib/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/runestone-custom-sphinx-bootstrap.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/js/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/js/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/assess.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="../_static/lib/lis.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-noconflict.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <link rel="top" title="CS42" href="../index.html" />
+    <link rel="up" title="Table of Contents" href="../toc.html" />
+    <link rel="next" title="Building Things" href="../week5/index.html" />
+    <link rel="prev" title="Reading Code" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://42cs.github.io' ? 'http://42cs.github.io' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/book';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'cs42';
+  eBookConfig.logLevel = 10;
+  eBookConfig.loginRequired = false
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+</script>
+
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+  </head>
+  <body>
+
+
+<!-- Begin navbar -->
+<div id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type='button' class='navbar-toggle' data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div>
+        <a class="brand-logo" style='background: transparent url("../_static/img/logo_small.png") no-repeat 0px 0px;' href="/book/default/user/login">&nbsp; </a>
+        <a class="navbar-brand" href="../index.html">CS42</a>
+      </div>
+    </div>
+
+    <div class="navbar-collapse collapse navbar-ex1-collapse">
+
+      <ul class="nav navbar-nav navbar-right">
+
+
+        <!-- social media dropdown -->
+        <!-- end social media dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- search dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-search" style='opacity:0.9;'></i>
+          </a>
+          <ul class='dropdown-menu'>
+            
+                <li><a href='../index.html'>Table of Contents</a></li>
+            
+            <li><a href='/book/static/cs42/genindex.html'>Book Index</a></li>
+            <li class="divider"></li>
+            <li id="scratch_ac_link"><a href="javascript:toggleScratchActivecode()">Scratch ActiveCode</a></li>
+            <li class="divider"></li>
+            <li style="width: 240px;">
+              <form class="navbar-search" style="margin:10px;" action="../search.html" method="get">
+                <div class="input-group">
+                  <input type="text" class="form-control" name="q" placeholder="Search this book" />
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" style="margin:0;" type="submit">
+                      <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+            </li>
+          </ul>
+        </li>
+        <!-- end search dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- user account dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-user" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><span class='loggedinuser'></span></li>
+            <li class="divider"></li>
+            <li><a href='http://42cs.github.io/book/admin/index'>Instructor's Page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://42cs.github.io/book/default/user/profile" id="profilelink">Edit Profile</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/change_password" id="passwordlink">Change Password</a></li>
+            <li><a href="http://42cs.github.io/book/default/user/register" id="registerlink">Register</a></li>
+            <li class='loginout'><a href='#'>Login</a></li> <!-- correct link populated by addNavbarLoginLink() -->
+          </ul>
+        </li>
+        <!-- end user account dropdown -->
+
+        <li class="divider-vertical"></li>
+
+        <!-- help menu dropdown -->
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="glyphicon glyphicon-question-sign" style="opacity:0.9;"></i>
+          </a>
+          <ul class="dropdown-menu user-menu">
+            <li><a href='/book/static/cs42/navhelp.html'>Navigation Help</a></li>
+            <li><a href='/book/static/overview/instructor.html'>Help for Instructors</a></li>            
+            <li class="divider"></li>
+            <li><a href='http://runestoneinteractive.org'>About Runestone</a></li>
+            <li><a href='https://github.com/bnmnetp/runestone/issues/new'>Report A Problem</a></li>
+          </ul>
+        </li>
+        <!-- end help menu dropdown -->
+
+        <li class="divider-vertical"></li>
+
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li class="divider-vertical"></li>
+        
+          <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Style</a><ul>
+<li><a class="reference internal" href="#what-not-to-do">What not to do:</a></li>
+<li><a class="reference internal" href="#examples">Examples</a><ul>
+<li><a class="reference internal" href="#useful-names">Useful names</a></li>
+<li><a class="reference internal" href="#variable-names">Variable Names.</a></li>
+<li><a class="reference internal" href="#conditionals">Conditionals</a></li>
+<li><a class="reference internal" href="#comments">Comments</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#where-to-get-more-information">Where to get more information</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+          <li class="divider-vertical"></li>
+        
+        
+          
+  <li id="relations-prev" title="Previous Chapter - Reading Code" data-toggle="tooltip">
+    <a href="index.html" >
+      <i class='glyphicon glyphicon-backward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  
+  <li id="relations-next" title='Next Chapter - Building Things' data-toggle="tooltip" >
+    <a href="../week5/index.html" >
+      <i class='glyphicon glyphicon-forward' style='opacity:0.9;'></i>
+    </a>
+  </li>
+  <li class="divider-vertical"></li>
+
+<script type="text/javascript">
+  opts = {'placement':'bottom',
+          'selector': '',
+          'delay': { show: 100, hide: 50}
+         };
+
+  $('#relations-prev').tooltip(opts);
+  $('#relations-next').tooltip(opts);
+</script>
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  
+  <div class="section" id="style">
+<h1>Style<a class="headerlink" href="#style" title="Permalink to this headline">¶</a></h1>
+<p>Code is actually written for humans - not computers.  Computers don&#8217;t understand python directly - they need an interpreter to convert it to instructions that the computer knows. Similiarly humans don&#8217;t automatically understand python, they need an interpreter to understand it - their brain.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Comprehension &gt;&gt;&gt; Cleverness</dt>
+<dd><ul class="first last simple">
+<li>Certain kinds of cleverness impairs your debugging ability.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">The best “comment” is a cleanly laid out program.</p>
+</li>
+<li><p class="first">You’re making your program easy to understand/reason with</p>
+</li>
+<li><p class="first">As well as handling/considering ways in which it could fail</p>
+</li>
+<li><p class="first">Aspects of style: Variable Names, Modularization, Spacing.</p>
+</li>
+</ul>
+
+<div id="this" lang="python" >
+
+<br/>
+<div id="this_code_div" style="display: block">
+<textarea cols="50" rows="12" id="this_code" class="active_code", prefixcode="undefined" lang="python">
+import this
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (this)</span> </p>
+
+<button class='btn btn-success' id="this_runb" onclick="runit('this',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="this_saveb" onclick="saveEditor('this');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="this_loadb" onclick="requestCode('this');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#this_saveb').toggle();
+    $('#this_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="this_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="this_suffix" style="display:none">
+</pre>
+<pre id="this_pre" class="active_out">
+
+</pre>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(window).load(function() {
+        var runb = document.getElementById("this_runb");
+        runit('this',runb, undefined);
+    });
+});
+</script>
+
+</div>
+
+<div class="section" id="what-not-to-do">
+<h2>What not to do:<a class="headerlink" href="#what-not-to-do" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Variable names that don’t clarify: a, test, test1</li>
+<li>Leaving everything as one big hunk of code.</li>
+<li>Too many comments because  the program is unclear.</li>
+<li>Use the o and 0 or I,l,1 - leading to confusion if that&#8217;s a 0 or a 1</li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="useful-names">
+<h3>Useful names<a class="headerlink" href="#useful-names" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Have useful variable names</li>
+</ol>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Bad</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">60</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">asdad</span> <span class="o">=</span> <span class="s">&quot;Win&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">asdad</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Better</span>
+<span class="n">time_left</span><span class="p">,</span> <span class="n">points</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">60</span>
+<span class="n">high_score</span> <span class="o">=</span> <span class="n">points</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s">&quot;Win&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="variable-names">
+<h3>Variable Names.<a class="headerlink" href="#variable-names" title="Permalink to this headline">¶</a></h3>
+<p>Bad</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">y</span> <span class="o">=</span> <span class="s">&quot;something&quot;</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">y</span>
+<span class="k">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Better</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">y</span> <span class="o">=</span> <span class="s">&quot;something&quot;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c"># If y will never change, print(&quot;something&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conditionals">
+<h3>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Bad</span>
+<span class="k">if</span> <span class="n">attr</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;True!&#39;</span>
+
+<span class="k">if</span> <span class="n">attr</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;attr is None!&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Better</span>
+<span class="c"># Just check the value</span>
+<span class="k">if</span> <span class="n">attr</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;attr is truthy!&#39;</span>
+
+<span class="c"># or check for the opposite</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">attr</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;attr is falsey!&#39;</span>
+
+<span class="c"># or, since None is considered false, explicitly check for it</span>
+<span class="k">if</span> <span class="n">attr</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&#39;attr is None!&#39;</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>::</dt>
+<dd><p class="first"># Not great
+def notSoGreat(x):</p>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt>if (x == 1):</dt>
+<dd>return True</dd>
+<dt>else:</dt>
+<dd>return False</dd>
+</dl>
+</div></blockquote>
+</dd>
+</dl>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># better</span>
+<span class="k">def</span> <span class="nf">better</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>What if you wanted to do the opposite of the conditional?</p>
+<blockquote>
+<div>return not CONDITIONALSTATMENT</div></blockquote>
+<p>But be careful when you are chaining conditional statements.</p>
+
+<div id="Conditional" lang="python" >
+
+<br/>
+<div id="Conditional_code_div" style="display: block">
+<textarea cols="50" rows="12" id="Conditional_code" class="active_code", prefixcode="undefined" lang="python">
+def multipleWays(complexCond):
+        return not complexCond
+        # return complexCond != True
+
+def notGoodWays(complexCond):
+        return not not (not (not not not not complexCond))
+
+print(multipleWays(True))
+print(notGoodWays(True))
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (Conditional)</span> </p>
+
+<button class='btn btn-success' id="Conditional_runb" onclick="runit('Conditional',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Conditional_saveb" onclick="saveEditor('Conditional');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="Conditional_loadb" onclick="requestCode('Conditional');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#Conditional_saveb').toggle();
+    $('#Conditional_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="Conditional_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="Conditional_suffix" style="display:none">
+</pre>
+<pre id="Conditional_pre" class="active_out">
+
+</pre>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(window).load(function() {
+        var runb = document.getElementById("Conditional_runb");
+        runit('Conditional',runb, undefined);
+    });
+});
+</script>
+
+</div>
+
+</div>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<p>Comments begin with the # character. Triple quotes are not actually comments - they are strings.</p>
+<p>The best code doesn&#8217;t need comments - but comments are useful tools. The comments should give context about what you are doing.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Don&#39;t do this</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c"># Increment x</span>
+<span class="c"># At least you have context now.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>                 <span class="c"># Compensate for border</span>
+<span class="c"># Best</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>What does this code do?</p>
+
+<div id="remove_comments" lang="python" >
+
+<br/>
+<div id="remove_comments_code_div" style="display: block">
+<textarea cols="50" rows="12" id="remove_comments_code" class="active_code", prefixcode="undefined" lang="python">
+# a = ["Hi", "My", "Name", "Hi"]
+# for i in a:
+#     print (a.index(i), i)
+</textarea>
+</div>
+<p class="ac_caption"><span class="ac_caption_text"> (remove_comments)</span> </p>
+
+<button class='btn btn-success' id="remove_comments_runb" onclick="runit('remove_comments',this, undefined);">Run</button>
+
+<!-- <div id="cont"></div>
+
+<button class="ac_opt btn btn-default" style="display: inline-block" id="remove_comments_saveb" onclick="saveEditor('remove_comments');">Save</button>
+<button class="ac_opt btn btn-default" style="display: inline-block" id="remove_comments_loadb" onclick="requestCode('remove_comments');">Load</button>
+
+<script>
+if ('block' == 'none') {
+    // a hack to preserve the inline-block display style. Toggle() will use display: block
+    // (instead of inline-block) if the previous display style was 'none'
+    $('#remove_comments_saveb').toggle();
+    $('#remove_comments_loadb').toggle();
+}
+</script>
+-->
+
+<div style="text-align: center">
+<canvas id="remove_comments_canvas" class="ac-canvas" height="400" width="400" style="border-style: solid; display: none; text-align: center"></canvas>
+</div>
+<pre id="remove_comments_suffix" style="display:none">
+</pre>
+<pre id="remove_comments_pre" class="active_out">
+
+</pre>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(window).load(function() {
+        var runb = document.getElementById("remove_comments_runb");
+        runit('remove_comments',runb, undefined);
+    });
+});
+</script>
+
+</div>
+
+<p>Answer: Nothing. You should remove commented out code when you are submitting.</p>
+</div>
+</div>
+<div class="section" id="where-to-get-more-information">
+<h2>Where to get more information<a class="headerlink" href="#where-to-get-more-information" title="Permalink to this headline">¶</a></h2>
+<p>PEP8 - is a style guide that is used for Python code and it&#8217;s worth taking a look at to see what others consider good style.</p>
+<blockquote>
+<div><a class="reference external" href="http://legacy.python.org/dev/peps/pep-0008/#code-lay-out">http://legacy.python.org/dev/peps/pep-0008/#code-lay-out</a></div></blockquote>
+<p>Albert Wu - who was a TA for CS61A a while ago - wrote a style guide that is really useful.</p>
+<p>You can view it here.</p>
+<blockquote>
+<div><a class="reference external" href="http://albertwu.org/cs61a/notes/style_guide">http://albertwu.org/cs61a/notes/style_guide</a></div></blockquote>
+</div>
+</div>
+
+
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <span id='numuserspan'></span> readers online now | <span class='loggedinuser'></span> | <a href="#">Back to top</a>
+      
+        <br />
+        
+      
+    </p>
+    <p>
+        2014 CS 61A, Contact: Sumukh Sridhara.
+    </p>
+  </div>
+</footer>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(addUserToFooter);
+    $(document).ready(addNavbarLoginLink);
+    $(document).ready(createEditors);
+    $(document).ready(getNumUsers);
+    $(document).ready(getOnlineUsers);
+    $(document).ready(createScratchActivecode());
+    $(document).ready(styleUnittestResults());
+</script>
+
+<script type="text/javascript">
+  // add the video play button overlay image
+  $(".video-play-overlay").each(function() {
+    $(this).css('background-image', "url(\'../_static/play_overlay_icon.png\')")
+    });
+
+  // This function is needed to allow the dropdown search bar to work;
+  // The default behaviour is that the dropdown menu closes when something in
+  // it (like the search bar) is clicked
+  $(function() {
+    // Fix input element click problem
+    $('.dropdown input, .dropdown label').click(function(e) {
+      e.stopPropagation();
+      });
+  });
+
+  // style codelens buttons (doing it here because PyTutor is a submodule owned by someone else
+  $(function() {
+    $(".ExecutionVisualizer").each(function() {
+      $(this).find("#jmpFirstInstr").addClass('btn btn-default');
+      $(this).find("#jmpStepBack").addClass('btn btn-danger');
+      $(this).find("#jmpStepFwd").addClass('btn btn-success');
+      $(this).find("#jmpLastInstr").addClass('btn btn-default');
+      });
+  });
+
+</script>
+
+
+
+
+  </body>
+</html>

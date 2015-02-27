@@ -9,7 +9,6 @@ Asking good questions
 .. notes 
 
 
-
 How to ask for help
 ------------------------
 
@@ -35,7 +34,7 @@ Things to consider.
 	* Is it Piazza? StackOverflow? Email?
 #. Don't just dump a question onto piazza and expect to have it sovled without effort on your part. 
 	#. People like helping others who put in effort. 
-#. Vauge questions get vauge answers.
+#. Vague questions get vague answers.
 
 The guideline for posting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,7 +83,7 @@ return square(x) + square(y)
 
 **********
 
-.. mchoicema:: question1_1
+.. mchoicemf:: question1_1
    :answer_a: good
    :answer_b: bad
    :correct: b
@@ -98,7 +97,7 @@ return square(x) + square(y)
 
 	Figure 2: No repsonse ... I wonder why? 
 
-.. mchoicema:: question1_2
+.. mchoicemf:: question1_2
    :answer_a: good
    :answer_b: bad
    :correct: a

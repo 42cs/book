@@ -1,0 +1,149 @@
+=========
+Building Things
+=========
+
+So've you're going through your computer science class and you are learning a lot - but you aren't sure about how you can actually use the things you are learning. This lesson will help you take the skills you've learnt and use them to build useful or fun projects!
+
+This class will cover all of the material we've learnt in earlier weeks to build a cool project! What is the cool project you ask? 
+We'll be building a version of IBM's Watson - a Jeopardy answering supercomputer. 
+
+.. figure:: http://ceasefiremagazine.co.uk/wp-content/uploads/IBM-Watson-Jeopardy.jpg
+   :alt: caption
+   :scale: 25%
+   :align: center
+
+
+.. figure:: http://www.wired.com/wp-content/uploads/blogs/wiredenterprise/wp-content/uploads/2012/03/watson_blue.jpg
+   :alt: caption
+   :scale: 25%
+   :align: center
+
+
+
+Common Objections
+-------------------------
+
+	But Sumukh, I can't build anything - I don't know that much! I need to take more classes and then I can think of building something!  
+
+False. Just by learning how to use a programming language and having a basic understanding the concepts taught in an intro CS course - you've unlocked a world of opportunity. You can truely build *anything*. A lot of times, we are our own biggest roadblock, and in this case the belief that you are not capable of doing something is the only thing holding you back from actually doing it. 
+
+	I've never done this before and I don't know where to start. I only have done stuff for class and not stuff outside. 
+
+There's always a first time for everything! The important thing is to start. Once you start, you can see that you don't need experience, just the willingness to learn as you go. 
+
+	I can't think of any ideas or projects to work on. 
+
+There's a couple of solutions to this. You can work with other people, use the guide below to come up with your ideas, or just work with a common idea for practice/fun. 
+
+	I just don't know - I'm not sure if I'm ready. 
+
+If you're asking that question - that usually means that you are ready. Even when experienced programmers start working on something - they think 'Hmm... I don't know if I can even do that?' ... but the difference is that they answer with 'Well, I'll find out when I start'. 
+
+
+If you still have objections - just give building things a try! 
+
+The process of building things
+---------------------------------
+
+- Think of something that you want to work on
+ 	- This can be an idea for a project or game that you want to make
+ 	- Maybe you are working on something where programming can help. 
+	- You are asked to get something working (a website or a project)
+	- Then think of what you want the final result to look like
+
+- Figure out what is the minimum you need to do to accomplish your goal.
+	- What is the core interaction/purpose
+	- To solve that problem/need - what do you need to make
+	- What problems do you need to solve?
+	- How can you solve those problems? 
+		- What language?
+		- What computer?
+		- What medium? (Website, App, Command?)
+	- Have any of those problems been solved by someone else?
+		- Are they common problems? Is there a way to avoid writing it ourselves?
+
+- Search the internet to see if other people have worked on the same thing
+
+- Start and get the minimal version up quickly
+	- Don't worry about how good it is for now. 
+	- If you don't know how to do something - Search for it!
+
+- You won’t know what everything does - so look it up! 
+	- Documentation helps! 
+
+
+Coming up with ideas 
+-------------------------
+
+This applies for fun projects or startups and a bunch of other things. 
+
+	The best way to solve your own problems. 
+
+	Always think of ways you can use your skills to solve a problem. 
+
+	For projects: Think of fun or cool games.
+
+	Put a twist on an existing concept. 
+
+	Wouldn't it be cool if? 
+
+	What is your vision for the future? 
+
+
+
+Don't reinvent the wheel
+------------------------------
+A lot of times, someone else has solved the problem for us! If we effectively search the internet - we can save ourselves a lot of time. 
+
+When it comes to code, we can use libraries that other people have written to do common functions. Instead of writing it - we just need to install the library. In python this is often done with the use of `pip` or `pip3`. Some common examples include, instead of donwloading a website and checking its contents - we can use a library called BeautifulSoup to do most of the heavy lifting. If we wanted to use natural language processing, we don't have to implement everything. We can use a library called nltk. You do need to look up the installation instructions. 
+
+When it comes to tasks, there things called APIs that will help do tasks like sending a text message from your code. These APIs can help you get data from other places and talk to other services. This is how you could information about a YouTube video or about a user on Facebook. 
+
+Some examples APIs that you can look at - and maybe use: 
+Make Phone Calls & Send Text Messages with Code - https://www.twilio.com
+Accept credit cards online - https://stripe.com
+YouTube, Facebook, Chrome extensions
+
+
+
+Making Software
+---------------
+.. figure::  http://leehughes.wpengine.netdna-cdn.com/wp-content/uploads/2013/05/learn-programming.png
+   :scale: 50%
+   :align: center
+
+   Figure 1: Making things! (From: http://wpreviews.net/learn-programming/)
+
+
+Excercise - Building our own version of IBM's Watson
+---------------
+In-class: Follow along with Sumukh's directions. Pull out a laptop - or work with a partner. 
+
+Not in class? - I'll post a link to work through it yourself after CS42 
+
+Getting a job/internship
+----------------
+Believe it or not - the most important part of your resume is the projects you've been working on. By actually working on fun projects and having things that you've built to show off is huge boost. It's like a cheat code for finding a job. You could literally hand in a resume consisting of only your side projects and what you've done before and have a solid resume. Having actual projects that you are excited about shows creativity, ambition, and drive - which are skills that employers care about. 
+
+.. notes: personal anecdote
+
+Resources and Ways to Learn More
+-----------------
+- Google.com
+- StackOverflow.com
+- HackerNews (news.ycombinator.com)
+- Github.com
+- Sumukh's Hackathon Guide -  (APIs, Ideas, Examples, Tips) https://github.com/Sumukh/HackathonWorkshop
+- Examples of hackathon projects -  https://github.com/Sumukh/HackathonWorkshop/blob/master/winners.
+- Hackers @ Berkeley -  https://www.facebook.com/groups/hackberkeley/
+
+
+
+Conclusion
+-----------
+
+You might not realize it yet, but you have the power to build things. If you embrace it and take advantage of that skill you'll find yourself doing incredible things!
+
+
+
+
