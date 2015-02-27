@@ -63,6 +63,17 @@ First Steps
 Material
 ----------
 
+Current Topics
+~~~~~~~~~~~~~~~~~~~~
+.. toctree::
+    :maxdepth: 2
+
+    dress/index.rst
+
+
+
+
+
 Week 1 - Reasoning & Grit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 This week will get students excited/motivated & make them comfortable reasoning through code (by converting code to english).

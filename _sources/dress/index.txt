@@ -1,0 +1,38 @@
+
+The Dress
+------------
+
+* What's the dress? `Context  <http://www.nytimes.com/2015/02/28/business/a-simple-question-about-a-dress-and-the-world-weighs-in.html?_r=0>`_
+
+* Take me to the first topic!  `Reasoning <week1/reasoning.html>`_
+
+* View the :ref:`t_o_c`
+
+.. activecode:: dress
+   :above:
+
+  from processing import *
+  gg = ''
+  def setup():
+      global gg
+      size(600,800)
+      gg = loadImage('_static/dress.jpeg')
+      noLoop()
+
+  def scale(inp, small, most):
+    # TODO: Scale
+    return inp
+
+  def draw():
+      image(gg,0,0)
+      for i in range(gg.width):
+          for j in range(gg.height):
+              p = get(i,j)
+              r = red(p)
+              g = green(p)
+              b = blue(p)
+              #p = color(scale(r,134,255),scale(g,134,255), scale(b,134,255))
+              set(i,j,p)
+
+  run()
+
